@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" />
+    <title>{$highlight['title']}</title>
+    <meta content="{$highlight['title']}" name="description">
+    <meta content="{$highlight['title']}" name="keywords">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"  />
+    <link rel="stylesheet" href="__TIYU_CSS__/reset.css" />
+    <link rel="stylesheet" href="__TIYU_CSS__/index.css">
+    <link rel="stylesheet" href="__TIYU_CSS__/style.css" />
+    <link rel="stylesheet" href="__TIYU_CSS__/sy-footer.css">
+    <script type="text/javascript"  src="__TIYU_JS__/jquery.min.js"></script>
+    <script type="text/javascript" src="__TIYU_JS__/biebuzhu.js"></script>
+</head>
+
+<body>
+<!-- header/S -->
+{include file="public/header" /}
+
+{if condition="$highlight.pid neq 0"}
+<div class="topic_subnav_box">
+    <div class="topic_subnav">
+        <ul>
+            {if condition="$new_category.pinyin neq null"}
+            <li> <a href="/{$new_category.pinyin}/index.html" class="">{$highlight.name}新闻</a> </li>
+            {/if}
+
+            {if condition="$zhibo_category.pinyin neq null"}
+            <li> <a href="/{$zhibo_category.pinyin}/index.html" class="">{$highlight.name}直播</a> </li>
+            {/if}
+
+            {if condition="$video_category.pinyin neq null"}
+            <li> <a href="/{$video_category.pinyin}/index.html" class="">{$highlight.name}录像</a> </li>
+            {/if}
+
+            {if condition="$highlight.pinyin neq null"}
+            <li> <a href="/{$highlight.pinyin}/index.html" class="hover">{$highlight.name}集锦</a> </li>
+            {/if}
+        </ul>
+    </div>
+</div>
+{/if}
+
+<div class="content_box">
+    <div class="local"><span class="one">当前位置：</span>
+        <a href="/{$category['pinyin']}/index.html"><span>{$category['category_name']}</span></a> >
+        <a href="/{$highlight['pinyin']}/index.html"><span>{$highlight['category_name']}</span></a>
+    </div>
+    <div class="content_block_left">
+        <div class="articles_text_box">
+            <div class="bread_crumb">
+
+            </div>
+            <div class="articles_text">
+                <div class="title">
+                    <h1>{$highlight['title']}</h1>
+                    <time>{$highlight['create_time']|date="Y-m-d H:i:s",###}</time>
+                </div>
+                <p>
+                    {$highlight['content']}
+                </p>
+            </div>
+            <div class="articles_tag_text clearfix">
+                <ul>
+                    {volist name="tags" id="tag"}
+                    <li><a href=/tag/{$tag['tag_id']}.html target="_blank">{$tag['tag_name']}</a></li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+        <div class="reading_box">
+            <div class="reading_padding">
+                <div class="reading_title">
+                    <h1>推荐阅读</h1>
+                </div>
+                <div class="news_list">
+                    {volist name="support_news" id="new"}
+                    <div class="block_img">
+                        <a href="/{$top_category[$new['top_id']]}/{$new['article_id']}.html" class="tag_posituon">
+                            <img src="{$new['thumbnail']}" alt="{$new['title']}">
+                        </a>
+                        <div class="infro">
+                            <h1><a href="/{$top_category[$new['top_id']]}/{$new['article_id']}.html">{$new['title']}</a></h1>
+                            <p><a href="/{$top_category[$new['top_id']]}/{$new['article_id']}.html"></a></p>
+                            <time>{$new['create_time']|date="Y-m-d",###}</time>
+                        </div>
+                    </div>
+                    {/volist}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content_right">
+        {volist name="tag_list" id="tag_highlight"}
+        <div class="block">
+            <div class="block_title">
+                <h1>相关{$tag_highlight['tag_name']}录像</h1>
+            </div>
+            <div class="hot_video_con">
+                <ul>
+                    {volist name="tag_highlight.highlights" id="highlight"}
+                    <li> <img style="width: 12px" src="__TIYU_IMG__/919901b301f64ce5b2622ae2fe536d3e.gif">
+                        <a href="/{$top_category[$highlight['top_id']]}/{$highlight['id']}.html" title="{$highlight['title']}"target="_blank">{$highlight['title']}</a>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+        {/volist}
+
+        <div class="block">
+            <div class="block_title">
+                <h1>实时热点</h1>
+            </div>
+            <div class="hot_video_con">
+                <ul>
+                    {volist name="hot_news" id="new"}
+                    <li> <img style="width: 12px" src="__TIYU_IMG__/919901b301f64ce5b2622ae2fe536d3e.gif">
+                        <a href="/{$top_category[$new['top_id']]}/{$new['article_id']}.html" title="{$new['title']}"target="_blank">{$new['title']}</a>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+<!--底部-->
+{include file="public/footer" /}
+</body>
+</html>

@@ -1,0 +1,20 @@
+<div class="bor-default bor-blue">
+    <h4 class="blue">よく使うオンラインツール</h4>
+    <ul class="new-article">
+        {volist name="tools" id="tool"}
+        <li><a href="/tools/{$tool['action']}.html" title="{$tool['title']}">{$tool['title']}</a></li>
+        {/volist}
+    </ul>
+</div>
+
+<div class="bor-default bor-blue">
+    <h4 class="blue">最近更新した内容</h4>
+    <ul class="newsList newList-in">
+        {volist name="latestArticles" id="latestArticle" key="k"}
+        <li>
+            <em class="no1">{$k}</em>
+            <a href="/article/{$latestArticle['article_id']}.html" title="{$latestArticle['title']}">{$latestArticle['title']}</a>
+        </li>
+        {/volist}
+    </ul>
+</div>

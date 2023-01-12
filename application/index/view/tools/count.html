@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Copyright" content="コードスクリプトの家" />
+    <meta name="robots" content="index,follow" />
+
+    <title>{$tool['title']}</title>
+    <meta name="keywords" content="{$tool['keywords']}" />
+    <meta name="description" content="{$tool['description']}" />
+
+    <link rel="stylesheet" type="text/css" href="__PC_CSS__/style.css?ver=1.01" >
+    <link rel="stylesheet" type="text/css" href="__PC_CSS__/list.css?ver=1.07" >
+    <script type="text/javascript" src="__PC_JS__/jquery.min.js"></script>
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="__PC_IMG__/icon/favicon32.ico" media="screen"/>
+
+</head>
+<body>
+{include file="public/header" /}
+
+<div class="g-box g-jknav">
+    <i class="ico-path"></i>
+    <strong>
+        <a href="/">Home</a>  →
+        <a href="/tools/">オンラインツール</a>  →
+        {$tool['title']}
+    </strong>
+</div>
+
+<div id="wrapper">
+
+    <div id="main" class="clearfix">
+        <div class="main-left">
+
+            <div id="tools">
+                <div class="tool_title"><h1>{$tool['title']}</h1></div>
+
+                <div id="content_area">
+                    <form>
+                        <h3>これは、単語や文字の数をすばやく数えるための小さなツールです（小説の著者や編集者にとって不可欠なツール）。:</h3>
+                        <textarea class="toolarea" id="con"></textarea>
+                        <input class="bt-blue" onclick="strtoup();" value="統計" type="button">
+                        <input class="bt-blue" onclick="Empty();" value="結果を空にする" type="button">
+                        <br/><br/>
+                        日本語の文字：<span id="hz" class="num">0</span> 個<br />
+                        英語：<span id="zm" class="num">0</span> 個 （英語の数字、記号、句読点が含まれています）<br>
+                        数字：<span id="sz" class="num">0</span> 個<br />
+                        総文字数：<span id="zs" class="num">0</span> 個文字<br />
+                    </form>
+                </div>
+
+
+            </div>
+
+
+
+
+        </div>
+        <div class="main-right">
+
+            {include file="public/tool_right" /}
+
+        </div>
+    </div>
+
+
+
+</div>
+
+{include file="public/footer" /}
+<script type="text/javascript">
+    function strtoup(){
+        var str = document.getElementById('con').value;
+        var hzreg = /[\u0800-\u4e00]/g;
+        var zmreg = /[a-zA-Z]/g;
+        var szreg = /[0-9]/g;
+        if(hzreg.test(str)){
+            document.getElementById('hz').innerHTML = str.match(hzreg).length;
+        }else{
+            document.getElementById('hz').innerHTML = 0;
+        }
+        if(zmreg.test(str)){
+            document.getElementById('zm').innerHTML = str.match(zmreg).length;
+        }else{
+            document.getElementById('zm').innerHTML = 0;
+        }
+        if(szreg.test(str)){
+            document.getElementById('sz').innerHTML = str.match(szreg).length;
+        }else{
+            document.getElementById('sz').innerHTML = 0;
+        }
+        document.getElementById('zs').innerHTML = str.length;
+    }
+
+    function Empty() {
+        document.getElementById('con').value = '';
+        document.getElementById('con').select();
+    }
+</script>
+</body>
+
+
+
+</html>

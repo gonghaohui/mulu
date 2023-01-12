@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Copyright" content="コードスクリプトの家" />
+    <meta name="robots" content="index,follow" />
+
+    <title>{$article['title']} | コードスクリプトの家</title>
+    <meta name="keywords" content="{$article['keywords']}" />
+    <meta name="description" content="{$article['description']}" />
+
+    <!-- twitter-->
+    <meta name="twitter:title"   content="{$article['title']} | コードスクリプトの家" />
+    <meta name="twitter:description"   content="{$article['description']}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url"   content="https://www.scriptjp.com/article/{$id}.html" />
+
+    <!-- facebook -->
+    <meta property="og:title" content="{$article['title']} | コードスクリプトの家" />
+    <meta property="og:description" content="{$article['description']}" />
+    <meta property="og:url" content="https://www.scriptjp.com/article/{$id}.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="コードスクリプトの家" />
+
+
+    <link rel="stylesheet" type="text/css" href="__PC_CSS__/style.css?ver=1.01" >
+    <link rel="stylesheet" type="text/css" href="__PC_CSS__/list.css?ver=1.13" >
+    <script type="text/javascript" src="__PC_JS__/jquery.min.js"></script>
+
+    <script type="text/javascript" src="__PC_HIGHLIGHT__/scripts/shCore.js"></script>
+    <script type="text/javascript" src="__PC_HIGHLIGHT__/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="__PC_HIGHLIGHT__/scripts/shBrushCpp.js"></script>
+    <script type="text/javascript" src="__PC_HIGHLIGHT__/scripts/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="__PC_HIGHLIGHT__/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="__PC_HIGHLIGHT__/scripts/shBrushDelphi.js"></script>
+    <script type="text/javascript" src="__PC_HIGHLIGHT__/scripts/shBrushDiff.js"></script>
+    <script type="text/javascript" src="__PC_HIGHLIGHT__/scripts/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="__PC_HIGHLIGHT__/scripts/shBrushJava.js"></script>
+    <script type="text/javascript" src="__PC_HIGHLIGHT__/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="__PC_HIGHLIGHT__/scripts/shBrushPhp.js"></script>
+    <script type="text/javascript" src="__PC_HIGHLIGHT__/scripts/shBrushPlain.js"></script>
+    <script type="text/javascript" src="__PC_HIGHLIGHT__/scripts/shBrushPython.js"></script>
+    <script type="text/javascript" src="__PC_HIGHLIGHT__/scripts/shBrushRuby.js"></script>
+    <script type="text/javascript" src="__PC_HIGHLIGHT__/scripts/shBrushScala.js"></script>
+    <script type="text/javascript" src="__PC_HIGHLIGHT__/scripts/shBrushSql.js"></script>
+    <script type="text/javascript" src="__PC_HIGHLIGHT__/scripts/shBrushVb.js"></script>
+    <script type="text/javascript" src="__PC_HIGHLIGHT__/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="__PC_HIGHLIGHT__/scripts/shBrushPowerShell.js"></script>
+    <script type="text/javascript" src="__PC_HIGHLIGHT__/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="__PC_HIGHLIGHT__/scripts/shBrushPerl.js"></script>
+    <script type="text/javascript" src="__PC_HIGHLIGHT__/scripts/shBrushErlang.js"></script>
+    <link type="text/css" rel="stylesheet" href="__PC_HIGHLIGHT__/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="__PC_HIGHLIGHT__/styles/shThemeDefault.css"/>
+
+    <script type="text/javascript">
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.config.tagName = 'pre';
+        SyntaxHighlighter.config.bloggerMode = true;
+        SyntaxHighlighter.config.stripBrs = true;
+        SyntaxHighlighter.all();
+    </script>
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="__PC_IMG__/icon/favicon32.ico" media="screen"/>
+
+</head>
+<body>
+{include file="public/header" /}
+
+<div class="g-box g-jknav">
+    <i class="ico-path"></i>
+    <strong>
+        <a href="/">Home</a>  →
+        <a href="/{$article.first_category_url}/">{$article.first_category_name_jp}</a>  →
+        <a href="/{$article.first_category_url}/list_{$article.second_category}_1.html">{$article.second_category_name_jp}</a>  →
+        {$article['title']}
+    </strong>
+</div>
+
+<div id="wrapper">
+
+    <div id="main" class="clearfix">
+        <div class="main-left">
+
+            <div id="article">
+                <h1 class="title">{$article['title']}</h1>
+                <div class="info">&nbsp;リリース時間：{$article['create_time']|date="Y.m.d日",###} </div>
+                <div class="share">
+                    <a href="javascript:window.open('http://twitter.com/home?status='+encodeURIComponent(document.location.href)+' '+encodeURIComponent(document.title),'_blank','toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=600, height=450,top=100,left=350');void(0)">
+                        <img src="/static/pc/images/share/icon_twitter.png">
+                    </a>
+
+                    <a id="fbShare" href="javascript:window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(document.location.href)+'&t='+encodeURIComponent(document.title),'_blank','toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=600, height=450,top=100,left=350');void(0)">
+                        <img src="/static/pc/images/share/icon_facebook.png">
+                    </a>
+
+                    <a href="javascript:window.open('http://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent(document.location.href)+'&title='+encodeURIComponent(document.title)+'&source='+encodeURIComponent(document.location.href),'_blank','toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=600, height=450,top=100,left=350');void(0)">
+                        <img src="/static/pc/images/share/icon_linkedin.png">
+                    </a>
+
+                </div>
+                <div class="summary">{$article['description']}</div>
+                <div id="content">
+                    {$article['content']}
+
+                    {notempty name="relativeArticles"}
+                    <div class="art_xg">
+                        <b>関連記事:</b>
+                        <ul>
+                            {volist name="relativeArticles" id="relativeArticle"}
+                            <li><a href="/article/{$relativeArticle['article_id']}.html" title="{$relativeArticle['title']}">{$relativeArticle['title']}</a></li>
+                            {/volist}
+                        </ul>
+                    </div>
+                    {/notempty}
+                </div>
+                <div class="tags clearfix">
+                    <i class="icon-tag"></i>
+                    <ul class="meta-tags">
+                        {volist name="tags" id="tag"}
+                        <li class="tag item"><a href="/tag/list_{$tag['tag_id']}.html" title="検索エンジン{$tag['tag_name_jp']}の記事">{$tag['tag_name_jp']}</a></li>
+                        {/volist}
+                    </ul>
+                </div>
+
+                <div class="comment_bar">
+                    <div class="comment-edit-box d-flex">
+                        <form class="comment_form" id="comment_form">
+                            <textarea oninput="OnInput(event)" onpropertychange="OnPropChanged(event)" class="comment-content" name="comment_content" id="comment_content" placeholder="著者に何か言いたい" maxlength="1000"></textarea>
+                            <input type="hidden" id="article_id" name="article_id" value="{$id}">
+                            <div class="opt-box">
+                                <div class="left-box">
+                                    <span>名前</span>:<input name="ip_address" type="text" placeholder="{$ip_address}" value="">
+                                </div>
+                                <div class="right-box">
+                                    <span id="tip_comment" class="tip">You can still enter <em>1000</em> characters</span>
+                                    <input type="submit" class="btn btn-sm btn-comment" value="コメント">
+                                </div>
+                            </div>
+
+                        </form>
+
+                        <input type="button" class="bt-comment-show" value="コメント" style="display: block;">
+                    </div>
+
+                    <div class="comment-list-box">
+
+                        {foreach name="comments" item="comment"}
+                        <div class="comment-list">
+                            <div class="comment-line-box d-flex">
+                                <div style="display: flex;width: 100%;">
+                                    <div class="right-box">
+                                        <div class="new-info-box clearfix">
+                                            <span class="name ">{$comment.ip_address}</span>
+                                            <span class="colon">:</span>
+                                            <span class="floor-num"></span>
+                                            <span class="new-comment">{$comment.content}</span>
+                                            <span class="date" title="{$comment.create_time}">{$comment.between_time}</span>
+                                            <span class="new-opt-floating"><a class="btn-bt  btn-reply" data-type="reply" data-flag="true" data-commentid="{$comment.comment_id}">返事</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {notempty name="comment['down_comment']"}
+                            <div class="replay-box">
+                                <div class="comment-list">
+                                    {foreach name="comment['down_comment']" item="down"}
+                                    <div class="comment-line-box d-flex">
+                                        <div style="display: flex;width: 100%;">
+                                            <div class="right-box">
+                                                <div class="new-info-box clearfix">
+                                                    <span class="name ">{$down.ip_address}</span>
+                                                    <span class="text">返事</span>
+                                                    <span class="floor-num">{$down.reply_name}</span>
+                                                    <span class="colon"> : </span>
+                                                    <span class="new-comment">{$down.content}</span>
+                                                    <span class="date" title="{$down.create_time|date='Y-m-d H:i:s',###}">{$down.between_time}</span>
+                                                    <span class="new-opt-floating"><a class="btn-bt  btn-reply" data-type="reply" data-flag="true" data-commentid="{$comment.comment_id}">返事</a></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/foreach}
+                                </div>
+                            </div>
+                            {/notempty}
+                        </div>
+                        {/foreach}
+
+
+
+                    </div>
+
+                    <div class="pagination-box">
+                        {$page->comment_show()}
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+        <div class="main-right">
+
+            <div class="bor-default bor-blue">
+                <h4 class="blue">最近更新した内容</h4>
+                <ul class="newsList newList-in">
+                    {volist name="latestArticles" id="latestArticle" key="k"}
+                    <li>
+                        <em class="no1">{$k}</em>
+                        <a href="/article/{$latestArticle['article_id']}.html" title="{$latestArticle['title']}">{$latestArticle['title']}</a>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+
+            <div class="bor-default bor-blue">
+                <h4 class="blue">よく使うオンラインツール</h4>
+                <ul class="new-article">
+                    {volist name="tools" id="tool"}
+                    <li><a href="/tools/{$tool['action']}.html" title="{$tool['title']}">{$tool['title']}</a></li>
+                    {/volist}
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div>
+
+{include file="public/footer" /}
+
+<script type="text/javascript" src="__PC_JS__/function.js?ver=1.05"></script>
+<script type="text/javascript" src="__PC_JS__/comment.js?ver=1.02"></script>
+<script type="text/javascript">
+
+    function ajax_post_comment(form_id){
+        $.ajax({
+            url: '{:url("comment")}',
+            data: $("#"+form_id).serialize(),
+            type: "POST",
+            dataType: "json",
+            success: function(data) {
+                if(data.code == 200){
+                    if(data.type == 1){
+                        $("#comment_content").val('');
+                        $('.bt-comment-show').show();
+                        $('#comment_form .comment-content').removeClass('open');
+                        $('.opt-box').hide();
+                        alert('コメント成功、レビュー待ち!');
+                    }else{
+                        $("#commentEditBox").remove();
+                        alert('返信成功、レビュー待ち!');
+                    }
+                }else{
+                    alert(data.msg);
+                }
+                return false;
+            }
+        });
+    }
+
+
+
+</script>
+</body>
+
+
+
+</html>

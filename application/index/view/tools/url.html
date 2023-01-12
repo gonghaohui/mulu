@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Copyright" content="コードスクリプトの家" />
+    <meta name="robots" content="index,follow" />
+
+    <title>{$tool['title']}</title>
+    <meta name="keywords" content="{$tool['keywords']}" />
+    <meta name="description" content="{$tool['description']}" />
+
+    <link rel="stylesheet" type="text/css" href="__PC_CSS__/style.css?ver=1.01" >
+    <link rel="stylesheet" type="text/css" href="__PC_CSS__/list.css?ver=1.07" >
+    <script type="text/javascript" src="__PC_JS__/jquery.min.js"></script>
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="__PC_IMG__/icon/favicon32.ico" media="screen"/>
+
+</head>
+<body>
+{include file="public/header" /}
+
+<div class="g-box g-jknav">
+    <i class="ico-path"></i>
+    <strong>
+        <a href="/">Home</a>  →
+        <a href="/tools/">オンラインツール</a>  →
+        {$tool['title']}
+    </strong>
+</div>
+
+<div id="wrapper">
+
+    <div id="main" class="clearfix">
+        <div class="main-left">
+
+            <div id="tools">
+                <div class="tool_title"><h1>{$tool['title']}</h1></div>
+
+                <div id="content_area">
+                    <form>
+                        <h3>暗号化するURLを入力してください:</h3>
+                        <textarea class="toolarea" id="test"></textarea>
+                        <input class="bt-blue" onclick="urlCrypt()" value="暗号化" type="button">
+                        <input class="bt-blue" onclick="Empty();" value="結果を空にする" type="button">
+                        <h3>暗号化された結果:</h3>
+                        <textarea class="toolarea" id="result" name="MD5Text"></textarea>
+                    </form>
+                </div>
+
+
+            </div>
+
+
+
+
+        </div>
+        <div class="main-right">
+
+            {include file="public/tool_right" /}
+
+        </div>
+    </div>
+
+
+
+</div>
+
+{include file="public/footer" /}
+<script type="text/javascript">
+
+    function urlCrypt(){
+        var str2='';
+        str = $('#test').val();
+        str3 = str.substring(0,7);
+        if(str3 == 'http://'){
+            str2 = 'http://';
+            str = str.substring(7,str.length);
+        }
+
+        str4 = str.substring(0,8);
+        if(str4 == 'https://'){
+            str2 = 'https://';
+            str = str.substring(8,str.length);
+        }
+
+        for(i=0;i<str.length;i++){
+            if(str.charCodeAt(i) == '47') str2 += '/';
+            else if(str.charCodeAt(i) == '63') str2 += '?';
+            else if(str.charCodeAt(i) == '38') str2 += '&';
+            else if(str.charCodeAt(i) == '61') str2 += '=';
+            else if(str.charCodeAt(i) == '58') str2 += ':';
+            else str2 += '%'+str.charCodeAt(i).toString(16);
+        }
+        $('#result').val(str2);
+        // getid('codeText').focus();
+    }
+
+    function Empty() {
+        document.getElementById('test').value = '';
+        document.getElementById('result').value = '';
+        document.getElementById('test').select();
+    }
+</script>
+</body>
+
+
+
+</html>

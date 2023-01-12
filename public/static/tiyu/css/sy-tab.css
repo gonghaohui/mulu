@@ -1,0 +1,138 @@
+﻿
+.box{
+    background: #F1F1F1FF;
+    position: relative;
+}
+.img-gywm{
+    margin-top: 10px;
+}
+.content_qh{
+    width: 1200px;
+    margin: 0px auto;
+    margin-bottom: 40px;
+}
+.content_head{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    background: #FFFFFF;
+    margin-top: 10px;
+}
+.content_list{
+    border-bottom: 1px dashed transparent;
+    border-right: none;
+    margin:  0px 15px 0px 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: linear-gradient(white,white) padding-box,
+    repeating-linear-gradient(-45deg,#F1F1F1 0, #F1F1F1 0.20em,white 0,white 0.4em);
+}
+.content_list:last-of-type{
+    border:none;
+}
+.tabColor{
+    color: #999999FF;
+}
+.content_tab :hover{
+    cursor: pointer;
+}
+.content_tab .tab-sp{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    position: relative;
+}
+.content_tab span i{
+    font-size: 26px;
+    margin-right: 10px;
+}
+.content_tab img{
+    margin-right: 10px;
+}
+
+.wsclass{
+    position: relative;
+}
+.wsclass:before {
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 2px;
+    background: #FF0C0C;
+    left: 0;
+    bottom: 0;
+}
+.wsclass:after {
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 2px;
+    background: #4A8EF5;
+    left: 50%;
+    bottom: 0;
+}
+.content_box{
+    background: #FFFFFF;
+    min-height: 648px;
+    margin:0px auto;
+}
+.content_box:nth-child(1){
+    z-index: 999;
+}
+.content_list h3{
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    color: #000000;
+    position: relative;
+    padding-left: 10px;
+}
+.content_list p{
+    line-height: 48px;
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+}
+
+.content_list>h3:before {
+    position: absolute;
+    content: "";
+    background: #FF0C0C;
+    width: 2px;
+    height: 50%;
+    left: 0;
+    bottom: 0;
+    top: 50%;
+}
+.content_list>h3:after {
+    position: absolute;
+    content: "";
+    background: #4A8EF5;
+    left: 0;
+    bottom: 0;
+    width: 2px;
+    height: 50%;
+    top: 0;
+}
+
+#listCon{
+    position: relative;
+    min-height: 648px;
+    margin-top: 2px;
+}
+#listCon > .content_box{
+    position: absolute;
+    background-color: #FFFFFF;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+.cur{
+    z-index: 999;
+}

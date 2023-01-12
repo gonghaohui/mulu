@@ -1,0 +1,49 @@
+﻿@font-face {font-family: "iconfont";
+  src: url('/fonts/iconfont.eot'); /* IE9 */
+  src: url('/fonts/iconfont.eot') format('embedded-opentype'), /* IE6-IE8 */
+  url('/fonts/3cd22981a1e549d8b93cd6bec96a4f3b.woff') format('woff2'),
+  url('/fonts/iconfont.woff') format('woff'),
+  url('/fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('/fonts/iconfont.svg') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-head-02:before {
+  content: "\e600";
+}
+
+.icon-head-05:before {
+  content: "\e601";
+}
+
+.icon-head-03:before {
+  content: "\e602";
+}
+
+.icon-head-06:before {
+  content: "\e603";
+}
+
+.icon-head-04:before {
+  content: "\e604";
+}
+
+.icon-head-08:before {
+  content: "\e605";
+}
+
+.icon-head-07:before {
+  content: "\e606";
+}
+
+.icon-head-01-01:before {
+  content: "\e607";
+}
+

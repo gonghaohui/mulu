@@ -1,0 +1,651 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>体育迷</title>
+    <meta name="keywords" content="体育迷" />
+    <meta name="description" content="体育迷" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <link rel="stylesheet" href="__TIYU_CSS__/plugs.css" />
+    <link rel="stylesheet" href="__TIYU_CSS__/common.css">
+    <link rel="stylesheet" href="__TIYU_CSS__/index.css">
+    <link rel="stylesheet" href="__TIYU_CSS__/style.css">
+    <link rel="stylesheet" href="__TIYU_CSS__/prospect_report.css">
+    <link rel="stylesheet" href="__TIYU_CSS__/hot_news.css" />
+    <script type="text/javascript"  src="__TIYU_JS__/jquery.min.js"></script>
+    <script type="text/javascript" src="__TIYU_JS__/common.js"></script>
+    <script type="text/javascript" src="__TIYU_JS__/common1.js"></script>
+    <script type="text/javascript" src="__TIYU_JS__/biebuzhu.js"></script>
+</head>
+<body>
+<div>
+    <!-- header/S -->
+    {include file="public/header" /}
+    <!-- nav/S -->
+
+
+</div>
+<!-- main -->
+<div class="main">
+    <!-- hot infor -->
+    <div class="focus-con clearfix">
+        <div class="pull-left focus-banner">
+            <!-- banner -->
+            <div id="myCarousel" class="carousel slide banner" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="0"></li>
+                    <li data-target="#myCarousel" data-slide-to="0"></li>
+                    <li data-target="#myCarousel" data-slide-to="0"></li>
+                </ol>
+                <div class="carousel-inner">
+                    {volist name="loops" id="loop" key="k"}
+                    <div class='item {if condition="$k eq 1"}active{/if}'> <a href="/{$loop['url']}/{$loop['article_id']}.html" title="{$loop['title']}" target="_blank"><img src="{$loop['img']}" alt="{$loop['title']}" width="370" height="230">
+                        <div class="fbanner-title">{$loop['title']}</div>
+                    </a> </div>
+                    {/volist}
+                </div>
+                <a class="carousel-control left" href="javascript:;" data-slide="prev"><span></span></a> <a class="carousel-control right" href="javascript:;" data-slide="next"><span></span></a> </div>
+            <!-- video -->
+            <div class="video-con">
+                <div class="title clearfix">
+                    <h2 class="pull-left rb-title">精彩视频</h2>
+                    <ul class="pull-right titleNav clearfix">
+                    </ul>
+                </div>
+                <ul class="video-list-ul">
+                    <li class="pull-left video-list"> <a href="43.html" target="_blank" title="九球争霸赛，潘晓婷连胜3局击败金佳映"><img src="images/2653_200.jpg" width="118" height="85" alt="九球争霸赛，潘晓婷连胜3局击败金佳映">
+                        <p class="text-hidden">九球争霸赛，潘晓婷连胜3局击败金佳映</p>
+                        <i class="coverMask"></i> <i class="playBtn"></i> </a> </li>
+                    <li class="pull-left video-list"> <a href="42.html" target="_blank" title="篮球世界杯排位赛 中国vs尼日利亚全场五佳球"><img src="images/2626_200.png" width="118" height="85" alt="篮球世界杯排位赛 中国vs尼日利亚全场五佳球">
+                        <p class="text-hidden">篮球世界杯排位赛 中国vs尼日利亚全场五佳球</p>
+                        <i class="coverMask"></i> <i class="playBtn"></i> </a> </li>
+                    <li class="pull-left video-list"> <a href="40.html" target="_blank" title="2019斯诺克国锦赛 丁俊晖6-5险胜"><img src="images/2586_200.png" width="118" height="85" alt="2019斯诺克国锦赛 丁俊晖6-5险胜">
+                        <p class="text-hidden">2019斯诺克国锦赛 丁俊晖6-5险胜</p>
+                        <i class="coverMask"></i> <i class="playBtn"></i> </a> </li>
+                    <li class="pull-left video-list"> <a href="41.html" target="_blank" title="别以为你稳了，来看守门员的各种逆天骚操作！"><img src="images/2651_200.jpg" width="118" height="85" alt="别以为你稳了，来看守门员的各种逆天骚操作！">
+                        <p class="text-hidden">别以为你稳了，来看守门员的各种逆天骚操作！</p>
+                        <i class="coverMask"></i> <i class="playBtn"></i> </a> </li>
+                    <li class="pull-left video-list"> <a href="39.html" target="_blank" title="足球场上那些惊心动魄的绝杀时刻！"><img src="images/2653_200.jpg" width="118" height="85" alt="足球场上那些惊心动魄的绝杀时刻！">
+                        <p class="text-hidden">足球场上那些惊心动魄的绝杀时刻！</p>
+                        <i class="coverMask"></i> <i class="playBtn"></i> </a> </li>
+                    <li class="pull-left video-list"> <a href="38.html" target="_blank" title="张怡宁对阵福原爱，上演经典让球局"><img src="images/2618_200.png" width="118" height="85" alt="张怡宁对阵福原爱，上演经典让球局">
+                        <p class="text-hidden">张怡宁对阵福原爱，上演经典让球局</p>
+                        <i class="coverMask"></i> <i class="playBtn"></i> </a> </li>
+                </ul>
+                <ul class="video-item-ul">
+                    <li class="video-item"> <a href="34.html" target="_blank" title="丁俊晖生涯最佳表演！"><span class="video-icon"></span>丁俊晖生涯最佳表演！</a> </li>
+                    <li class="video-item"> <a href="35.html" target="_blank" title="怀念过去，曾经的红黑军团所向披靡"><span class="video-icon"></span>怀念过去，曾经的红黑军团所向披靡</a> </li>
+                    <li class="video-item"> <a href="36.html" target="_blank" title="9月女排世界杯 中国铿锵玫瑰的完整赛程"><span class="video-icon"></span>9月女排世界杯 中国铿锵玫瑰的完整赛程</a> </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pull-left focus-news">
+            <h2><a href="2071.html" title="欧冠巴萨4-0基辅提前两轮小组出线：德斯特格子破门 布莱斯维特双响" target="_blank"><span class="red-tip text-uppercase">头条</span>欧冠巴萨4-0基辅提前两轮小组出线：德斯特格子破门 布莱斯维特双响</a></h2>
+            <ul class="red-dl">
+                <li><a href="2070.html" title="欧冠拜仁vs萨尔茨堡红牛免费高清直播地址" target="_blank">欧冠拜仁vs萨尔茨堡红牛免费高清直播地址</a></li>
+                <li><a href="2069.html" title="欧冠马竞vs莫斯科火车头前瞻|分析：床单军团胜券在握" target="_blank">欧冠马竞vs莫斯科火车头前瞻|分析：床单军团胜券在握</a></li>
+                <li><a href="2068.html" title="欧冠国际米兰vs皇马前瞻|分析：出线生死战" target="_blank">欧冠国际米兰vs皇马前瞻|分析：出线生死战</a></li>
+            </ul>
+            <h2><a href="2071.html" title="欧冠巴萨4-0基辅提前两轮小组出线：德斯特格子破门 布莱斯维特双响" target="_blank"><span class="red-tip text-uppercase">国际</span>欧冠巴萨4-0基辅提前两轮小组出线：德斯特格子破门 布莱斯维特双响</a></h2>
+            <ul class="red-dl">
+                <li><a href="2070.html" title="欧冠拜仁vs萨尔茨堡红牛免费高清直播地址" target="_blank">欧冠拜仁vs萨尔茨堡红牛免费高清直播地址</a></li>
+                <li><a href="2069.html" title="欧冠马竞vs莫斯科火车头前瞻|分析：床单军团胜券在握" target="_blank">欧冠马竞vs莫斯科火车头前瞻|分析：床单军团胜券在握</a></li>
+                <li><a href="2068.html" title="欧冠国际米兰vs皇马前瞻|分析：出线生死战" target="_blank">欧冠国际米兰vs皇马前瞻|分析：出线生死战</a></li>
+            </ul>
+            <h2><a href="1023.html" title="富力官方： 外援雷纳迪尼奥和托西奇离队" target="_blank"><span class="red-tip text-uppercase">国内</span>富力官方： 外援雷纳迪尼奥和托西奇离队</a></h2>
+            <ul class="red-dl">
+                <li><a href="1017.html" title="塔利斯卡疑似“社媒宣” 恒大外援很可能即将走人?" target="_blank">塔利斯卡疑似“社媒宣” 恒大外援很可能即将走人?</a></li>
+                <li><a href="1016.html" title="官方：雷纳迪尼奥、托西奇将不再为广州富力效力" target="_blank">官方：雷纳迪尼奥、托西奇将不再为广州富力效力</a></li>
+                <li><a href="1010.html" title="官方：2023中超扩军18支 中甲扩军20支 中乙扩军30队" target="_blank">官方：2023中超扩军18支 中甲扩军20支 中乙扩军30队</a></li>
+            </ul>
+            <h2><a href="1951.html" title="CBA常规赛北京北控VS四川五粮金樽高清直播" target="_blank"><span class="red-tip text-uppercase">篮球</span>CBA常规赛北京北控VS四川五粮金樽高清直播</a></h2>
+            <ul class="red-dl">
+                <li><a href="1950.html" title="CBA常规赛上海久事VS九台农商银行高清直播" target="_blank">CBA常规赛上海久事VS九台农商银行高清直播</a></li>
+                <li><a href="1949.html" title="CBA常规赛福建豹发力vs广东东莞大益高清视频直播" target="_blank">CBA常规赛福建豹发力vs广东东莞大益高清视频直播</a></li>
+                <li><a href="1948.html" title="CBA常规赛天津先行者VS浙江广厦控股视频直播" target="_blank">CBA常规赛天津先行者VS浙江广厦控股视频直播</a></li>
+            </ul>
+        </div>
+        <!-- focus-live -->
+        <div class="pull-right focus-live live-game-div">
+            <div class="pull-left typeArtLeft">
+                <ul class="recUl noDashed">
+                    {volist name="loops_right" id="right"}
+                    <li class="clearfix"> <a href="1.html" target="_blank" title="{$right['title']}" class="pull-left recImg">
+                        <img src="{$right['img']}" width="100%" alt="{$right['title']}"></a>
+                        <div class="pull-left recArt">
+                            <h3 class="text-hidden"><a href="/{$right['url']}/{$right['article_id']}.html" target="_blank" title="{$right['title']}">{$right['title']}</a></h3>
+                            <p>{$right['content']}<a href="/{$right['url']}/{$right['article_id']}.html" target="_blank" title="{$right['title']}">[详情]</a></p>
+                        </div>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+        <!-- focus-live -->
+    </div>
+    <!-- 新增节目表 -->
+    <div class="part_one">
+        <div class="p_left">
+            <div class="box">
+                <h2 onclick="display('09月29日星期四',0);" class="cp"><b class="h">今天</b>2022年09月29日星期四                    节目表<span id="list_09月29日星期四_span"></span><img id="list_09月29日星期四_img" src="images/show_no.gif" title="收起/展开" alt="收起/展开" /></h2>
+                <ul id="list_09月29日星期四">
+                    <li>
+                        <div class='tit '><em>17:27</em><strong ><a href="yczb.html" target="_blank" >瑞典超</a></strong> <a>赫根</a><a>vs</a><a>IFK瓦纳默</a></div>
+                        <div class="con"><a href="zbnry.html" target="_blank">直播信号</a></div>
+                    </li>
+                    <li>
+                        <div class='tit '><em>17:27</em><strong ><a href="yczb.html" target="_blank" >挪甲</a></strong> <a>腓特烈斯塔</a><a>vs</a><a>松达尔</a></div>
+                        <div class="con"><a href="zbnry.html" target="_blank">直播信号</a></div>
+                    </li>
+                </ul>
+                <div class="c"></div>
+            </div>
+            <div class="box">
+                <h2 onclick="display('09月30日星期五',0);" class="cp"><b >明天</b>2022年09月30日星期五                    节目表<span id="list_09月30日星期五_span"></span><img id="list_09月30日星期五_img" src="images/show_no.gif" title="收起/展开" alt="收起/展开" /></h2>
+                <ul id="list_09月30日星期五">
+                    <li>
+                        <div class='tit '><em>17:27</em><strong ><a href="yczb.html" target="_blank" >瑞典超</a></strong> <a>赫根</a><a>vs</a><a>IFK瓦纳默</a></div>
+                        <div class="con"><a href="zbnry.html" target="_blank">直播信号</a></div>
+                    </li>
+                    <li>
+                        <div class='tit '><em>17:27</em><strong ><a href="yczb.html" target="_blank" >挪甲</a></strong> <a>腓特烈斯塔</a><a>vs</a><a>松达尔</a></div>
+                        <div class="con"><a href="zbnry.html" target="_blank">直播信号</a></div>
+                    </li>
+                </ul>
+                <div class="c"></div>
+            </div>
+            <div class="box">
+                <h2 onclick="display('10月01日星期六',0);" class="cp"><b >后天</b>2022年10月01日星期六                    节目表<span id="list_10月01日星期六_span"></span><img id="list_10月01日星期六_img" src="images/show_no.gif" title="收起/展开" alt="收起/展开" /></h2>
+                <ul id="list_10月01日星期六">
+                </ul>
+                <div class="c"></div>
+            </div>
+            <div class="box">
+                <h2 onclick="display('10月02日星期日',0);" class="cp"><b >大后天</b>2022年10月02日星期日                    节目表<span id="list_10月02日星期日_span"></span><img id="list_10月02日星期日_img" src="images/show_no.gif" title="收起/展开" alt="收起/展开" /></h2>
+                <ul id="list_10月02日星期日">
+                </ul>
+                <div class="c"></div>
+            </div>
+            <div class="box">
+                <h2 onclick="display('10月03日星期一',0);" class="cp"><b >五天后</b>2022年10月03日星期一                    节目表<span id="list_10月03日星期一_span"></span><img id="list_10月03日星期一_img" src="images/show_no.gif" title="收起/展开" alt="收起/展开" /></h2>
+                <ul id="list_10月03日星期一">
+                </ul>
+                <div class="c"></div>
+            </div>
+            <div class="box">
+                <h2 onclick="display('10月04日星期二',0);" class="cp"><b >六天后</b>2022年10月04日星期二                    节目表<span id="list_10月04日星期二_span"></span><img id="list_10月04日星期二_img" src="images/show_no.gif" title="收起/展开" alt="收起/展开" /></h2>
+                <ul id="list_10月04日星期二">
+                </ul>
+                <div class="c"></div>
+            </div>
+            <div class="box">
+                <h2 onclick="display('10月05日星期三',0);" class="cp"><b >七天后</b>2022年10月05日星期三                    节目表<span id="list_10月05日星期三_span"></span><img id="list_10月05日星期三_img" src="images/show_no.gif" title="收起/展开" alt="收起/展开" /></h2>
+                <ul id="list_10月05日星期三">
+                </ul>
+                <div class="c"></div>
+            </div>
+        </div>
+        <div class="p_right">
+            <div class="right_slide">
+                <h3><div class="tpleft"><strong>篮球录像</strong>
+                    <a href="">湖人</a> <a href="">76人</a>  <a href="">辽宁</a></div>  <a href="/lqlx/gdlqlx.index" target="_blank">+更多</a></h3>
+
+                <div class="slideVideo">
+                    <div class="bd">
+                        <ul><dl class="highlight ui-list ui-min-list">
+                            <dd>09月19日 <a href="3809.html"  target='_blank' title="09月19日WNBA总决赛4 拉斯维加斯王牌vs康涅狄格太阳 全场录像"><font color=#000000>09月19日 篮球 拉斯维加斯王牌vs康涅狄格太阳</font></a></dd>
+                            <dd>09月16日 <a href="3811.html"  target='_blank' title="WNBA总决赛3 拉斯维加斯王牌 - 康涅狄格太阳 全场录像"><font color=#000000>09月16日 篮球 拉斯维加斯王牌vs康涅狄格太阳</font></a></dd>
+                            <dd>09月14日 <a href="3816.html"  target='_blank' title="09月14日WNBA总决赛2 康涅狄格太阳 - 拉斯维加斯王牌 录像"><font color=#000000>09月14日 篮球 康涅狄格太阳vs拉斯维加斯王牌</font></a></dd>
+                            <dd>09月12日 <a href="3810.html"  target='_blank' title="WNBA总决赛1 康涅狄格太阳 - 拉斯维加斯王牌 全场录像"><font color=#000000>09月12日 篮球 康涅狄格太阳vs拉斯维加斯王牌</font></a></dd>
+                            <dd>09月11日 <a href="3812.html"  target='_blank' title="09月11日女篮亚锦赛U18决赛 澳大利亚女篮U18vs中国女篮U18 录像"><font color=#000000>09月11日 NBA 中国女篮U18vs澳大利亚女篮U18</font></a></dd>
+                            <dd>09月11日 <a href="3824.html"  target='_blank' title="09月11日NBA名人堂颁奖典礼 NBA - 名人堂 录像"><font color=#000000>09月11日 NBA 名人堂vsNBA</font></a></dd>
+                            <dd>09月10日 <a href="3865.html"  target='_blank' title="09月10日女篮亚锦赛U18半决赛 日本vs中国 全场录像"><font color=#000000>09月10日 NBA 中国女篮U18vs日本女篮U18</font></a></dd>
+
+
+                        </dl>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="right_slide">
+                <h3><div class="tpleft"><strong><a href="">足球录像</a></strong> <a href="">英超</a> <a href="">意甲</a> <a href="">德甲</a>   <a href="">法甲</a>  <a href="">世界杯</a></div><a href="/zqlx/gdzqlx.html" target="_blank">+更多</a></h3>
+                <div class="slideVideo">
+                    <div class="bd">
+                        <ul>
+                            <dl class="highlight ui-list ui-min-list">
+                                <dd>09月19日 <a href="3179.html"  target='_blank' title="09月19日 德甲第7轮 霍芬海姆vs弗赖堡 全场录像"><font color=#000000>09月19日 德甲 弗赖堡vs霍芬海姆</font></a></dd>
+                                <dd>09月19日 <a href="3181.html"  target='_blank' title="09月19日 西甲第6轮 皇家社会vs西班牙人 全场录像"><font color=#000000>09月19日 西甲 西班牙人vs皇家社会</font></a></dd>
+                                <dd>09月19日 <a href="3184.html"  target='_blank' title="09月19日 西甲第6轮 贝蒂斯vs赫罗纳 全场录像"><font color=#000000>09月19日 西甲 赫罗纳vs贝蒂斯</font></a></dd>
+                                <dd>09月19日 <a href="3176.html"  target='_blank' title="09月19日 意甲第7轮 AC米兰vs那不勒斯 全场录像"><font color=#000000>09月19日 意甲 那不勒斯vsAC米兰</font></a></dd>
+                                <dd>09月19日 <a href="3170.html"  target='_blank' title="09月19日 西甲第6轮 马德里竞技vs皇家马德里 全场录像"><font color=#000000>09月19日 西甲 皇家马德里vs马德里竞技</font></a></dd>
+                                <dd>09月19日 <a href="3173.html"  target='_blank' title="09月19日 法甲第8轮 里昂vs巴黎圣日耳曼 全场录像"><font color=#000000>09月19日 法甲 巴黎圣日耳曼vs里昂</font></a></dd>
+
+
+                            </dl>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 专题栏目 -->
+    <div class="clearfix"></div>
+    <div class="pull-left topicLeft">
+        <!-- FootballTopic -->
+        <!-- fbTopic -->
+
+        <div class="football ballTopic">
+            <div class="pull-left leftTitle"><span>足球专栏</span></div>
+            <ul class="pull-right rightNav clearfix">
+                <li><a href="/zqxw/yingchao/index.html" target="_blank" title="英超">英超</a></li>
+                <li><a href="" target="_blank" title="西甲">西甲</a></li>
+                <li><a href="" target="_blank" title="德甲">德甲</a></li>
+                <li><a href="" target="_blank" title="意甲">意甲</a></li>
+                <li><a href="" target="_blank" title="意甲">法甲</a></li>
+                <li><a href="" target="_blank" title="中超">中超</a></li>
+            </ul>
+        </div>
+        <!-- fbTopic -->
+        <div class="typeNav">
+            <div class="pull-left typeTitle">
+                <h2><span class="big">国际足球</span>  </h2>
+            </div>
+        </div>
+        <div class="clearfix h-15"></div>
+        <div class="pull-left typeArtLeft1">
+            <nav class="typeArtNav clearfix"> <span class="pull-left">英超足球推荐</span>
+                <ul class="pull-left clearfix">
+                    <li><a target="_blank" href="/tag/manlian/index.html" title="曼联">曼联</a></li>
+                    <li><a target="_blank" href="" title="曼城">曼城</a></li>
+                    <li><a target="_blank" href="" title="切尔西">切尔西</a></li>
+                    <li><a target="_blank" href="" title="利物浦">利物浦</a></li>
+                </ul>
+            </nav>
+            <ul class="typeArtUl ">
+                <li><a href="/zqxw/yingchao/1423.html" target="_blank" title="兰帕德：切尔西没有像科斯塔或阿扎尔那样的前锋" class="text-hidden"><i></i>兰帕德：切尔西没有像科斯塔或阿扎尔那样的前锋</a></li>
+                <li><a href="" target="_blank" title="英超莱斯特城vs切尔西前瞻分析：切尔西锋线低迷" class="text-hidden"><i></i>英超莱斯特城vs切尔西前瞻分析：切尔西锋线低迷</a></li>
+                <li><a href="" target="_blank" title="兰帕德：维尔纳对自己很严厉 希望他能感受到我的支持" class="text-hidden"><i></i>兰帕德：维尔纳对自己很严厉 希望他能感受到我的支持</a></li>
+                <li><a href="" target="_blank" title="合同到期在即 阿奎罗需重新证明自己对曼城的价值" class="text-hidden"><i></i>合同到期在即 阿奎罗需重新证明自己对曼城的价值</a></li>
+                <li><a href="" target="_blank" title="ESPN：双红会惹怒色盲症球迷 吐槽无法区分两队球衣颜色" class="text-hidden"><i></i>ESPN：双红会惹怒色盲症球迷 吐槽无法区分两队球衣颜色</a></li>
+            </ul>
+            <nav class="typeArtNav clearfix"> <span class="pull-left">西甲足球推荐</span>
+                <ul class="pull-left clearfix">
+                    <li><a target="_blank" href="" title="皇马">皇马</a></li>
+                    <li><a target="_blank" href="" title="巴萨">巴萨</a></li>
+                    <li><a target="_blank" href="" title="马竞">马竞</a></li>
+                </ul>
+            </nav>
+            <ul class="typeArtUl ">
+                <li><a href="" target="_blank" title="西甲皇家社会vs奥萨苏纳比赛视频直播地址" class="text-hidden"><i></i>西甲皇家社会vs奥萨苏纳比赛视频直播地址</a></li>
+                <li><a href="" target="_blank" title="西甲韦斯卡VS巴萨免费高清直播地址" class="text-hidden"><i></i>西甲韦斯卡VS巴萨免费高清直播地址</a></li>
+                <li><a href="" target="_blank" title="西甲韦斯卡VS巴萨前瞻分析：梅西王者归来" class="text-hidden"><i></i>西甲韦斯卡VS巴萨前瞻分析：梅西王者归来</a></li>
+                <li><a href="" target="_blank" title="西甲梅西助攻德容破门 巴萨1-0韦斯卡升至积分榜第五" class="text-hidden"><i></i>西甲梅西助攻德容破门 巴萨1-0韦斯卡升至积分榜第五</a></li>
+                <li><a href="" target="_blank" title="西甲巴伦西亚VS卡迪斯前瞻分析：巴伦西亚近况不佳" class="text-hidden"><i></i>西甲巴伦西亚VS卡迪斯前瞻分析：巴伦西亚近况不佳</a></li>
+            </ul>
+            <nav class="typeArtNav clearfix"> <span class="pull-left">德甲足球推荐</span>
+                <ul class="pull-left clearfix">
+                    <li><a target="_blank" href="" title="拜仁">拜仁</a></li>
+                    <li><a target="_blank" href="" title="多特蒙德">多特蒙德</a></li>
+                    <li><a target="_blank" href="" title="德甲诸强">德甲诸强</a></li>
+                </ul>
+            </nav>
+            <ul class="typeArtUl noDashed">
+                <li><a href="" target="_blank" title="德甲美因茨VS不莱梅免费高清直播地址" class="text-hidden"><i></i>德甲美因茨VS不莱梅免费高清直播地址</a></li>
+                <li><a href="" target="_blank" title="德甲-莱万梅开二度补时绝杀 拜仁2-1逆转勒沃库森登顶榜首" class="text-hidden"><i></i>德甲-莱万梅开二度补时绝杀 拜仁2-1逆转勒沃库森登顶榜首</a></li>
+                <li><a href="" target="_blank" title="德甲莱比锡红牛VS科隆前瞻分析：红牛气势正盛" class="text-hidden"><i></i>德甲莱比锡红牛VS科隆前瞻分析：红牛气势正盛</a></li>
+                <li><a href="" target="_blank" title="德甲弗赖堡VS柏林赫塔前瞻：弗赖堡近况出色" class="text-hidden"><i></i>德甲弗赖堡VS柏林赫塔前瞻：弗赖堡近况出色</a></li>
+                <li><a href="" target="_blank" title="德甲莱比锡红牛VS科隆高清直播视频地址" class="text-hidden"><i></i>德甲莱比锡红牛VS科隆高清直播视频地址</a></li>
+            </ul>
+        </div>
+        <div class="pull-left typeArtRight">
+            <ul class="recUl">
+                <li class="clearfix"> <a href="2067.html" target="_blank" title="欧冠马竞vs莫斯科火车头在线|高清直播地址" class="pull-left recImg"><img src="images/2653_200.jpg" width="100%" alt="欧冠马竞vs莫斯科火车头在线|高清直播地址"></a>
+                    <div class="pull-left recArt">
+                        <h3 class="text-hidden"><a href="2067.html" target="_blank" title="欧冠马竞vs莫斯科火车头在线|高清直播地址">欧冠马竞vs莫斯科火车头在线|高清直播地址</a></h3>
+                        <p>北京时间11月26日凌晨1:55，欧冠小组赛A组一场较量在万达... <a href="2067.html" target="_blank" title="欧冠马竞vs莫斯科火车头在线|高清直播地址">[详情]</a></p>
+                    </div>
+                </li>
+                <li class="clearfix"> <a href="2066.html" target="_blank" title="欧冠国际米兰vs皇马在线|视频直播地址" class="pull-left recImg"><img src="images/2653_200.jpg" width="100%" alt="欧冠国际米兰vs皇马在线|视频直播地址"></a>
+                    <div class="pull-left recArt">
+                        <h3 class="text-hidden"><a href="2066.html" target="_blank" title="欧冠国际米兰vs皇马在线|视频直播地址">欧冠国际米兰vs皇马在线|视频直播地址</a></h3>
+                        <p>北京时间11月26日凌晨4:00，欧冠小组赛B组第二轮一场焦点... <a href="2066.html" target="_blank" title="欧冠国际米兰vs皇马在线|视频直播地址">[详情]</a></p>
+                    </div>
+                </li>
+                <li class="clearfix"> <a href="2065.html" target="_blank" title="欧冠拜仁vs萨尔茨堡红牛前瞻|分析：拜仁望提前出线" class="pull-left recImg"><img src="images/2653_200.jpg" width="100%" alt="欧冠拜仁vs萨尔茨堡红牛前瞻|分析：拜仁望提前出线"></a>
+                    <div class="pull-left recArt">
+                        <h3 class="text-hidden"><a href="2065.html" target="_blank" title="欧冠拜仁vs萨尔茨堡红牛前瞻|分析：拜仁望提前出线">欧冠拜仁vs萨尔茨堡红牛前瞻|分析：拜仁望提前出线</a></h3>
+                        <p>11月16日凌晨，欧冠小组赛A组第四轮继续进行，拜仁主场迎战... <a href="2065.html" target="_blank" title="欧冠拜仁vs萨尔茨堡红牛前瞻|分析：拜仁望提前出线">[详情]</a></p>
+                    </div>
+                </li>
+                <li class="clearfix"> <a href="2064.html" target="_blank" title="欧冠阿贾克斯VS中日德兰高清视频直播地址" class="pull-left recImg"><img src="images/2653_200.jpg" width="100%" alt="欧冠阿贾克斯VS中日德兰高清视频直播地址"></a>
+                    <div class="pull-left recArt">
+                        <h3 class="text-hidden"><a href="2064.html" target="_blank" title="欧冠阿贾克斯VS中日德兰高清视频直播地址">欧冠阿贾克斯VS中日德兰高清视频直播地址</a></h3>
+                        <p>北京时间11月26日凌晨04:00，在欧冠小组赛D组第4轮中，我们... <a href="2064.html" target="_blank" title="欧冠阿贾克斯VS中日德兰高清视频直播地址">[详情]</a></p>
+                    </div>
+                </li>
+            </ul>
+            <div class="clearfix titAndm"> <span class="pull-left">每日视频集锦</span> <a href="" target="_blank" class="f12 text-999 pull-right moreTit">更多<em class="rightIcon"><i class="glyphicon glyphicon-menu-right"></i></em></a> </div>
+            <ul class="clearfix videoBoxUl">
+                <li class="pull-left"> <a href="37.html" target="_blank" title="欧冠史诗大，利物浦逆转巴萨原声纪录片！"  class="videoImg cmHover"><img src="images/2653_200.jpg" width="100%" alt="欧冠史诗大，利物浦逆转巴萨原声纪录片！"><i class="coverMask"></i><i class="playBtn"></i> </a> <a href="37.html" target="_blank" title="欧冠史诗大，利物浦逆转巴萨原声纪录片！" class="row-2">欧冠史诗大，利物浦逆转巴萨原声纪录片！</a> </li>
+                <li class="pull-left"> <a href="30.html" target="_blank" title="你能憋住不笑？来看看绿茵场上的逗比吧"  class="videoImg cmHover"><img src="images/2653_200.jpg" width="100%" alt="你能憋住不笑？来看看绿茵场上的逗比吧"><i class="coverMask"></i><i class="playBtn"></i> </a> <a href="30.html" target="_blank" title="你能憋住不笑？来看看绿茵场上的逗比吧" class="row-2">你能憋住不笑？来看看绿茵场上的逗比吧</a> </li>
+                <li class="pull-left"> <a href="31.html" target="_blank" title="18岁丁俊晖翻袋逆转 一战成名"  class="videoImg cmHover"><img src="images/2653_200.jpg" width="100%" alt="18岁丁俊晖翻袋逆转 一战成名"><i class="coverMask"></i><i class="playBtn"></i> </a> <a href="31.html" target="_blank" title="18岁丁俊晖翻袋逆转 一战成名" class="row-2">18岁丁俊晖翻袋逆转 一战成名</a> </li>
+            </ul>
+        </div>
+        <div class="pull-right typeArtLeft1">
+            <nav class="typeArtNav clearfix"> <span class="pull-left">意甲足球推荐</span>
+                <ul class="pull-left clearfix">
+                    <li><a target="_blank" href="" title="尤文图斯">尤文图斯</a></li>
+                    <li><a target="_blank" href="" title="AC米兰">AC米兰</a></li>
+                    <li><a target="_blank" href="">国际米兰</a></li>
+                </ul>
+            </nav>
+            <ul class="typeArtUl ">
+                <li><a href="1445.html" target="_blank" title="米兰官方：杜阿尔特租借加盟伊斯坦布尔  租期至2022年6月" class="text-hidden"><i></i>米兰官方：杜阿尔特租借加盟伊斯坦布尔  租期至2022年6月</a></li>
+                <li><a href="1442.html" target="_blank" title="丹麦主帅：国米浪费了埃里克森的能力 希望今年他能踢更多的比赛" class="text-hidden"><i></i>丹麦主帅：国米浪费了埃里克森的能力 希望今年他能踢更多的比赛</a></li>
+                <li><a href="1439.html" target="_blank" title="官方：迪巴拉膝盖扭伤 将缺席15-20天" class="text-hidden"><i></i>官方：迪巴拉膝盖扭伤 将缺席15-20天</a></li>
+                <li><a href="1437.html" target="_blank" title="复制德米拉尔交易 尤文图斯将在下周与美国小将进行谈判" class="text-hidden"><i></i>复制德米拉尔交易 尤文图斯将在下周与美国小将进行谈判</a></li>
+                <li><a href="1433.html" target="_blank" title="AC米兰希望在赛季结束之后留下布拉欣" class="text-hidden"><i></i>AC米兰希望在赛季结束之后留下布拉欣</a></li>
+            </ul>
+            <nav class="typeArtNav clearfix"> <span class="pull-left">法甲足球推荐</span></nav>
+            <ul class="typeArtUl">
+                <li><a href="" target="_blank" title="法甲兰斯vs南特前瞻分析：双方均已连续5轮不胜" class="text-hidden"><i></i>法甲兰斯vs南特前瞻分析：双方均已连续5轮不胜</a></li>
+                <li><a href="" target="_blank" title="法甲雷恩vs马赛前瞻分析预测：马赛9轮不败" class="text-hidden"><i></i>法甲雷恩vs马赛前瞻分析预测：马赛9轮不败</a></li>
+                <li><a href="" target="_blank" title="法甲波尔多vs圣埃蒂安前瞻分析+直播链接" class="text-hidden"><i></i>法甲波尔多vs圣埃蒂安前瞻分析+直播链接</a></li>
+                <li><a href="" target="_blank" title="法甲雷恩vs马赛视频直播地址" class="text-hidden"><i></i>法甲雷恩vs马赛视频直播地址</a></li>
+                <li><a href="" target="_blank" title="法甲巴黎2-0洛里昂 姆巴佩点射小基恩破门" class="text-hidden"><i></i>法甲巴黎2-0洛里昂 姆巴佩点射小基恩破门</a></li>
+            </ul>
+            <div class="clearfix titAndm"> <span class="pull-left">足球精彩图片</span> <a href="/zqtp/" target="_blank" class="f12 text-999 pull-right moreTit">更多<em class="rightIcon"><i class="glyphicon glyphicon-menu-right"></i></em></a> </div>
+            <ul class="clearfix videoBoxUl">
+                <li class="pull-left"> <a href="/photo/30.html" target="_blank" title="英雄联盟KDA女团"  class="videoImg cmHover"><img src="201912161124591402/1_240.jpg" width="100%" alt="英雄联盟KDA女团"></a> <a href="/photo/30.html" target="_blank" title="英雄联盟KDA女团" class="row-2">英雄联盟KDA女团</a> </li>
+                <li class="pull-left"> <a href="/photo/29.html" target="_blank" title="欧冠小组赛 科斯塔绝杀 尤文2-1莫斯科火车头"  class="videoImg cmHover"><img src="201912161124201130/1_240.jpg" width="100%" alt="欧冠小组赛 科斯塔绝杀 尤文2-1莫斯科火车头"></a> <a href="/photo/29.html" target="_blank" title="欧冠小组赛 科斯塔绝杀 尤文2-1莫斯科火车头" class="row-2">欧冠小组赛 科斯塔绝杀 尤文2-1莫斯科火车头</a> </li>
+                <li class="pull-left"> <a href="/photo/28.html" target="_blank" title="王者荣耀高清英雄原画"  class="videoImg cmHover"><img src="201912161124451356/1_240.jpg" width="100%" alt="王者荣耀高清英雄原画"></a> <a href="/photo/28.html" target="_blank" title="王者荣耀高清英雄原画" class="row-2">王者荣耀高清英雄原画</a> </li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+        <!-- fbTopic -->
+        <div class="typeNav">
+            <div class="pull-left typeTitle">
+
+                <h2><span class="big">国内足球</span>  <span class="gry">球队名</span>  <span class="gry">球队名2</span> <span class="gry">球队名3</span> </h2>
+            </div>
+        </div>
+        <!-- typeArtCon -->
+        <div class="clearfix h-15"></div>
+        <div class="clearfix h-15"></div>
+        <div class="pull-left typeArtLeft1">
+            <ul class="recUl noDashed">
+                <li class="clearfix"> <a href="1023.html" target="_blank" title="富力官方： 外援雷纳迪尼奥和托西奇离队" class="pull-left recImg"><img src="images/2653_200.jpg" width="100%" alt="富力官方： 外援雷纳迪尼奥和托西奇离队"></a>
+                    <div class="pull-left recArt">
+                        <h3 class="text-hidden"><a href="1023.html" target="_blank" title="富力官方： 外援雷纳迪尼奥和托西奇离队">富力官方： 外援雷纳迪尼奥和托西奇离队</a></h3>
+                        <p>球天下12月16日讯 广州富力官方宣布，球队外援雷纳迪尼奥...<a href="1023.html" target="_blank" title="富力官方： 外援雷纳迪尼奥和托西奇离队">[详情]</a></p>
+                    </div>
+                </li>
+                <li class="clearfix"> <a href="1017.html" target="_blank" title="塔利斯卡疑似“社媒宣” 恒大外援很可能即将走人?" class="pull-left recImg"><img src="images/2653_200.jpg" width="100%" alt="塔利斯卡疑似“社媒宣” 恒大外援很可能即将走人?"></a>
+                    <div class="pull-left recArt">
+                        <h3 class="text-hidden"><a href="1017.html" target="_blank" title="塔利斯卡疑似“社媒宣” 恒大外援很可能即将走人?">塔利斯卡疑似“社媒宣” 恒大外援很可能即将走人?</a></h3>
+                        <p>在近日更新的一则社交媒体动态中，塔利斯卡喊话艾特自己的...<a href="1017.html" target="_blank" title="塔利斯卡疑似“社媒宣” 恒大外援很可能即将走人?">[详情]</a></p>
+                    </div>
+                </li>
+                <li class="clearfix"> <a href="1016.html" target="_blank" title="官方：雷纳迪尼奥、托西奇将不再为广州富力效力" class="pull-left recImg"><img src="images/2653_200.jpg" width="100%" alt="官方：雷纳迪尼奥、托西奇将不再为广州富力效力"></a>
+                    <div class="pull-left recArt">
+                        <h3 class="text-hidden"><a href="1016.html" target="_blank" title="官方：雷纳迪尼奥、托西奇将不再为广州富力效力">官方：雷纳迪尼奥、托西奇将不再为广州富力效力</a></h3>
+                        <p>广州富力官方宣布，队内外援雷纳迪尼奥、托西奇离队，两名球...<a href="1016.html" target="_blank" title="官方：雷纳迪尼奥、托西奇将不再为广州富力效力">[详情]</a></p>
+                    </div>
+                </li>
+                <li class="clearfix"> <a href="1010.html" target="_blank" title="官方：2023中超扩军18支 中甲扩军20支 中乙扩军30队" class="pull-left recImg"><img src="images/2653_200.jpg" width="100%" alt="官方：2023中超扩军18支 中甲扩军20支 中乙扩军30队"></a>
+                    <div class="pull-left recArt">
+                        <h3 class="text-hidden"><a href="1010.html" target="_blank" title="官方：2023中超扩军18支 中甲扩军20支 中乙扩军30队">官方：2023中超扩军18支 中甲扩军20支 中乙扩军30队</a></h3>
+                        <p>中国足协公布了《中国足球协会关于进一步推进足球改革发...<a href="1010.html" target="_blank" title="官方：2023中超扩军18支 中甲扩军20支 中乙扩军30队">[详情]</a></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="pull-left typeArtRight">
+            <ul class="typeArtUl noDashed noPadTop">
+                <li><a href="1009.html" target="_blank" title="足协杯江苏苏宁vs山东鲁能前瞻分析：冠军全华班PK豪华五外援" class="text-hidden"><i></i>中国足球  |  足协杯江苏苏宁vs山东鲁能前瞻分析：冠军全华班PK豪华五外援</a></li>
+                <li><a href="1003.html" target="_blank" title="足协杯江苏苏宁VS山东鲁能首发：苏宁全华班 鲁能格德斯佩莱领衔" class="text-hidden"><i></i>中国足球  |  足协杯江苏苏宁VS山东鲁能首发：苏宁全华班 鲁能格德斯佩莱领衔</a></li>
+                <li><a href="1002.html" target="_blank" title="足协杯江苏苏宁vs山东鲁能视频直播地址" class="text-hidden"><i></i>中国足球  |  足协杯江苏苏宁vs山东鲁能视频直播地址</a></li>
+                <li><a href="995.html" target="_blank" title="山东鲁能2-0江苏苏宁 获得亚冠资格" class="text-hidden"><i></i>中国足球  |  山东鲁能2-0江苏苏宁 获得亚冠资格</a></li>
+                <li><a href="994.html" target="_blank" title="工商注册宣？企业信息显示富力已更名为广州城" class="text-hidden"><i></i>中国足球  |  工商注册宣？企业信息显示富力已更名为广州城</a></li>
+                <li><a href="988.html" target="_blank" title="2021亚冠名额尘埃落定 山东鲁能晋级正赛上海上港无缘" class="text-hidden"><i></i>中国足球  |  2021亚冠名额尘埃落定 山东鲁能晋级正赛上海上港无缘</a></li>
+                <li><a href="987.html" target="_blank" title="官方：广州富力正式改名为广州城俱乐部" class="text-hidden"><i></i>中国足球  |  官方：广州富力正式改名为广州城俱乐部</a></li>
+            </ul>
+            <div class="clearfix titAndm"> <span class="pull-left">每日视频集锦</span> <a href="" target="_blank" class="f12 text-999 pull-right moreTit">更多<em class="rightIcon"><i class="glyphicon glyphicon-menu-right"></i></em></a> </div>
+            <ul class="clearfix videoBoxUl noPadBot noMarBot">
+                <li class="pull-left"> <a href="32.html" target="_blank" title="魔鬼主场！多特主场的经典开场tifo"  class="videoImg cmHover"><img src="images/2653_200.jpg" width="100%"  alt="魔鬼主场！多特主场的经典开场tifo"><i class="coverMask"></i><i class="playBtn"></i> </a> <a href="32.html" target="_blank" title="魔鬼主场！多特主场的经典开场tifo" class="row-2">魔鬼主场！多</a> </li>
+                <li class="pull-left"> <a href="33.html" target="_blank" title="点球还能这样踢的吗？确定不是在搞笑"  class="videoImg cmHover"><img src="images/2653_200.jpg" width="100%"  alt="点球还能这样踢的吗？确定不是在搞笑"><i class="coverMask"></i><i class="playBtn"></i> </a> <a href="33.html" target="_blank" title="点球还能这样踢的吗？确定不是在搞笑" class="row-2">点球还能这</a> </li>
+                <li class="pull-left"> <a href="25.html" target="_blank" title="台球杂谈，很经典的十个进球"  class="videoImg cmHover"><img src="images/2653_200.jpg" width="100%"  alt="台球杂谈，很经典的十个进球"><i class="coverMask"></i><i class="playBtn"></i> </a> <a href="25.html" target="_blank" title="台球杂谈，很经典的十个进球" class="row-2">台球杂谈，很</a> </li>
+            </ul>
+        </div>
+        <div class="pull-right typeArtLeft1 nbaType">
+            <div class="typeArtBox">
+                <ul class="typeArtUl noDashed" style=" padding:0;">
+                    <li><a href="1009.html" target="_blank" title="足协杯江苏苏宁vs山东鲁能前瞻分析：冠军全华班PK豪华五外援" class="text-hidden"><i></i>足协杯江苏苏宁vs山东鲁能前瞻分析：冠军全华班PK豪华五外援</a></li>
+                    <li><a href="1003.html" target="_blank" title="足协杯江苏苏宁VS山东鲁能首发：苏宁全华班 鲁能格德斯佩莱领衔" class="text-hidden"><i></i>足协杯江苏苏宁VS山东鲁能首发：苏宁全华班 鲁能格德斯佩莱领衔</a></li>
+                    <li><a href="1002.html" target="_blank" title="足协杯江苏苏宁vs山东鲁能视频直播地址" class="text-hidden"><i></i>足协杯江苏苏宁vs山东鲁能视频直播地址</a></li>
+                    <li><a href="995.html" target="_blank" title="山东鲁能2-0江苏苏宁 获得亚冠资格" class="text-hidden"><i></i>山东鲁能2-0江苏苏宁 获得亚冠资格</a></li>
+                    <li><a href="994.html" target="_blank" title="工商注册宣？企业信息显示富力已更名为广州城" class="text-hidden"><i></i>工商注册宣？企业信息显示富力已更名为广州城</a></li>
+                    <li><a href="988.html" target="_blank" title="2021亚冠名额尘埃落定 山东鲁能晋级正赛上海上港无缘" class="text-hidden"><i></i>2021亚冠名额尘埃落定 山东鲁能晋级正赛上海上港无缘</a></li>
+                    <li><a href="987.html" target="_blank" title="官方：广州富力正式改名为广州城俱乐部" class="text-hidden"><i></i>官方：广州富力正式改名为广州城俱乐部</a></li>
+                    <li><a href="982.html" target="_blank" title="德转确认：武汉卓尔续约巴西外援拉斐尔至2022年" class="text-hidden"><i></i>德转确认：武汉卓尔续约巴西外援拉斐尔至2022年</a></li>
+                    <li><a href="981.html" target="_blank" title="足协杯山东鲁能2-0江苏苏宁夺冠 王彤建功佩莱传射" class="text-hidden"><i></i>足协杯山东鲁能2-0江苏苏宁夺冠 王彤建功佩莱传射</a></li>
+                    <li><a href="978.html" target="_blank" title="记者：国安换帅程序已经启动 热内西奥帅位大概率不保" class="text-hidden"><i></i>记者：国安换帅程序已经启动 热内西奥帅位大概率不保</a></li>
+                    <li><a href="977.html" target="_blank" title="跟队记者：留洋球员并非韦世豪 球员对留洋兴趣不大" class="text-hidden"><i></i>跟队记者：留洋球员并非韦世豪 球员对留洋兴趣不大</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="h-15 b-t"></div>
+        <div class="basketball ballTopic">
+            <div class="pull-left leftTitle"><span>篮球专栏</span></div>
+            <ul class="pull-right rightNav clearfix">
+                <li><a href="/nba/" target="_blank" title="NBA">NBA</a></li>
+                <li><a href="" target="_blank" title="CBA">CBA</a></li>
+            </ul>
+        </div>
+        <div class="typeNav">
+            <div class="pull-left typeTitle">
+                <h2><span class="big">NBA</span>  </h2>
+            </div>
+        </div>
+        <div class="pull-left typeArtLeft1">
+            <nav class="typeArtNav clearfix"> <span class="pull-left">湖人队</span>
+                <ul class="pull-left clearfix">
+                    <li><a target="_blank" href="/e/search/?searchget=1&tempid=1&tbname=news&keyboard=曼联&show=title" title="曼联">詹姆斯</a></li>
+                </ul>
+            </nav>
+            <ul class="typeArtUl ">
+                <li><a href="/yingchao/1423.html" target="_blank" title="兰帕德：切尔西没有像科斯塔或阿扎尔那样的前锋" class="text-hidden"><i></i>兰帕德：切尔西没有像科斯塔或阿扎尔那样的前锋</a></li>
+                <li><a href="/yingchao/1418.html" target="_blank" title="英超莱斯特城vs切尔西前瞻分析：切尔西锋线低迷" class="text-hidden"><i></i>英超莱斯特城vs切尔西前瞻分析：切尔西锋线低迷</a></li>
+                <li><a href="/yingchao/1417.html" target="_blank" title="兰帕德：维尔纳对自己很严厉 希望他能感受到我的支持" class="text-hidden"><i></i>兰帕德：维尔纳对自己很严厉 希望他能感受到我的支持</a></li>
+                <li><a href="/yingchao/1411.html" target="_blank" title="合同到期在即 阿奎罗需重新证明自己对曼城的价值" class="text-hidden"><i></i>合同到期在即 阿奎罗需重新证明自己对曼城的价值</a></li>
+                <li><a href="/yingchao/1410.html" target="_blank" title="ESPN：双红会惹怒色盲症球迷 吐槽无法区分两队球衣颜色" class="text-hidden"><i></i>ESPN：双红会惹怒色盲症球迷 吐槽无法区分两队球衣颜色</a></li>
+            </ul>
+            <nav class="typeArtNav clearfix"> <span class="pull-left">勇士</span>
+                <ul class="pull-left clearfix">
+                    <li><a target="_blank" href="/e/search/?searchget=1&tempid=1&tbname=news&keyboard=皇马&show=title" title="皇马">库里</a></li>
+                    <li><a target="_blank" href="/e/search/?searchget=1&tempid=1&tbname=news&keyboard=巴萨&show=title" title="巴萨">汤普森</a></li>
+                </ul>
+            </nav>
+            <ul class="typeArtUl ">
+                <li><a href="1470.html" target="_blank" title="西甲皇家社会vs奥萨苏纳比赛视频直播地址" class="text-hidden"><i></i>西甲皇家社会vs奥萨苏纳比赛视频直播地址</a></li>
+                <li><a href="1469.html" target="_blank" title="西甲韦斯卡VS巴萨免费高清直播地址" class="text-hidden"><i></i>西甲韦斯卡VS巴萨免费高清直播地址</a></li>
+                <li><a href="1468.html" target="_blank" title="西甲韦斯卡VS巴萨前瞻分析：梅西王者归来" class="text-hidden"><i></i>西甲韦斯卡VS巴萨前瞻分析：梅西王者归来</a></li>
+                <li><a href="1467.html" target="_blank" title="西甲梅西助攻德容破门 巴萨1-0韦斯卡升至积分榜第五" class="text-hidden"><i></i>西甲梅西助攻德容破门 巴萨1-0韦斯卡升至积分榜第五</a></li>
+                <li><a href="1466.html" target="_blank" title="西甲巴伦西亚VS卡迪斯前瞻分析：巴伦西亚近况不佳" class="text-hidden"><i></i>西甲巴伦西亚VS卡迪斯前瞻分析：巴伦西亚近况不佳</a></li>
+            </ul>
+            <nav class="typeArtNav clearfix"> <span class="pull-left">76人</span>
+                <ul class="pull-left clearfix">
+                    <li><a target="_blank" href="/e/search/?searchget=1&tempid=1&tbname=news&keyboard=拜仁&show=title" title="拜仁">哈登</a></li>
+                </ul>
+            </nav>
+            <ul class="typeArtUl noDashed">
+                <li><a href="/dejia/1435.html" target="_blank" title="德甲美因茨VS不莱梅免费高清直播地址" class="text-hidden"><i></i>德甲美因茨VS不莱梅免费高清直播地址</a></li>
+                <li><a href="/dejia/1431.html" target="_blank" title="德甲-莱万梅开二度补时绝杀 拜仁2-1逆转勒沃库森登顶榜首" class="text-hidden"><i></i>德甲-莱万梅开二度补时绝杀 拜仁2-1逆转勒沃库森登顶榜首</a></li>
+                <li><a href="/dejia/1427.html" target="_blank" title="德甲莱比锡红牛VS科隆前瞻分析：红牛气势正盛" class="text-hidden"><i></i>德甲莱比锡红牛VS科隆前瞻分析：红牛气势正盛</a></li>
+                <li><a href="/dejia/1426.html" target="_blank" title="德甲弗赖堡VS柏林赫塔前瞻：弗赖堡近况出色" class="text-hidden"><i></i>德甲弗赖堡VS柏林赫塔前瞻：弗赖堡近况出色</a></li>
+                <li><a href="/dejia/1421.html" target="_blank" title="德甲莱比锡红牛VS科隆高清直播视频地址" class="text-hidden"><i></i>德甲莱比锡红牛VS科隆高清直播视频地址</a></li>
+            </ul>
+        </div>
+        <div class="pull-left typeArtLeft1">
+            <nav class="typeArtNav clearfix"> <span class="pull-left">湖人队</span>
+                <ul class="pull-left clearfix">
+                    <li><a target="_blank" href="/e/search/?searchget=1&tempid=1&tbname=news&keyboard=曼联&show=title" title="曼联">詹姆斯</a></li>
+                </ul>
+            </nav>
+            <ul class="typeArtUl ">
+                <li><a href="/yingchao/1423.html" target="_blank" title="兰帕德：切尔西没有像科斯塔或阿扎尔那样的前锋" class="text-hidden"><i></i>兰帕德：切尔西没有像科斯塔或阿扎尔那样的前锋</a></li>
+                <li><a href="/yingchao/1418.html" target="_blank" title="英超莱斯特城vs切尔西前瞻分析：切尔西锋线低迷" class="text-hidden"><i></i>英超莱斯特城vs切尔西前瞻分析：切尔西锋线低迷</a></li>
+                <li><a href="/yingchao/1417.html" target="_blank" title="兰帕德：维尔纳对自己很严厉 希望他能感受到我的支持" class="text-hidden"><i></i>兰帕德：维尔纳对自己很严厉 希望他能感受到我的支持</a></li>
+                <li><a href="/yingchao/1411.html" target="_blank" title="合同到期在即 阿奎罗需重新证明自己对曼城的价值" class="text-hidden"><i></i>合同到期在即 阿奎罗需重新证明自己对曼城的价值</a></li>
+                <li><a href="/yingchao/1410.html" target="_blank" title="ESPN：双红会惹怒色盲症球迷 吐槽无法区分两队球衣颜色" class="text-hidden"><i></i>ESPN：双红会惹怒色盲症球迷 吐槽无法区分两队球衣颜色</a></li>
+            </ul>
+            <nav class="typeArtNav clearfix"> <span class="pull-left">勇士</span>
+                <ul class="pull-left clearfix">
+                    <li><a target="_blank" href="/e/search/?searchget=1&tempid=1&tbname=news&keyboard=皇马&show=title" title="皇马">库里</a></li>
+                    <li><a target="_blank" href="/e/search/?searchget=1&tempid=1&tbname=news&keyboard=巴萨&show=title" title="巴萨">汤普森</a></li>
+                </ul>
+            </nav>
+            <ul class="typeArtUl ">
+                <li><a href="1470.html" target="_blank" title="西甲皇家社会vs奥萨苏纳比赛视频直播地址" class="text-hidden"><i></i>西甲皇家社会vs奥萨苏纳比赛视频直播地址</a></li>
+                <li><a href="1469.html" target="_blank" title="西甲韦斯卡VS巴萨免费高清直播地址" class="text-hidden"><i></i>西甲韦斯卡VS巴萨免费高清直播地址</a></li>
+                <li><a href="1468.html" target="_blank" title="西甲韦斯卡VS巴萨前瞻分析：梅西王者归来" class="text-hidden"><i></i>西甲韦斯卡VS巴萨前瞻分析：梅西王者归来</a></li>
+                <li><a href="1467.html" target="_blank" title="西甲梅西助攻德容破门 巴萨1-0韦斯卡升至积分榜第五" class="text-hidden"><i></i>西甲梅西助攻德容破门 巴萨1-0韦斯卡升至积分榜第五</a></li>
+                <li><a href="1466.html" target="_blank" title="西甲巴伦西亚VS卡迪斯前瞻分析：巴伦西亚近况不佳" class="text-hidden"><i></i>西甲巴伦西亚VS卡迪斯前瞻分析：巴伦西亚近况不佳</a></li>
+            </ul>
+            <nav class="typeArtNav clearfix"> <span class="pull-left">76人</span>
+                <ul class="pull-left clearfix">
+                    <li><a target="_blank" href="/e/search/?searchget=1&tempid=1&tbname=news&keyboard=拜仁&show=title" title="拜仁">哈登</a></li>
+                </ul>
+            </nav>
+            <ul class="typeArtUl noDashed">
+                <li><a href="/dejia/1435.html" target="_blank" title="德甲美因茨VS不莱梅免费高清直播地址" class="text-hidden"><i></i>德甲美因茨VS不莱梅免费高清直播地址</a></li>
+                <li><a href="/dejia/1431.html" target="_blank" title="德甲-莱万梅开二度补时绝杀 拜仁2-1逆转勒沃库森登顶榜首" class="text-hidden"><i></i>德甲-莱万梅开二度补时绝杀 拜仁2-1逆转勒沃库森登顶榜首</a></li>
+                <li><a href="/dejia/1427.html" target="_blank" title="德甲莱比锡红牛VS科隆前瞻分析：红牛气势正盛" class="text-hidden"><i></i>德甲莱比锡红牛VS科隆前瞻分析：红牛气势正盛</a></li>
+                <li><a href="/dejia/1426.html" target="_blank" title="德甲弗赖堡VS柏林赫塔前瞻：弗赖堡近况出色" class="text-hidden"><i></i>德甲弗赖堡VS柏林赫塔前瞻：弗赖堡近况出色</a></li>
+                <li><a href="/dejia/1421.html" target="_blank" title="德甲莱比锡红牛VS科隆高清直播视频地址" class="text-hidden"><i></i>德甲莱比锡红牛VS科隆高清直播视频地址</a></li>
+            </ul>
+        </div>
+        <div class="pull-left typeArtLeft1">
+            <nav class="typeArtNav clearfix"> <span class="pull-left">湖人队</span>
+                <ul class="pull-left clearfix">
+                    <li><a target="_blank" href="/e/search/?searchget=1&tempid=1&tbname=news&keyboard=曼联&show=title" title="曼联">詹姆斯</a></li>
+                </ul>
+            </nav>
+            <ul class="typeArtUl ">
+                <li><a href="/yingchao/1423.html" target="_blank" title="兰帕德：切尔西没有像科斯塔或阿扎尔那样的前锋" class="text-hidden"><i></i>兰帕德：切尔西没有像科斯塔或阿扎尔那样的前锋</a></li>
+                <li><a href="/yingchao/1418.html" target="_blank" title="英超莱斯特城vs切尔西前瞻分析：切尔西锋线低迷" class="text-hidden"><i></i>英超莱斯特城vs切尔西前瞻分析：切尔西锋线低迷</a></li>
+                <li><a href="/yingchao/1417.html" target="_blank" title="兰帕德：维尔纳对自己很严厉 希望他能感受到我的支持" class="text-hidden"><i></i>兰帕德：维尔纳对自己很严厉 希望他能感受到我的支持</a></li>
+                <li><a href="/yingchao/1411.html" target="_blank" title="合同到期在即 阿奎罗需重新证明自己对曼城的价值" class="text-hidden"><i></i>合同到期在即 阿奎罗需重新证明自己对曼城的价值</a></li>
+                <li><a href="/yingchao/1410.html" target="_blank" title="ESPN：双红会惹怒色盲症球迷 吐槽无法区分两队球衣颜色" class="text-hidden"><i></i>ESPN：双红会惹怒色盲症球迷 吐槽无法区分两队球衣颜色</a></li>
+            </ul>
+            <nav class="typeArtNav clearfix"> <span class="pull-left">勇士</span>
+                <ul class="pull-left clearfix">
+                    <li><a target="_blank" href="/e/search/?searchget=1&tempid=1&tbname=news&keyboard=皇马&show=title" title="皇马">库里</a></li>
+                    <li><a target="_blank" href="/e/search/?searchget=1&tempid=1&tbname=news&keyboard=巴萨&show=title" title="巴萨">汤普森</a></li>
+                </ul>
+            </nav>
+            <ul class="typeArtUl ">
+                <li><a href="1470.html" target="_blank" title="西甲皇家社会vs奥萨苏纳比赛视频直播地址" class="text-hidden"><i></i>西甲皇家社会vs奥萨苏纳比赛视频直播地址</a></li>
+                <li><a href="1469.html" target="_blank" title="西甲韦斯卡VS巴萨免费高清直播地址" class="text-hidden"><i></i>西甲韦斯卡VS巴萨免费高清直播地址</a></li>
+                <li><a href="1468.html" target="_blank" title="西甲韦斯卡VS巴萨前瞻分析：梅西王者归来" class="text-hidden"><i></i>西甲韦斯卡VS巴萨前瞻分析：梅西王者归来</a></li>
+                <li><a href="1467.html" target="_blank" title="西甲梅西助攻德容破门 巴萨1-0韦斯卡升至积分榜第五" class="text-hidden"><i></i>西甲梅西助攻德容破门 巴萨1-0韦斯卡升至积分榜第五</a></li>
+                <li><a href="1466.html" target="_blank" title="西甲巴伦西亚VS卡迪斯前瞻分析：巴伦西亚近况不佳" class="text-hidden"><i></i>西甲巴伦西亚VS卡迪斯前瞻分析：巴伦西亚近况不佳</a></li>
+            </ul>
+            <nav class="typeArtNav clearfix"> <span class="pull-left">76人</span>
+                <ul class="pull-left clearfix">
+                    <li><a target="_blank" href="/e/search/?searchget=1&tempid=1&tbname=news&keyboard=拜仁&show=title" title="拜仁">哈登</a></li>
+                </ul>
+            </nav>
+            <ul class="typeArtUl noDashed">
+                <li><a href="/dejia/1435.html" target="_blank" title="德甲美因茨VS不莱梅免费高清直播地址" class="text-hidden"><i></i>德甲美因茨VS不莱梅免费高清直播地址</a></li>
+                <li><a href="/dejia/1431.html" target="_blank" title="德甲-莱万梅开二度补时绝杀 拜仁2-1逆转勒沃库森登顶榜首" class="text-hidden"><i></i>德甲-莱万梅开二度补时绝杀 拜仁2-1逆转勒沃库森登顶榜首</a></li>
+                <li><a href="/dejia/1427.html" target="_blank" title="德甲莱比锡红牛VS科隆前瞻分析：红牛气势正盛" class="text-hidden"><i></i>德甲莱比锡红牛VS科隆前瞻分析：红牛气势正盛</a></li>
+                <li><a href="/dejia/1426.html" target="_blank" title="德甲弗赖堡VS柏林赫塔前瞻：弗赖堡近况出色" class="text-hidden"><i></i>德甲弗赖堡VS柏林赫塔前瞻：弗赖堡近况出色</a></li>
+                <li><a href="/dejia/1421.html" target="_blank" title="德甲莱比锡红牛VS科隆高清直播视频地址" class="text-hidden"><i></i>德甲莱比锡红牛VS科隆高清直播视频地址</a></li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+        <div class="h-15 b-t"></div>
+        <div class="typeNav">
+            <div class="pull-left typeTitle">
+                <h2><span class="big">CBA</span>  <span class="gry">球队名</span>  <span class="gry">球队名2</span> <span class="gry">球队名3</span> </h2>
+            </div>
+        </div>
+        <div class="clearfix h-15"></div>
+        <div class="pull-left typeArtLeft1 cbaType">
+            <ul class="recUl noDashed">
+                <li class="clearfix"> <a href="1951.html" target="_blank" title="CBA常规赛北京北控VS四川五粮金樽高清直播" class="pull-left recImg"><img src="images/2653_200.jpg" width="100%"  alt="CBA常规赛北京北控VS四川五粮金樽高清直播"></a>
+                    <div class="pull-left recArt">
+                        <h3 class="text-hidden"><a href="1951.html" target="_blank" title="CBA常规赛北京北控VS四川五粮金樽高清直播">CBA常规赛北京北控VS四川五粮金樽高清直播</a></h3>
+                        <p>北京时间12月24日晚19:35，CBA常规赛继续再战，今日CBA常规...<a href="1951.html" target="_blank" title="CBA常规赛北京北控VS四川五粮金樽高清直播">[详情]</a></p>
+                    </div>
+                </li>
+                <li class="clearfix"> <a href="1950.html" target="_blank" title="CBA常规赛上海久事VS九台农商银行高清直播" class="pull-left recImg"><img src="images/2653_200.jpg" width="100%"  alt="CBA常规赛上海久事VS九台农商银行高清直播"></a>
+                    <div class="pull-left recArt">
+                        <h3 class="text-hidden"><a href="1950.html" target="_blank" title="CBA常规赛上海久事VS九台农商银行高清直播">CBA常规赛上海久事VS九台农商银行高清直播</a></h3>
+                        <p>北京时间12月26日中午12:30，CBA常规赛继续再战，今日比赛迎...<a href="1950.html" target="_blank" title="CBA常规赛上海久事VS九台农商银行高清直播">[详情]</a></p>
+                    </div>
+                </li>
+                <li class="clearfix"> <a href="1949.html" target="_blank" title="CBA常规赛福建豹发力vs广东东莞大益高清视频直播" class="pull-left recImg"><img src="images/2653_200.jpg" width="100%"  alt="CBA常规赛福建豹发力vs广东东莞大益高清视频直播"></a>
+                    <div class="pull-left recArt">
+                        <h3 class="text-hidden"><a href="1949.html" target="_blank" title="CBA常规赛福建豹发力vs广东东莞大益高清视频直播">CBA常规赛福建豹发力vs广东东莞大益高清视频直播</a></h3>
+                        <p>北京时间12月25日晚20:00，CBA常规赛将进行一场焦点大战，福...<a href="1949.html" target="_blank" title="CBA常规赛福建豹发力vs广东东莞大益高清视频直播">[详情]</a></p>
+                    </div>
+                </li>
+                <li class="clearfix"> <a href="1948.html" target="_blank" title="CBA常规赛天津先行者VS浙江广厦控股视频直播" class="pull-left recImg"><img src="images/2653_200.jpg" width="100%"  alt="CBA常规赛天津先行者VS浙江广厦控股视频直播"></a>
+                    <div class="pull-left recArt">
+                        <h3 class="text-hidden"><a href="1948.html" target="_blank" title="CBA常规赛天津先行者VS浙江广厦控股视频直播">CBA常规赛天津先行者VS浙江广厦控股视频直播</a></h3>
+                        <p>北京时间12月26日下午15:30，CBA常规赛继续再战，今日第三场...<a href="1948.html" target="_blank" title="CBA常规赛天津先行者VS浙江广厦控股视频直播">[详情]</a></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="pull-left typeArtRight cbaType">
+            <ul class="typeArtUl noDashed noPadTop">
+                <li><a href="/nba/1736.html" target="_blank" title="NBA常规赛尼克斯VS魔术视频直播" class="text-hidden"><i></i>中国蓝球  |  NBA常规赛尼克斯VS魔术视频直播</a></li>
+                <li><a href="/nba/1731.html" target="_blank" title="NBA常规赛开拓者VS马刺视频直播" class="text-hidden"><i></i>中国蓝球  |  NBA常规赛开拓者VS马刺视频直播</a></li>
+                <li><a href="/nba/1730.html" target="_blank" title="鹈鹕客场128-123险胜国王 锡安31+6+2 福克斯空砍43+13+4" class="text-hidden"><i></i>中国蓝球  |  鹈鹕客场128-123险胜国王 锡安31+6+2 福克斯空砍43+13+4</a></li>
+                <li><a href="/nba/1726.html" target="_blank" title="NBA常规赛灰熊VS太阳视频直播" class="text-hidden"><i></i>中国蓝球  |  NBA常规赛灰熊VS太阳视频直播</a></li>
+                <li><a href="/nba/1725.html" target="_blank" title="美媒评选25岁以下十大二人组：塔图姆与布朗领衔榜首" class="text-hidden"><i></i>中国蓝球  |  美媒评选25岁以下十大二人组：塔图姆与布朗领衔榜首</a></li>
+                <li><a href="/nba/1722.html" target="_blank" title="NBA常规赛猛龙VS独行侠视频直播" class="text-hidden"><i></i>中国蓝球  |  NBA常规赛猛龙VS独行侠视频直播</a></li>
+                <li><a href="/nba/1721.html" target="_blank" title="NBA常规赛老鹰VS森林狼视频直播" class="text-hidden"><i></i>中国蓝球  |  NBA常规赛老鹰VS森林狼视频直播</a></li>
+            </ul>
+            <div class="clearfix titAndm"> <span class="pull-left">视频中心</span> <a href="" target="_blank" class="f12 text-999 pull-right moreTit">更多<em class="rightIcon"><i class="glyphicon glyphicon-menu-right"></i></em></a> </div>
+            <ul class="clearfix videoBoxUl noPadBot noMarBot">
+                <li class="pull-left"> <a href="29.html" target="_blank" title="斯诺克，奥沙利文vs丁俊晖！"  class="videoImg cmHover"><img src="images/2653_200.jpg" width="100%"  alt="斯诺克，奥沙利文vs丁俊晖！"><i class="coverMask"></i><i class="playBtn"></i> </a> <a href="29.html" target="_blank" title="斯诺克，奥沙利文vs丁俊晖！" class="row-2">斯诺克，奥沙</a> </li>
+                <li class="pull-left"> <a href="19.html" target="_blank" title="男篮世界杯小组赛集锦：中国VS波兰"  class="videoImg cmHover"><img src="images/2653_200.jpg" width="100%"  alt="男篮世界杯小组赛集锦：中国VS波兰"><i class="coverMask"></i><i class="playBtn"></i> </a> <a href="19.html" target="_blank" title="男篮世界杯小组赛集锦：中国VS波兰" class="row-2">男篮世界杯</a> </li>
+                <li class="pull-left"> <a href="20.html" target="_blank" title="中国最强后卫郭艾伦过人混剪"  class="videoImg cmHover"><img src="images/2653_200.jpg" width="100%"  alt="中国最强后卫郭艾伦过人混剪"><i class="coverMask"></i><i class="playBtn"></i> </a> <a href="20.html" target="_blank" title="中国最强后卫郭艾伦过人混剪" class="row-2">中国最强后</a> </li>
+            </ul>
+        </div>
+        <div class="pull-right typeArtLeft1 nbaType">
+            <div class="typeArtBox">
+                <ul class="typeArtUl noDashed" style=" padding:0;">
+                    <li><a href="1947.html" target="_blank" title="CBA常规赛深圳马可波罗VS山东西王视频直播" class="text-hidden"><i></i>CBA常规赛深圳马可波罗VS山东西王视频直播</a></li>
+                    <li><a href="1946.html" target="_blank" title="CBA常规赛辽宁本钢VS山西汾酒股份视频直播" class="text-hidden"><i></i>CBA常规赛辽宁本钢VS山西汾酒股份视频直播</a></li>
+                    <li><a href="1945.html" target="_blank" title="CBA常规赛苏州肯帝亚VS北京首钢视频直播" class="text-hidden"><i></i>CBA常规赛苏州肯帝亚VS北京首钢视频直播</a></li>
+                    <li><a href="1944.html" target="_blank" title="CBA常规赛新疆伊力特VS南京同曦宙光高清视频直播" class="text-hidden"><i></i>CBA常规赛新疆伊力特VS南京同曦宙光高清视频直播</a></li>
+                    <li><a href="1943.html" target="_blank" title="CBA常规赛时代中国广州VS浙江稠州金租视频直播" class="text-hidden"><i></i>CBA常规赛时代中国广州VS浙江稠州金租视频直播</a></li>
+                    <li><a href="1942.html" target="_blank" title="CBA常规赛浙江广厦控股VS九台农商银行视频直播" class="text-hidden"><i></i>CBA常规赛浙江广厦控股VS九台农商银行视频直播</a></li>
+                    <li><a href="1941.html" target="_blank" title="CBA常规赛广东东莞大益VS上海久事高清视频直播" class="text-hidden"><i></i>CBA常规赛广东东莞大益VS上海久事高清视频直播</a></li>
+                    <li><a href="1940.html" target="_blank" title="CBA常规赛南京同曦宙光VS福建豹发力视频直播" class="text-hidden"><i></i>CBA常规赛南京同曦宙光VS福建豹发力视频直播</a></li>
+                    <li><a href="1939.html" target="_blank" title="CBA常规赛天津先行者VS四川五粮金樽视频直播" class="text-hidden"><i></i>CBA常规赛天津先行者VS四川五粮金樽视频直播</a></li>
+                    <li><a href="1938.html" target="_blank" title="CBA常规赛新疆伊力特VS北京北控视频直播" class="text-hidden"><i></i>CBA常规赛新疆伊力特VS北京北控视频直播</a></li>
+                    <li><a href="1937.html" target="_blank" title="上海久事117-92击败广东东莞大益 终结卫冕冠军9连胜" class="text-hidden"><i></i>上海久事117-92击败广东东莞大益 终结卫冕冠军9连胜</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<!-- main -->
+{include file="public/footer" /}
+
+
+</body>
+</html>

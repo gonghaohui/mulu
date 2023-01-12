@@ -1,0 +1,89 @@
+{include file="public/header" /}
+<body class="gray-bg">
+<div class="layui-fluid layui-col-xs12">
+    <div class="layui-card">
+        <div class="layui-tab layui-tab-card">
+            <ul class="layui-tab-title">
+                <a href="{:url('?id=1')}"><li {if $id eq 1}class="layui-this"{/if}>新闻采集配置</li></a>
+                <a href="{:url('?id=2')}"><li {if $id eq 2}class="layui-this"{/if}>直播采集配置</li></a>
+                <a href="{:url('?id=3')}"><li {if $id eq 3}class="layui-this"{/if}>录像采集配置</li></a>
+                <a href="{:url('?id=4')}"><li {if $id eq 4}class="layui-this"{/if}>集锦采集配置</li></a>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show ">
+                    <div class="layui-form">
+                        <input type="hidden"name="key" value="{$key}">
+                        <input type="hidden"name="id" value="{$id}">
+                        <div class="layui-form-item layui-col-xs-offset1 layui-col-xs8">
+                            <label class="layui-form-label">是否开启采集</label>
+                            <div class="layui-input-block">
+                                <select name="caiji_status" lay-verify="required">
+                                    <option value="0" {if $allow.value eq 0}selected{/if}>关闭</option>
+                                    <option value="1" {if $allow.value eq 1}selected{/if}>开启</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-row layui-col-space10 layui-form-item ">
+                            <div class="layui-form-item layui-col-xs-offset1 layui-col-xs8">
+                                <label class="layui-form-label">远程数据库地址</label>
+                                <div class="layui-input-block">
+                                    <input type="text"name="dbhost" value="{$setting.dbhost}" lay-verify="required" placeholder="" class="layui-input ">
+                                </div>
+                            </div>
+                            <div class="layui-form-item layui-col-xs-offset1 layui-col-xs8">
+                                <label class="layui-form-label">数据库帐号</label>
+                                <div class="layui-input-block">
+                                    <input type="text"name="dbuser" value="{$setting.dbuser}" lay-verify="required" placeholder="" class="layui-input ">
+                                </div>
+                            </div>
+                            <div class="layui-form-item layui-col-xs-offset1 layui-col-xs8">
+                                <label class="layui-form-label">数据库密码</label>
+                                <div class="layui-input-block">
+                                    <input type="text"name="dbpwd" value="{$setting.dbpwd}" lay-verify="required" placeholder="" class="layui-input ">
+                                </div>
+                            </div>
+                            <div class="layui-form-item layui-col-xs-offset1 layui-col-xs8">
+                                <label class="layui-form-label">数据库名</label>
+                                <div class="layui-input-block">
+                                    <input type="text"name="dbname" value="{$setting.dbname}" lay-verify="required" placeholder="" class="layui-input ">
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item layui-col-xs-offset1 layui-col-xs8">
+                                <div class="layui-input-block">
+                                    <button class="layui-btn" lay-submit="" lay-filter="component-form-element">保存
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="public/footer" /}
+<script>
+    layui.use(['form'], function() {
+        var form = layui.form;
+        form.on('submit(component-form-element)', function (data) {
+            $('.layui-btn').addClass('layui-disabled').attr('disabled','disabled');
+            $.ajax({
+                url:"{:url('save')}",
+                type:'post',
+                dataType:'json',
+                data:data.field,
+                success:function(res){
+                    if (res.code == 200) {
+                        wk.success(res.msg);
+                    } else {
+                        wk.error(res.msg);
+                    }
+                    $(".layui-btn").removeClass('layui-disabled').removeAttr('disabled');
+                }
+            })
+        });
+    });
+</script>
+</body>
+</html>

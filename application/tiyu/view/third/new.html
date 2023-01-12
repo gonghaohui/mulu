@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" />
+    <title>{$third['category_name']}</title>
+    <meta content="{$third['description']}" name="description" />
+    <meta content="{$third['keywords']}" name="keywords" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"  />
+    <link rel="stylesheet" href="__TIYU_CSS__/reset.css" />
+    <link rel="stylesheet" href="__TIYU_CSS__/index.css">
+    <link rel="stylesheet" href="__TIYU_CSS__/style.css" />
+    <link rel="stylesheet" href="__TIYU_CSS__/sy-footer.css">
+    <link rel="stylesheet" href="__TIYU_CSS__/hot_news.css" />
+    <script type="text/javascript"  src="__TIYU_JS__/jquery.min.js"></script>
+    <script type="text/javascript" src="__TIYU_JS__/biebuzhu.js"></script>
+</head>
+
+<body>
+
+<!-- header/S -->
+{include file="public/header" /}
+
+<div class="topic_subnav_box">
+    <div class="topic_subnav">
+        <ul>
+            <li> <a href=""
+                    class="hover">英超首页</a> </li>
+            <li> <a href="zhibo.html"
+                    class="">英超直播</a> </li>
+            <li> <a href="jijing.html"
+                    class="">英超集锦</a> </li>
+            <li> <a href="erji.html"
+                    class="">英超新闻</a> </li>
+        </ul>
+    </div>
+</div>
+<div class="content_box">
+    <div class="local"><span class="one">当前位置：</span><a href="/index.html">首页</a> >
+        <span><a href="/{$third['p_pinyin']}/index.html">{$third['p_category_name']}</a></span>  >
+        <span>{$third['category_name']}</span></div>
+    <div class="part_o">
+        <div class="toc_left_w665">
+            <div class=" toc_articles_box ">
+                <div class="topic_articles">
+                    {volist name="top_right" id="right"}
+                    <h1> <i class="tag">{$right['category_name']}</i>
+                        {volist name="right.news" id="new" offset="0" length="1"}
+                        <a href="/{$f_url}/{$new['article_id']}.html" target="_blank" title="{$new['title']}">{$new['title']}</a> </h1>
+                        {/volist}
+                    <ul>
+                        {volist name="right.news" id="new" offset="1" length="4"}
+                        <li> <a href="/{$f_url}/{$new['article_id']}.html" target="_blank" title="{$new['title']}" class=""> {$new['title']} </a> </li>
+                        {/volist}
+                    </ul>
+                    {/volist}
+                </div>
+            </div>
+            <div class="hot_textimg_box">
+                <div class="hot_textimg clearfix">
+                    <ul>
+                        <li> <a href="/lqnews/885.html" target="_blank"> <img src="img/294ACB13-96C4-4A88-96C3-75235EF1EDCD.png" alt=""/> <span>名记：史蒂夫-库里将与勇士完成4年2.15亿美元的提前续约</span> <strong>英超最Top</strong> </a> </li>
+                        <li> <a href="/lqnews/883.html" target="_blank"> <img src="img/1EF9CC84-9AF2-4B42-8C1B-5BD2E5EDC01F.png" alt=""/> <span>名记：小卡跳出合同预计将和快船重签一份相对短的合约</span> <strong>英超万花筒</strong> </a> </li>
+                        <li> <a href="/lqnews/893.html" target="_blank"> <img src="img/3C445F7C-34B1-4A14-B227-E3CCA901753B.png" alt=""/> <span>篮网GM：丁威迪有能力试水自由市场，去哪打球取决于自己</span> <strong>英超麻辣烫</strong> </a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="toc_right_w525">
+            <div class="topic_match_box">
+                <div class="topic_tag_title">
+                    <h1>热门比赛</h1>
+                    <i>|</i> <a href="/{$all_games_url.pinyin}/index.html">全部比赛 <s>&gt;</s></a> </div>
+                <div class="topic_match_list">
+                    {volist name="hot_games" id="game"}
+                    <div class="list_block">
+                        <a href="/{$top_category[$game.top_id]}/{$game.id}.html" target="_blank">
+                            <div class="state gray">
+                                {if condition="$game.create_time + 7200 lt $time "}
+                                已结束
+                                {else}
+                                未开始
+                                {/if}
+                            </div>
+                            <time class="time">{$game.create_time|date="m-d H:i",###}</time>
+                            <div class="type text-ignore">{$game.saishi}</div>
+                            <div class="match_name">
+                                <span class="text_left text-ignore">{$game.zhudui}</span>
+                                <!--<img class="lazy" src="img/20180117154321.jpg" data-original="img/20180117154321.jpg">-->
+                                <strong style="padding: 0 10px;">{$game.bifen}</strong>
+                                <!--<div class="shape"></div>-->
+                                <!--<strong>112</strong>-->
+                                <!--<img class="lazy" src="img/20180117153007.png" data-original="img/20180117153007.png">-->
+                                <span class="text_right text-ignore">{$game.kedui}</span> </div>
+                            <!--<div class="resource green">集锦</div>-->
+                        </a>
+                    </div>
+                    {/volist}
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="part_o">
+        <div class="toc_left_w850">
+
+            {volist name="teams" id="team" key="k"}
+            <div class="topic_name_video_box">
+                <div class="tocname_tag_title">
+                    <div class="tpleft"><img class="lazy" src="{$team['img']}" data-original="" />
+                        <h1><a href="/{$team['pinyin']}/index.html">{$team['category_name']}</a></h1>
+                    </div>
+                    <a href="/{$team['pinyin']}/index.html" class="gd" target="_blank">更多></a>
+                    <ul class="btnlist" rel=".tabcontent_{$k}">
+                        {volist name="team.players" id="player"}
+                        <li data-value="{$player['tag_name']}" class="team-tag"> <a href="javascript:"  class="active">{$player['tag_name']}</a> </li>
+                        {/volist}
+                    </ul>
+                </div>
+
+
+                <div class="tabcontent_{$k}">
+                    {volist name="team.players" id="player"}
+                    <div class="ta_show">
+                        <div class="tocname_list">
+                            <ul>
+                                {volist name="player.news" id="new" offset="0" length="5"}
+                                <li> <a href="/{$f_url}/{$new['article_id']}.html" title="{$new['title']}" target="_blank">{$new['title']}</a> </li>
+                                {/volist}
+                            </ul>
+                            <ul>
+                                {volist name="player.news" id="new" offset="5" length="5"}
+                                <li> <a href="/{$f_url}/{$new['article_id']}.html" title="{$new['title']}" target="_blank">{$new['title']}</a> </li>
+                                {/volist}
+                            </ul>
+                        </div>
+                    </div>
+                    {/volist}
+
+
+                </div>
+                <div class="tocname_score_box clearfix"> </div>
+            </div>
+            {/volist}
+
+
+
+
+
+
+
+
+
+        </div>
+        <div class="toc_right_w340">
+            <div style="margin-top: 10px;"></div>
+            <div class="topic_right_block">
+                <div class="tocr_block_title">
+                    <h1>排行榜</h1>
+                    <a href="/jifen/nba/">完整排行</a> </div>
+                <div class="tocr_block_taggle">
+                    <ul>
+                        <li class="active" style="width: 50%">英超排行榜<s></s></li>
+
+                    </ul>
+                </div>
+                <div class="ranking_taggle">
+                    <div class="tocr_block_table" style="">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <th style="width: 10%;">排名</th>
+                                <th colspan="2" style="width: 50%;">球队</th>
+                                <th style="width: 20%">胜负</th>
+                                <th style="width: 20%;">积分</th>
+                            </tr>
+                            <tr>
+                                <td><span class="red">1</span></td>
+                                <td><img class="lazy" width="35px" src="img/20180117152851.png"  /></td>
+                                <td style="text-align: left;">76人</td>
+                                <td>49/23</td>
+                                <td>0.0</td>
+                            </tr>
+                            <tr>
+                                <td><span class="red">2</span></td>
+                                <td><img class="lazy" width="35px" src="img/20120821112729.jpg"  /></td>
+                                <td style="text-align: left;">篮网</td>
+                                <td>48/24</td>
+                                <td>1.0</td>
+                            </tr>
+                            <tr>
+                                <td><span class="red">3</span></td>
+                                <td><img class="lazy" width="35px" src="img/20180117154321.jpg"  /></td>
+                                <td style="text-align: left;">雄鹿</td>
+                                <td>46/26</td>
+                                <td>3.0</td>
+                            </tr>
+                            <tr>
+                                <td><span class="red">4</span></td>
+                                <td><img class="lazy" width="35px" src="img/20120112165918.jpg"  /></td>
+                                <td style="text-align: left;">尼克斯</td>
+                                <td>41/31</td>
+                                <td>8.0</td>
+                            </tr>
+                            <tr>
+                                <td><span class="red">5</span></td>
+                                <td><img class="lazy" width="35px" src="img/20180117153007.png"  /></td>
+                                <td style="text-align: left;">老鹰</td>
+                                <td>41/31</td>
+                                <td>8.0</td>
+                            </tr>
+                            <tr>
+                                <td><span class="red">6</span></td>
+                                <td><img class="lazy" width="35px" src="img/20120112154051.jpg"  /></td>
+                                <td style="text-align: left;">热火</td>
+                                <td>40/32</td>
+                                <td>9.0</td>
+                            </tr>
+                            <tr>
+                                <td><span class="red">7</span></td>
+                                <td><img class="lazy" width="35px" src="img/20120112150854.jpg"  /></td>
+                                <td style="text-align: left;">凯尔特人</td>
+                                <td>36/36</td>
+                                <td>13.0</td>
+                            </tr>
+                            <tr>
+                                <td><span class="red">8</span></td>
+                                <td><img class="lazy" width="35px" src="img/20180117153230.png"  /></td>
+                                <td style="text-align: left;">奇才</td>
+                                <td>34/38</td>
+                                <td>15.0</td>
+                            </tr>
+                            <tr>
+                                <td><span class="red">9</span></td>
+                                <td><img class="lazy" width="35px" src="img/20180117154046.png"  /></td>
+                                <td style="text-align: left;">步行者</td>
+                                <td>34/38</td>
+                                <td>15.0</td>
+                            </tr>
+                            <tr>
+                                <td><span class="red">10</span></td>
+                                <td><img class="lazy" width="35px" src="img/20140521143018.jpg"  /></td>
+                                <td style="text-align: left;">黄蜂</td>
+                                <td>33/39</td>
+                                <td>16.0</td>
+                            </tr>
+                            <tr>
+                                <td><span class="red">11</span></td>
+                                <td><img class="lazy" width="35px" src="img/20120112161112.jpg"  /></td>
+                                <td style="text-align: left;">公牛</td>
+                                <td>31/41</td>
+                                <td>18.0</td>
+                            </tr>
+                            <tr>
+                                <td><span class="red">12</span></td>
+                                <td><img class="lazy" width="35px" src="img/20180117152618.png"  /></td>
+                                <td style="text-align: left;">猛龙</td>
+                                <td>27/45</td>
+                                <td>22.0</td>
+                            </tr>
+                            <tr>
+                                <td><span class="red">13</span></td>
+                                <td><img class="lazy" width="35px" src="img/20180117153527.png"  /></td>
+                                <td style="text-align: left;">骑士</td>
+                                <td>22/50</td>
+                                <td>27.0</td>
+                            </tr>
+                            <tr>
+                                <td><span class="red">14</span></td>
+                                <td><img class="lazy" width="35px" src="img/20120112171211.jpg"  /></td>
+                                <td style="text-align: left;">魔术</td>
+                                <td>21/51</td>
+                                <td>28.0</td>
+                            </tr>
+                            <tr>
+                                <td><span class="red">15</span></td>
+                                <td><img class="lazy" width="35px" src="img/20180117153734.png"  /></td>
+                                <td style="text-align: left;">活塞</td>
+                                <td>20/52</td>
+                                <td>29.0</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--底部-->
+{include file="public/footer" /}
+
+
+<script type="text/javascript">
+    $('.tocr_block_taggle li').on("mouseover", function () {
+        var _index = $(this).index();
+        $(this).addClass("active").siblings().removeClass();
+        $(this).parents('.tocr_block_taggle').siblings('.ranking_taggle').children('div').eq(_index).show().siblings().hide();
+    })
+</script>
+<script>
+    $(".btnlist").each(function(idx,item){
+        $(item).children().eq(0).addClass("cur");
+        if(!!$(this).attr("rel"))
+        {
+            $($(this).attr("rel")).children().eq(0).addClass("cur");
+        }
+    });
+    $(".btnlist").children().bind("click",function(){
+        if($(this).is(".cur")){return false;}
+        var parent = $(this).parent();
+        var obj_box= $($(this).parent().attr("rel"));
+        var index  = parent.children().index(this);
+        if(obj_box.children().eq(index).size() <= 0){ return false;}
+        parent.find(".cur").removeClass("cur");
+        $(this).addClass("cur");
+        obj_box.children().removeClass("cur");
+        obj_box.children().eq(index).addClass("cur");
+        return false;
+    });
+</script>
+
+</body>
+</html>

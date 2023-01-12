@@ -1,0 +1,127 @@
+﻿/* 首页新闻样式 */
+.home_articles{
+  height: 638px !important;
+  overflow: hidden;
+}
+.home_articles>.topic_articles{
+  padding: 25px 20px 0 !important;
+}
+.home_articles>.topic_articles h1:nth-child(1) {
+  margin-top: 0 !important;
+}
+.home_articles>.topic_articles h1{
+  margin-top: 10px!important;
+  padding-top: 0 !important;
+  overflow: hidden !important;
+}
+
+.home_articles>.topic_articles>h1>a{
+  height: 30px !important;
+  font-size: 22px;
+}
+.home_articles>.topic_articles ul{
+  padding-top: 0 !important;
+}
+.home_articles>.topic_articles ul li{
+  height: 21px !important;
+  margin-top: 10px!important;
+  font-size: 16px;
+}
+
+/* 欧洲杯样式 */
+/* .ozb_block_title1{
+  width: 540px;
+} */
+.world_hot{
+  /* width: 540px; */
+  /* padding: 20px 25px; */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+/* .ozb_block_title_img1{
+  width: 540px;
+} */
+.world_hot>h1{
+  height: 30px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.world_hot>h1:nth-child(1){
+  margin-top: 0px;
+}
+.world_hot>h1>.tag{
+  font-size: 18px;
+  color: #FFFFFF;
+  height: 29px;
+  line-height: 29px;
+  padding: 0 10px;
+  text-align: center;
+  background: #017BD1;
+  margin-right: 10px;
+  font-weight: normal;
+}
+/* 20200921 标题  18fs  小标14fs  */
+.world_hot>h1>a{
+  width: 100%;
+  height: 30px !important;
+  line-height: 30px;
+  overflow: hidden;
+  font-size: 18px;
+  font-weight: bold;
+  color: #555;
+}
+.world_hot>h1>a:hover{
+  color:  #DC2221;
+}
+.world_hot>ul{
+  display:flex;
+  flex-wrap: wrap;
+}
+.world_hot>ul>li{
+  width: 50%;
+  height: 20px;
+  line-height: 20px;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+.world_hot>ul>li:nth-child(odd){
+  border-right: 1px solid #555;
+  padding-right: 10px;
+}
+.world_hot>ul>li:nth-child(even){
+  padding-left: 10px;
+}
+.world_hot>ul>li>a{
+  display: block;
+  height: 20px !important;
+  text-decoration: none !important;
+  overflow:hidden;
+  word-break:keep-all;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  font-size: 14px;
+  color: #333;
+}
+.world_hot>ul>li>a.video_tag{
+  background: url(/images/topic_video_tag_initial.png);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-position-y: 3px;
+  padding-left: 26px;
+}
+.world_hot>ul>li>a.video_tag:hover{
+  background: url(/images/topic_video_tag_hover.png);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-position-y: 3px;
+  padding-left: 26px;
+}
+.world_hot>ul>li>a.video_tag{
+  box-sizing: border-box;
+}
+/* 世界杯 */
+.wc_hot{
+  /* padding: 30px 25px; */
+  box-sizing: border-box;
+  overflow: hidden;
+}

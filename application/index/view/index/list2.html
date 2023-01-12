@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Copyright" content="コードスクリプトの家" />
+    <meta name="robots" content="index,follow" />
+
+    <title>{$nowSecondCategory.category_name_jp} | コードスクリプトの家</title>
+    <meta name="keywords" content="{$nowSecondCategory.keywords_jp}" />
+    <meta name="description" content="{$nowSecondCategory.description_jp}" />
+
+    <link rel="stylesheet" type="text/css" href="__PC_CSS__/style.css?ver=1.01" >
+    <link rel="stylesheet" type="text/css" href="__PC_CSS__/list.css?ver=1.07" >
+    <script type="text/javascript" src="__PC_JS__/jquery.min.js"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="__PC_IMG__/icon/favicon32.ico" media="screen"/>
+
+</head>
+<body>
+{include file="public/header" /}
+
+<div class="g-box g-jknav">
+    <i class="ico-path"></i>
+    <strong>
+        <a href="/">Home</a>  →
+        <a href="/{$nowSecondCategory.first_category_url}/">{$nowSecondCategory.first_category_name_jp}</a>  →
+        <a href="/{$nowSecondCategory.first_category_url}/list_{$nowSecondCategory.category_id}_1.html">{$nowSecondCategory.category_name_jp}</a>
+    </strong>
+</div>
+
+<div id="wrapper">
+
+    <div id="main" class="clearfix">
+
+        <div class="main-left">
+
+            <div class="articlelistBar">
+                {if condition="$p eq 1"}
+                {notempty name="$nowSecondCategory.thumb"}
+                <div class="introduces" >
+                    <div class="tjcon">
+                        {notempty name="$nowSecondCategory.thumb"}
+                        <div class="thumb">
+                            <img src="{$nowSecondCategory.thumb}" alt="{$nowSecondCategory.category_name_jp}">
+                        </div>
+                        {/notempty}
+                        {$nowSecondCategory.content}
+                    </div>
+                </div>
+                {/notempty}
+                {/if}
+                <div class="artlist clearfix">
+                    <dl>
+                        {foreach name="lists" item="list"}
+                        <dt>
+                            <span>日付:{$list['create_time']|date="Y-m-d",###}</span>
+                            <a href="/article/{$list['article_id']}.html" title="{$list['title']}">{$list['title']}</a>
+                        </dt>
+                        {/foreach}
+                    </dl>
+
+                    <div class="page p">
+                        {$page->show('article_second_list',$first)}
+                    </div>
+
+
+                    <div class="clearfix"></div>
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+        <div class="main-right">
+
+            <div class="bor-default bor-blue">
+                <h4 class="blue">{$nowSecondCategory.category_name_jp}人気ランキング</h4>
+                <ul class="newsList newList-in">
+                    {volist name="secondRankArticles" id="secondRankArticle" key="k"}
+                    <li>
+                        <em class="no1">{$k}</em>
+                        <a href="/article/{$secondRankArticle.article_id}.html" title="{$secondRankArticle.title}">{$secondRankArticle.title}</a>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+
+            <div class="bor-default bor-blue">
+                <h4 class="blue">よく使うオンラインツール</h4>
+                <ul class="new-article">
+                    {volist name="tools" id="tool"}
+                    <li><a href="/tools/{$tool['action']}.html" title="{$tool['title']}">{$tool['title']}</a></li>
+                    {/volist}
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</div>
+
+{include file="public/footer" /}
+
+
+<script type="text/javascript">
+    $(function(){
+        var $left = $('.main-left');
+        var $right = $('.main-right');
+        var l_h = $left.height();
+        var r_h = $right.height();
+        if( l_h >= r_h ){
+            $right.css('height',l_h);
+        }else{
+            $('.articlelistBar').css('height',r_h);
+        }
+    });
+</script>
+</body>
+
+
+
+</html>

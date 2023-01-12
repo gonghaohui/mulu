@@ -1,0 +1,56 @@
+<div class="top-header">
+    <div class="head-top">
+        <div class="clearfix top-box">
+            <span class="f-fl">ウェブマスターとネットワークプログラミングの実践的な知識！</span>
+            <p class="f-fr">
+                <a href="/sitemap.xml">サイトマップ</a>
+                <a href="javascript:void(0);" onclick="about_us();">お問い合わせ</a>
+                <script>
+                    function about_us(){
+                        alert('お問い合わせ:gonghaohui@yahoo.com \n   交換リンク:gonghaohui@yahoo.com');
+                    }
+                </script>
+            </p>
+        </div>
+    </div>
+
+    <div class="logo-full clearfix">
+        <div class="top-box clearfix">
+            <div class="logo-box f-fl">
+                <a class="top-logo f-fl" href="/">
+                    <img src="__PC_IMG__/logo.png" alt="コードスクリプトの家">
+                </a>
+
+            </div>
+            <div class="f-fr clearfix">
+                <div class="top-search f-fl">
+                    <form class="clearfix" method="post" name="formsearch" action="/search.html">
+                        <select name="category" class="top-category-select" id="select">
+                            {volist name="navigation" id="nav"}
+                            <option value="{$nav['category_id']}">{$nav['category_name_jp']}</option>
+                            {/volist}
+                        </select>
+
+                        <input class="search-input" type="text" value="" name="keywords" placeholder="検索したいコンテンツを入力してください">
+                        <input type="submit" class="top-search-btn" name="submit" value="検索">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="top-nav clearfix">
+        <div class="top-box clearfix">
+            <ul>
+                <li><a href="/">HOME</a></li>
+                {volist name="navigation" id="nav"}
+                <li><a href="/{$nav['category_url']}/" title="{$nav['category_name_jp']}">{$nav['category_name_jp']}</a></li>
+                {/volist}
+                <li><a href="/tools/" title="オンラインツール">オンラインツール</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+
+</div>

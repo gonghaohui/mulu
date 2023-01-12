@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>tag标签</title>
+    <meta content="tag标签" name="keywords">
+    <meta content="tag标签" name="description">
+
+    <link rel="stylesheet" href="__TIYU_CSS__/index.css">
+    <link rel="stylesheet" href="__TIYU_CSS__/style.css">
+    <link href="__TIYU_CSS__/public.css" type="text/css" rel="stylesheet">
+    <link href="__TIYU_CSS__/biaoqian.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="__TIYU_JS__/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript"  src="__TIYU_JS__/jquery.min.js"></script>
+    <script type="text/javascript" src="__TIYU_JS__/biebuzhu.js"></script>
+</head>
+<body>
+
+{include file="public/header" /}
+
+<!--biaoqin-->
+<div class="main">
+    <!-- 面包屑导航 -->
+    <ul class="Bread-nav clearfix">
+        <li><a href="/index.html">首页</a></li>
+        <li><i>></i>标签搜索</li>
+    </ul>
+    <div class="wrap search-box" >
+        <div class="tab-index-box">
+            <div class="tab-box">
+                <p class="fl">
+                    <input class="searchCont" type="text" name="name" placeholder="请输入要搜索的专题..." value="">
+                </p>
+                <b class="fl"><input type="submit" name="" class="searchBtn"></b>
+            </div>
+            <div class="index-ulb">
+                <ul class="index-box">
+                </ul>
+            </div>
+        </div>
+
+        <div class="noresul-box">
+            未找到您所搜索的专题。
+        </div>
+        <div class="hot-bqbox">
+            {volist name="hot_tags" id="hot"}
+            <a target="_blank" href="/tag/{$hot.new_tag_id}.html">{$hot.tag_name}</a>
+            {/volist}
+        </div>
+        <p class="mlink"><a>查看全部专题<i></i></a></p>
+    </div>
+
+    <div class="wrap">
+        <div class="all-box " id="allBox" style="display:block;">
+            <ul class="clearfix head-s">
+                <li class="active fl">全部专题</li>
+                <li class="sear-btn"><a href="#" class="clearfix"><b></b><span>搜索</span></a></li>
+            </ul>
+            <div class="biaoqian-box">
+
+
+
+                <div class="all-bq">
+                    {volist name="lists" id="list"}
+                    <a href="/tag/{$list.new_tag_id}.html" target="_blank">{$list.tag_name}</a>
+                    {/volist}
+
+                </div>
+                <nav class="page1">
+                    {$page->show_tiyu($url)}
+                </nav>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 公共底部 -->
+
+<!--底部-->
+{include file="public/footer" /}
+
+<script>
+    $('.searchBtn').click(function(){
+        var tag = $('.searchCont').val();
+        if(tag != ''){
+            $.ajax({
+                url:'/tag/search',
+                method:'post',
+                dataType:'json',
+                data:{
+                    tag:tag
+                },
+                success:function(res){
+                    if(res.code == 1){
+                        $(".noresul-box").css('display','none');
+                        window.location.href = "/tag/"+res.id+".html";
+                    }else{
+                        $(".noresul-box").css('display','block');
+                    }
+                }
+            });
+        }
+    });
+</script>
+
+<script type="text/javascript" src="__TIYU_JS__/default.js" data-cfasync="false"></script>
+<script type="text/javascript" src="__TIYU_JS__/index.js" data-cfasync="false"></script>
+</body></html>

@@ -1,0 +1,315 @@
+$(function(){ 
+	
+	var textGG='';
+	$('.panel-body li').each(function(){
+		var id=$(this).find('.title a').attr('id');
+		var type = $(this).attr('label');
+		//var bf='';
+		//if(type=='lq'){
+		//	bf='<a href="/bifen/lanqiu/" target="_blank">篮球比分直播</a>';
+			
+		//}else{
+		//	bf='<a href="/bifen/" target="_blank">足球比分直播</a>';
+		//}
+		try
+		{
+			//$(this).find('.context').append("<span class='zhu'></span>");
+			//if(zhibo_info && zhibo_info[id])
+			//{
+				////$(this).find('.zb_pd').html(zhibo_info[id][1]+textGG+$(this).find('.zb_pd').html()+"<span class='zhiboTextGG2'></span>");
+				////console.log('xx',zhibo_info[id][1]);
+				//$(this).find('.context').append(zhibo_info[id][1]);
+			//}
+			$(this).find('.context').append('<a href="/play/'+id+'.html" target="_blank">高清直播</a>');			
+		}
+		catch (e)
+		{}
+		//$(this).find('.context').append(bf);
+	});
+	if(typeof(MatchID)!='undefined' && typeof(zhibo_info[MatchID])!='undefined'){
+		$('.xh').append(zhibo_info[MatchID][1]);
+	}else{
+		$('.xh').append('暂无');
+	}
+});
+function setTab(name, cursel, n) {
+	for (i = 1; i <= n; i++) {
+		var menu = document.getElementById(name + i);
+		var con = document.getElementById("con_" + name + "_" + i);
+		menu.className = i == cursel ? "hover" : "";
+		con.style.display = i == cursel ? "block" : "none"
+	}
+}
+var right_fixed = function() {
+		var w = $(window).width();
+		var right = (w - 1200) / 2 - 65;
+		$(".zc_right_fixed").css({
+			"right": right,
+			"display": "block"
+		})
+	}
+	
+$(document).ready(function() {
+	right_fixed();
+	$(window).scroll(function() {
+		if ($(window).scrollTop() >= 100) {
+			$('.zc_right_fixed a.top').fadeIn(300).css({
+				"display": "block",
+				"text-indent": "-9999px"
+			})
+		} else {
+			$('.zc_right_fixed a.top').fadeOut(300)
+		}
+	});
+	$('.zc_right_fixed a.top').click(function() {
+		$('html,body').animate({
+			scrollTop: '0px'
+		}, 800)
+	});
+	$('.zc_right_fixed a.closead').click(function() {
+		$(".pro").remove();
+		var show = $('<a href="javascript:;" class="ggshowbtn">显示广告</a>');
+		var show2 = $('<a class="ggshowbtn"><i class="icon icon-block-ad"></i><span>显示广告</span></a>');
+		$("#top-fav-list>li>a.ggclosebtn").after(show).remove();
+		$("#feet a.ggclosebtn").after(show2).remove()
+	});
+	$(".right_tab_data a").click(function() {
+		var index = $(this).index();
+		$(".right_tab_data").children("a").removeClass("f");
+		$(this).addClass("f");
+		$("#tab_content").children(".show").css("display", "none");
+		$("#tab_content .show:eq(" + index + ")").css("display", '')
+	})
+});
+window.onresize = function() {
+	right_fixed()
+}
+
+ 
+
+$(function() {
+	$(".c_cat a").click(function() {
+		
+		setCookie('c_cat', $(this).text(),300);
+		if ($(this).attr("class") == "current") {
+			return
+		}
+		$(".c_cat a").removeClass("current");
+		if ($(this).text() === '筛选') {
+			$(this).parent().find("a").eq(0).addClass("current")
+		} else {
+			$(this).addClass("current")
+		}
+		var num;
+		if ($(this).text() === '全部' || $(this).text() === '筛选') {
+			dochoose('全部赛事');
+			num = 0
+		} else if ($(this).text() === '民间' || $(this).text() === '游戏') {
+			num = $(this).index()
+		}else if ($(this).text() === '足球') {
+			dochoose('zq');
+			num = $(this).index()
+		}else if ($(this).text() === '篮球') {
+			dochoose('lq');
+			num = $(this).index()
+		} else {
+			dochoose($(this).text());
+			num = $(this).index()
+		}
+	});
+	$(document).on("click", ".c_cat .c_wrap span", function() {
+		if ($(this).html() == 'CCTV5') {
+			$(".c_result").val($(this).html());
+			$(".c_cat .c_wrap").hide();
+			dochooseKey($(this).html());
+			return
+		}
+		var value = typeof($(this).attr("value")) == 'undefined' ? $(this).html() : $(this).attr("value");
+		dochoose(value);
+		$(".c_result").val($(this).html());
+		$(".c_cat .c_wrap").hide()
+	});
+	$(".c_result").focus(function(e) {
+		$(this).val("");
+		$(".c_cat").css("z-index", '9')
+	});
+	$(".c_result").blur(function(e) {
+		var result = $(this).val();
+		if (result == "") {
+			result = "全部赛事";
+			$(this).val("全部赛事-输入关键字")
+		}
+		var flage = false;
+		$('.c_cat span').each(function(index) {
+			if (result == $(this).html()) {
+				dochoose($(this).attr("value"));
+				flage = true
+			}
+		});
+		if (!flage) {
+			dochoose(result);
+			$(".c_cat .c_wrap").hide()
+		}
+	});
+	$(".c_result").keydown(function(e) {
+		if (e.keyCode == 13) {
+			var result = $(this).val();
+			var flage = false;
+			$('.c_cat span').each(function(index) {
+				if (result == $(this).html()) {
+					dochoose($(this).attr("value"));
+					flage = true
+				}
+			});
+			if (!flage) {
+				dochoose(result);
+				$(".c_cat .c_wrap").hide()
+			}
+		}
+	})
+});
+
+function dochoose(value) {
+	if (value.indexOf("完赛") > -1 ) {
+		$(".panel-schedules").hide();
+		$(".history").show();
+		return
+	}else{
+		$(".panel-schedules").show();
+		$(".history").hide();
+	}
+	$('li[label]').each(function(i, e) {
+		var li = $(e);
+		var label = li.attr("label");
+		if (value.indexOf("全部赛事") > -1) {
+			$(this).css("display", "list-item");
+			return
+		}
+		if (value.indexOf("重要") > -1 && $(this).attr("class")=="hot") {
+			$(this).css("display", "list-item");
+			return
+		}
+		var flage = false;
+		var vs = value.split(",");
+		for (i = 0; i < vs.length; i++) {
+			if ($(this).html().indexOf('暂无比赛') >= 0) continue;
+			if (label.indexOf(vs[i].toLowerCase()) < 0) {} else {
+				flage = true
+			}
+		}
+		if (!flage) {
+			$(this).css("display", "none")
+		} else {
+			$(this).css("display", "list-item")
+		}
+	})
+}
+
+
+
+
+var App;(function(App){var Ui;(function(Ui){if(typeof Array.prototype.forEach!='function'){Array.prototype.forEach=function(callback){for(var i=0;i<this.length;i++){callback.apply(this,[this[i],i,this])}}}var Ready=(function(){function Ready(){}Ready.addEvent=function(event){this.events.push(event)};Ready.go=function(){this.events.forEach(function(e){e()})};Ready.events=new Array();return Ready})();Ui.Ready=Ready})(Ui=App.Ui||(App.Ui={}))})(App||(App={}));
+
+var App;
+(function (App) {
+    var Ui;
+    (function (Ui) {
+        //客户端中所有折叠的panel
+        var Panel = (function () {
+            function Panel(element) {
+                this.onClosing = new Array();
+                this.onOpening = new Array();
+                this.target = $(element);
+                this.heading = this.target.find(".panel-heading");
+                this.body = this.heading.next();
+                this.initPanelEvents();
+            }
+            Panel.init = function () {
+                var panels = new Array();
+                $(".panel").each(function (i, e) {
+                    if (!$(e).hasClass("panel-static")) {
+                        panels.push(new Panel(e));
+                    }
+                });
+                Panel.allPanels = panels;
+            };
+            Panel.initPanel = function (element) {
+                element.each(function (i, e) {
+                    if (!$(e).hasClass("panel-static")) {
+                        Panel.allPanels.push(new Panel(e));
+                    }
+                });
+            };
+            Panel.prototype.initPanelEvents = function () {
+                var _this = this;
+                //初始化panel的一些事件
+                var collapser = $("<a>").addClass("panel-title-btn panel-collapser").attr("title", "收起");
+                this.heading.append(collapser);
+                this.onOpening.push(function () {
+                    collapser.removeClass("closed").attr("title", "收起");
+                });
+                this.onClosing.push(function () {
+                    collapser.addClass("closed").attr("title", "展开");
+                    ;
+                });
+                var title = this.heading.find(".panel-title");
+                var triggers = new Array(collapser, title);
+                if (title.has("a").length) {
+                    /*
+                     * 因为title包含有链接 所以 增加一个更多链接
+                     */
+                    var a = title.find("a");
+                    var atxt = a.attr("title");
+                    var morelink = a.clone().addClass("panel-title-btn more txt").attr("title", atxt).attr("target", "_blank").empty().append($("<span>").addClass("txt").text(atxt));
+                    collapser.after(morelink);
+                    //删除原来title中的a
+                    title.text(a.text());
+                    a.remove();
+                }
+                // collapser.switchClass
+                triggers.forEach(function (s) {
+                    s.on("click", function () {
+                        _this.switchStatus();
+                    });
+                });
+            };
+            Panel.prototype.closeBody = function () {
+                var _this = this;
+                if (this.onClosing && this.onClosing.length > 0) {
+                    this.onClosing.forEach(function (s) {
+                        s();
+                    });
+                }
+                this.body.slideUp(150, function () {
+                    _this.target.addClass("panel-collapsed");
+                });
+            };
+            Panel.prototype.openBody = function () {
+                var _this = this;
+                if (this.onOpening && this.onOpening.length > 0) {
+                    this.onOpening.forEach(function (s) {
+                        s();
+                    });
+                }
+                this.body.slideDown(150, function () {
+                    _this.target.removeClass("panel-collapsed");
+                });
+            };
+            Panel.prototype.switchStatus = function () {
+                if (this.body.is(":visible")) {
+                    this.closeBody();
+                }
+                else {
+                    this.openBody();
+                }
+            };
+            return Panel;
+        })();
+        Ui.Panel = Panel;
+        Ui.Ready.addEvent(function () {
+            Panel.init();
+        });
+    })(Ui = App.Ui || (App.Ui = {}));
+})(App || (App = {}));
+
+App.Ui.Ready.go(); 

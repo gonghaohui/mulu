@@ -1,0 +1,206 @@
+{include file="public/header" /}
+<body>
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <div class="layui-input-inline" style="width: 100px;">
+                        <input type="text" id="id" class="layui-input" name="id" placeholder="直播ID"/>
+                    </div>
+                </div>
+                <!--<div class="layui-inline">-->
+                <!--<div class="layui-input-inline">-->
+                <!--<input type="text" id="title" class="layui-input" name="title" placeholder="标题"/>-->
+                <!--</div>-->
+                <!--</div>-->
+
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <select name="category" id="category" class="layui-input">
+                            <option value="">直播分类</option>
+                            {foreach name="$AllCategories" item="vo"}
+                            <option value="{$vo.category_id}">{$vo.placeholder}{$vo.category_name}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <div class="layui-input-inline" style="width: 100px;">
+                        <select name="status" id="status" class="layui-input">
+                            <option value="" selected="selected">状态</option>
+                            <option value="0">不显示</option>
+                            <option value="1">显示</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!--<div class="layui-inline">-->
+                <!--<div class="layui-input-inline" style="width: 100px;">-->
+                <!--<select name="content_img" id="content_img" class="layui-input">-->
+                <!--<option value="" selected="selected">是否有图片</option>-->
+                <!--<option value="0">无</option>-->
+                <!--<option value="1">有</option>-->
+                <!--</select>-->
+                <!--</div>-->
+                <!--</div>-->
+
+                <!--<div class="layui-inline">-->
+                    <!--<div class="layui-input-inline" style="width: 100px;">-->
+                        <!--<select name="hot" id="hot" class="layui-input">-->
+                            <!--<option value="" selected="selected">推荐</option>-->
+                            <!--<option value="0">无</option>-->
+                            <!--<option value="1">有</option>-->
+                        <!--</select>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+
+
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <button class="layui-btn" lay-submit="" lay-filter="LAY-search">立即搜索</button>
+                        <button  class="layui-btn layui-btn-normal" id="empty"  lay-submit="" lay-filter="LAY-search">重置</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+
+                <span class="layui-btn-dropdown" style="display:inline-block;">
+                    <button class="layui-btn layui-btn-danger" data-toggle="dropdown"><i class="fa fa-wrench"></i> 批量操作 <i class="fa fa-caret-down"></i></button>
+                    <ul class="layui-dropdown-menu layui-anim layui-anim-upbit">
+                        <li><a href="javascript:;" class="layuiBtn" data-type="getCheckData"><i class="fa fa-trash-o"></i> 批量删除 </a></li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+
+        <div class="layui-card-body">
+            <table id="LAY-table-manage" lay-filter="LAY-table-manage"></table>
+            <!--类型模板-->
+
+            <!--状态模板-->
+            <script type="text/html" id="staBar">
+                <input type="checkbox" value="{{d.id}}" name="status"  lay-skin="switch"  lay-text="ON|OFF" lay-filter="OnOff"{{ d.status == 1 ? 'checked' : '' }}  >
+            </script>
+            <script type="text/html" id="staBar_hot">
+                <input type="checkbox" value="{{d.id}}" name="hot" lay-skin="switch"  lay-text="ON|OFF" lay-filter="OnOff"{{ d.hot == 1 ? 'checked' : '' }}  >
+            </script>
+            <!--操作模板-->
+            <script type="text/html" id="opeBar">
+                <a class="layui-btn layui-btn-xs" title="编辑" onclick="wk.href('{:url('edit_zhibo')}?id={{d.id}}')"><i class="fa fa-pencil"></i></a>
+                <a class="layui-btn layui-btn-info layui-btn-xs" title="编辑标签" onclick="wk.href('{:url('edit_zhibo_tags')}?id={{d.id}}')"><i class="fa fa-tag"></i></a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" title="删除" onclick="del_zhibo(this,{{d.id}})"><i class="fa fa-trash-o"></i></a>
+
+            </script>
+        </div>
+    </div>
+</div>
+{include file="public/footer" /}
+<script>
+    layui.use(['index', 'table'], function () {
+        var $ = layui.$
+            , form = layui.form
+            , table = layui.table
+
+        //固定块
+        // util.fixbar({
+        //     css: {right: 20, bottom: 50}
+        //     ,bgcolor: '#393D49'
+        // });
+        table.render({
+            elem: '#LAY-table-manage'
+            , url: '{:url("zhibo/zhibo_list")}'
+            ,response: {
+                statusCode: 220 //成功的状态码，默认：0
+            }
+            , page: true
+            , even: false //开启隔行背景
+            , size: 'lg' //sm小尺寸的表格 lg大尺寸
+            // ,width:100
+            , autoSort: false
+            , cellMinWidth: 150
+            , limits: [10, 20, 30, 40, 50]
+            , limit: "50"
+            // , height: "full-220"
+            , loading: true
+            , id: 'LAY-table'
+            , cols: [[
+                {type: 'checkbox', fixed: 'left'},
+                {field:'id', width: 100, title: 'ID', align: 'center'},
+                {field: 'category_name', width: 150 ,title: '分类', align: 'left'},
+                {field: 'zhudui', width: '' ,title: '主队', align: 'center'},
+                {field: 'kedui', width: '' ,title: '客队', align: 'center'},
+                {field: 'bifen', width: 100 ,title: '比分', align: 'center'},
+                {field: 'lunci', width: 100 ,title: '轮次', align: 'center'},
+
+                {field: 'create_time', width: 180, title: '开始时间', align: 'center',templet:"<div>{{layui.util.toDateString(d.create_time,'yyyy-MM-dd HH:mm:ss')}}</div>"},
+                {field: 'status',fixed: 'right', width: 100, title: '状态', align: 'center', templet: '#staBar'},
+                // {field: 'hot',fixed: 'right', width: 100, title: '推荐', align: 'center', templet: '#staBar_hot'},
+                // {field: 'status', width: 80 ,title: '状态', align: 'center',templet:function (d) {
+                //         if(d.status == 0){
+                //             return '<em style="color: red;font-style: normal;">不显示</em>';
+                //         }else{
+                //             return '<em style="color: #009688;font-style: normal;">显示</em>';
+                //         }
+                //
+                //     }},
+                // {field: 'create_time', width: '', title: '采集时间', align: 'center',templet:"<div>{{layui.util.toDateString(d.create_time,'yyyy年MM月dd日')}}</div>"},
+                {fixed: 'right', width: 130, title: '操作', align: 'center', toolbar: '#opeBar'}
+            ]]
+            ,done: function (res, curr, count) {
+                $('th').children().prop('align','center');
+            }
+        });
+
+        //监听状态开关操作
+        form.on('switch(OnOff)', function (obj) {
+            var num = '';
+            obj.elem.checked == true? num = 1: num = 0;
+            //菜单状态
+            // alert(this.value);
+            wk.status(this.value,num, '{:url("zhibos_state")}',obj);
+        });
+
+        //事件
+        var active = {
+            getCheckData: function(){
+                //批量删除
+                wk.batchDel(getIds(),"{:url('batchDelZhibos')}");
+            }
+        };
+        $('.layuiBtn').on('click', function () {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+        var getIds = function () {
+            var ids = [];
+            var checkStatus = table.checkStatus('LAY-table')
+                ,data = checkStatus.data;
+            $.each(data,function(index,item){
+                ids.push(item['id'])
+            });
+            return ids;
+        }
+    });
+
+
+    /**
+     * [del_category 删除菜单]
+     */
+    function del_zhibo(obj,id){
+        layer.confirm('确认删除吗?', {icon: 7, title:'警告'}, function(index){
+            //do something
+            $.getJSON('{:url("del_zhibo_data")}', {'id' : id}, function(res){
+                if(res.code == 200){
+                    wk.success(res.msg,"layui.table.reload('LAY-table');")
+                }else if(res.code == 100){
+                    wk.error(res.msg,"layui.table.reload('LAY-table');");
+                }
+            });
+            layer.close(index);
+        })
+    }
+</script>
+</body>
+</html>

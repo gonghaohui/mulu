@@ -1,0 +1,613 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{$site.web_site_title}</title>
+    <meta name="keywords" content="{$site.web_site_keyword}" />
+    <meta name="description" content="{$site.web_site_description}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <link rel="stylesheet" href="__TIYU_CSS__/plugs.css" />
+    <link rel="stylesheet" href="__TIYU_CSS__/common.css">
+    <link rel="stylesheet" href="__TIYU_CSS__/index.css">
+    <link rel="stylesheet" href="__TIYU_CSS__/style.css">
+    <link rel="stylesheet" href="__TIYU_CSS__/prospect_report.css">
+    <link rel="stylesheet" href="__TIYU_CSS__/hot_news.css" />
+    <script type="text/javascript"  src="__TIYU_JS__/jquery.min.js"></script>
+
+    <script type="text/javascript" src="__TIYU_JS__/swiper/swiper-4.5.0.min.js"></script>
+    <script type="text/javascript" src="__TIYU_JS__/common.js"></script>
+    <script type="text/javascript" src="__TIYU_JS__/common1.js"></script>
+    <script type="text/javascript" src="__TIYU_JS__/biebuzhu.js"></script>
+</head>
+<body>
+<div>
+    <!-- header/S -->
+    {include file="public/header" /}
+    <!-- nav/S -->
+    <!--手机导航-->
+
+</div>
+<!-- main -->
+<div class="main">
+    <!-- hot infor -->
+    <div class="focus-con clearfix">
+        <div class="pull-left focus-banner">
+            <!-- banner -->
+            <div id="myCarousel" class="carousel slide banner" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="0"></li>
+                    <li data-target="#myCarousel" data-slide-to="0"></li>
+                    <li data-target="#myCarousel" data-slide-to="0"></li>
+                </ol>
+                <div class="carousel-inner">
+                    {volist name="loops" id="loop" key="k"}
+                    <div class='item {if condition="$k eq 1"}active{/if}'> <a href="/{$loop['url']}/{$loop['article_id']}.html" title="{$loop['title']}" target="_blank"><img src="{$loop['img']}" alt="{$loop['title']}" width="370" height="230">
+                        <div class="fbanner-title">{$loop['title']}</div>
+                    </a> </div>
+                    {/volist}
+                </div>
+                <a class="carousel-control left" href="javascript:;" data-slide="prev"><span></span></a> <a class="carousel-control right" href="javascript:;" data-slide="next"><span></span></a> </div>
+            <!-- video -->
+            <div class="video-con">
+                <div class="title clearfix">
+                    <h2 class="pull-left rb-title">精彩视频</h2>
+                    <ul class="pull-right titleNav clearfix">
+                    </ul>
+                </div>
+                <ul class="video-list-ul">
+                    {volist name="head_video" id="video" offset="0" length="6"}
+                    <li class="pull-left video-list">
+                        <a href="/{$top_category[$video['top_id']]}/{$video['id']}.html" target="_blank" title="{$video['title']}">
+                            <img src="{$video['img']}" width="118" height="85" alt="{$video['title']}">
+                        <p class="text-hidden">{$video['title']}</p>
+                        <i class="coverMask"></i> <i class="playBtn"></i> </a>
+                    </li>
+                    {/volist}
+                </ul>
+                <ul class="video-item-ul">
+                    {volist name="head_video" id="video" offset="6" length="3"}
+                    <li class="video-item"> <a href="/{$top_category[$video['top_id']]}/{$video['id']}.html" target="_blank" title="{$video['title']}"><span class="video-icon"></span>{$video['title']}</a> </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+        <div class="pull-left focus-news">
+            {volist name="head_hot_new" id="new" offset="0" length="1"}
+            <h2><a href="/{$top_category[$new['top_id']]}/{$new['article_id']}.html" title="{$new['title']}" target="_blank"><span class="red-tip text-uppercase">头条</span>{$new['title']}</a></h2>
+            {/volist}
+            <ul class="red-dl">
+                {volist name="head_hot_new" id="new" offset="1" length="3"}
+                <li><a href="/{$top_category[$new['top_id']]}/{$new['article_id']}.html" title="{$new['title']}" target="_blank">{$new['title']}</a></li>
+                {/volist}
+            </ul>
+
+            {volist name="head_international_new" id="new" offset="0" length="1"}
+            <h2><a href="/{$top_category[$new['top_id']]}/{$new['article_id']}.html" title="{$new['title']}" target="_blank"><span class="red-tip text-uppercase">国际</span>{$new['title']}</a></h2>
+            {/volist}
+            <ul class="red-dl">
+                {volist name="head_international_new" id="new" offset="1" length="3"}
+                <li><a href="/{$top_category[$new['top_id']]}/{$new['article_id']}.html" title="{$new['title']}" target="_blank">{$new['title']}</a></li>
+                {/volist}
+            </ul>
+
+            {volist name="head_domestic_new" id="new" offset="0" length="1"}
+            <h2><a href="/{$top_category[$new['top_id']]}/{$new['article_id']}.html" title="{$new['title']}" target="_blank"><span class="red-tip text-uppercase">国内</span>{$new['title']}</a></h2>
+            {/volist}
+            <ul class="red-dl">
+                {volist name="head_domestic_new" id="new" offset="1" length="3"}
+                <li><a href="/{$top_category[$new['top_id']]}/{$new['article_id']}.html" title="{$new['title']}" target="_blank">{$new['title']}</a></li>
+                {/volist}
+            </ul>
+
+            {volist name="head_basketball_new" id="new" offset="0" length="1"}
+            <h2><a href="/{$top_category[$new['top_id']]}/{$new['article_id']}.html" title="{$new['title']}" target="_blank"><span class="red-tip text-uppercase">篮球</span>{$new['title']}</a></h2>
+            {/volist}
+            <ul class="red-dl">
+                {volist name="head_domestic_new" id="new" offset="1" length="3"}
+                <li><a href="/{$top_category[$new['top_id']]}/{$new['article_id']}.html" title="{$new['title']}" target="_blank">{$new['title']}</a></li>
+                {/volist}
+            </ul>
+        </div>
+        <!-- focus-live -->
+        <div class="pull-right focus-live live-game-div">
+            <div class="pull-left typeArtLeft">
+                <ul class="recUl noDashed">
+                    {volist name="loops_right" id="right"}
+                    <li class="clearfix"> <a href="1.html" target="_blank" title="{$right['title']}" class="pull-left recImg">
+                        <img src="{$right['img']}" width="100%" alt="{$right['title']}"></a>
+                        <div class="pull-left recArt">
+                            <h3 class="text-hidden"><a href="/{$right['url']}/{$right['article_id']}.html" target="_blank" title="{$right['title']}">{$right['title']}</a></h3>
+                            <p>{$right['content']}<a href="/{$right['url']}/{$right['article_id']}.html" target="_blank" title="{$right['title']}">[详情]</a></p>
+                        </div>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+        <!-- focus-live -->
+    </div>
+    <!-- 新增节目表 -->
+    <div class="part_one">
+        <div class="p_left">
+            {volist name="zhibo_show_lists" id="zhibo"}
+            <div class="box">
+                <!--{$zhibo['time']}-->
+                <h2 onclick="display('{$zhibo[\'time\']}',0);" class="cp"><b class="h">今天</b>2{$zhibo['time']}  节目表
+                    <span id="list_{$zhibo['time']}_span"></span>
+                    <img id="{$zhibo['time']}_img" src="__TIYU_IMG__/show_no.gif" title="收起/展开" alt="收起/展开" />
+                </h2>
+                <ul id="list_{$zhibo['time']}">
+                    {volist name="zhibo.list" id="ll"}
+                    <li>
+                        <div class='tit '><em>{$ll['create_time']|date="m:d",###}</em><strong >
+                            <a href="/{$ll['pinyin']}/index.html" target="_blank" >{$ll['category_name']|mb_substr=0,2}</a></strong> <a>{$ll['zhudui']}</a><a>vs</a><a>{$ll['kedui']}</a>
+                        </div>
+                        <div class="con"><a href="#" target="_blank">直播信号</a></div>
+                    </li>
+                    {/volist}
+                </ul>
+                <div class="c"></div>
+            </div>
+            {/volist}
+
+        </div>
+        <div class="p_right">
+            <div class="right_slide">
+                <h3>
+                    <div class="tpleft"><strong>篮球录像</strong>
+                        {volist name="basketball_team_tags" id="team_tag"}
+                        <a href="/tag/{$team_tag['tag_id']}.html">{$team_tag['category_name']}</a>
+                        {/volist}
+                    </div>
+                    <div class="tpright"><a href="/{$top_category[6]}/index.html" target="_blank" class="more1">+更多</a></div></h3>
+
+                <div class="slideVideo">
+                    <div class="bd">
+                        <ul><dl class="highlight ui-list ui-min-list">
+                            {volist name="basketball_videos" id="video"}
+                            <dd>{$video['create_time']|date="m月d日",###} <a href="/{$top_category[$video['top_id']]}/{$video['id']}.html"  target='_blank' title="{$video['title']}"><font color=#000000>{$video['title']}</font></a></dd>
+                            {/volist}
+                        </dl>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="right_slide">
+                <h3>
+                    <div class="tpleft"><strong><a href="">足球录像</a></strong>
+                        {volist name="football_team_category" id="fc"}
+                        <a href="/{$fc['pinyin']}/index.html">{$fc['category_name']}</a>
+                        {/volist}
+
+                    </div>
+                    <div class="tpright"><a href="/{$top_category[5]}/index.html" target="_blank" class="more1">+更多</a></div></h3>
+                <div class="slideVideo">
+                    <div class="bd">
+                        <ul>
+                            <dl class="highlight ui-list ui-min-list">
+                                {volist name="football_videos" id="video"}
+                                <dd>{$video['create_time']|date="m月d日",###} <a href="/{$top_category[$video['top_id']]}/{$video['id']}.html"  target='_blank' title="{$video['title']}"><font color=#000000>{$video['title']}</font></a></dd>
+                                {/volist}
+                            </dl>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 专题栏目 -->
+    <div class="clearfix"></div>
+    <div class="pull-left topicLeft">
+        <!-- FootballTopic -->
+        <!-- fbTopic -->
+
+        <div class="football ballTopic">
+            <div class="pull-left leftTitle"><span>足球专栏</span></div>
+            <ul class="pull-right rightNav clearfix">
+                {volist name="football_column" id="football"}
+                <li><a href="/{$football['pinyin']}/index.html" target="_blank" title="{$football['category_name']}">{$football['category_name']}</a></li>
+                {/volist}
+            </ul>
+        </div>
+        <!-- fbTopic -->
+        <div class="typeNav">
+            <div class="pull-left typeTitle">
+                <h2><span class="big">国际足球</span>  </h2>
+            </div>
+        </div>
+        <div class="clearfix h-15"></div>
+        <div class="pull-left typeArtLeft1">
+            <nav class="typeArtNav clearfix"> <span class="pull-left">英超足球推荐</span>
+                <ul class="pull-left clearfix">
+                    {volist name="yingchao_support_teams" id="team"}
+                    <li><a target="_blank" href="/tag/{$team['tag_id']}.html" title="{$team['category_name']}">{$team['category_name']}</a></li>
+                    {/volist}
+                </ul>
+            </nav>
+            <ul class="typeArtUl ">
+                {volist name="yingchao_news" id="new"}
+                <li><a href="/{$new['pinyin']}/{$new['article_id']}.html" target="_blank" title="{$new['title']}" class="text-hidden"><i></i>{$new['title']}</a></li>
+                {/volist}
+            </ul>
+            <nav class="typeArtNav clearfix"> <span class="pull-left">西甲足球推荐</span>
+                <ul class="pull-left clearfix">
+                    {volist name="xijia_support_teams" id="team"}
+                    <li><a target="_blank" href="/tag/{$team['tag_id']}.html" title="{$team['category_name']}">{$team['category_name']}</a></li>
+                    {/volist}
+                </ul>
+            </nav>
+            <ul class="typeArtUl ">
+                {volist name="xijia_news" id="new"}
+                <li><a href="/{$new['pinyin']}/{$new['article_id']}.html" target="_blank" title="{$new['title']}" class="text-hidden"><i></i>{$new['title']}</a></li>
+                {/volist}
+            </ul>
+            <nav class="typeArtNav clearfix"> <span class="pull-left">德甲足球推荐</span>
+                <ul class="pull-left clearfix">
+                    {volist name="dejia_support_teams" id="team"}
+                    <li><a target="_blank" href="/tag/{$team['tag_id']}.html" title="{$team['category_name']}">{$team['category_name']}</a></li>
+                    {/volist}
+                </ul>
+            </nav>
+            <ul class="typeArtUl noDashed">
+                {volist name="dejia_news" id="new"}
+                <li><a href="/{$new['pinyin']}/{$new['article_id']}.html" target="_blank" title="{$new['title']}" class="text-hidden"><i></i>{$new['title']}</a></li>
+                {/volist}
+            </ul>
+        </div>
+        <div class="pull-left typeArtRight">
+            <ul class="recUl">
+                {volist name="international_football_news" id="new"}
+                <li class="clearfix"> <a href="/{$new['url']}/{$new['article_id']}.html" target="_blank" title="{$new['title']}" class="pull-left recImg"><img src="{$new['img']}" width="100%" alt="{$new['title']}"></a>
+                    <div class="pull-left recArt">
+                        <h3 class="text-hidden"><a href="/{$new['url']}/{$new['article_id']}.html" target="_blank" title="{$new['title']}">{$new['title']}</a></h3>
+                        <p>{$new['content']}<a href="/{$new['url']}/{$new['article_id']}.html" target="_blank" title="{$new['title']}">[详情]</a></p>
+                    </div>
+                </li>
+                {/volist}
+            </ul>
+            <div class="clearfix titAndm"> <span class="pull-left">每日视频集锦</span> <a href="/{$top_category['7']}/index.html" target="_blank" class="f12 text-999 pull-right moreTit">更多<em class="rightIcon"><i class="glyphicon glyphicon-menu-right"></i></em></a> </div>
+            <ul class="clearfix videoBoxUl">
+                {volist name="perday_highlights" id="highlight"}
+                <li class="pull-left">
+                    <a href="/{$highlight['pinyin']}/{$highlight['id']}.html" target="_blank" title="{$highlight['title']}"  class="videoImg cmHover"><img src="{$highlight['img']}" width="100%" alt="{$highlight['title']}">
+                        <i class="coverMask"></i>
+                        <i class="playBtn"></i>
+                    </a>
+                    <a href="37.html" target="_blank" title="{$highlight['title']}" class="row-2">{$highlight['title']}</a> </li>
+                {/volist}
+            </ul>
+        </div>
+        <div class="pull-right typeArtLeft1">
+            <nav class="typeArtNav clearfix"> <span class="pull-left">意甲足球推荐</span>
+                <ul class="pull-left clearfix">
+                    {volist name="yijia_support_teams" id="team"}
+                    <li><a target="_blank" href="/tag/{$team['tag_id']}.html" title="{$team['category_name']}">{$team['category_name']}</a></li>
+                    {/volist}
+                </ul>
+            </nav>
+            <ul class="typeArtUl ">
+                {volist name="yijia_news" id="new"}
+                <li><a href="/{$new['pinyin']}/{$new['article_id']}.html" target="_blank" title="{$new['title']}" class="text-hidden"><i></i>{$new['title']}</a></li>
+                {/volist}
+            </ul>
+            <nav class="typeArtNav clearfix"> <span class="pull-left">法甲足球推荐</span>
+                <ul class="pull-left clearfix">
+                    {volist name="fajia_support_teams" id="team"}
+                    <li><a target="_blank" href="/tag/{$team['tag_id']}.html" title="{$team['category_name']}">{$team['category_name']}</a></li>
+                    {/volist}
+                </ul>
+            </nav>
+            <ul class="typeArtUl">
+                {volist name="fajia_news" id="new"}
+                <li><a href="/{$new['pinyin']}/{$new['article_id']}.html" target="_blank" title="{$new['title']}" class="text-hidden"><i></i>{$new['title']}</a></li>
+                {/volist}
+            </ul>
+            <div class="clearfix titAndm"> <span class="pull-left">足球精彩图片</span> <a href="/zqtp/" target="_blank" class="f12 text-999 pull-right moreTit">更多<em class="rightIcon"><i class="glyphicon glyphicon-menu-right"></i></em></a> </div>
+            <ul class="clearfix videoBoxUl">
+                <li class="pull-left"> <a href="/photo/30.html" target="_blank" title="英雄联盟KDA女团"  class="videoImg cmHover"><img src="201912161124591402/1_240.jpg" width="100%" alt="英雄联盟KDA女团"></a> <a href="/photo/30.html" target="_blank" title="英雄联盟KDA女团" class="row-2">英雄联盟KDA女团</a> </li>
+                <li class="pull-left"> <a href="/photo/29.html" target="_blank" title="欧冠小组赛 科斯塔绝杀 尤文2-1莫斯科火车头"  class="videoImg cmHover"><img src="201912161124201130/1_240.jpg" width="100%" alt="欧冠小组赛 科斯塔绝杀 尤文2-1莫斯科火车头"></a> <a href="/photo/29.html" target="_blank" title="欧冠小组赛 科斯塔绝杀 尤文2-1莫斯科火车头" class="row-2">欧冠小组赛 科斯塔绝杀 尤文2-1莫斯科火车头</a> </li>
+                <li class="pull-left"> <a href="/photo/28.html" target="_blank" title="王者荣耀高清英雄原画"  class="videoImg cmHover"><img src="201912161124451356/1_240.jpg" width="100%" alt="王者荣耀高清英雄原画"></a> <a href="/photo/28.html" target="_blank" title="王者荣耀高清英雄原画" class="row-2">王者荣耀高清英雄原画</a> </li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+        <!-- fbTopic -->
+        <div class="typeNav">
+            <div class="pull-left typeTitle">
+
+                <h2><span class="big">国内足球</span>
+                    {volist name="domestic_football_teams" id="team"}
+                    <span class="gry">{$team['category_name']}</span>
+                    {/volist}
+                </h2>
+            </div>
+        </div>
+        <!-- typeArtCon -->
+        <div class="clearfix h-15"></div>
+        <div class="clearfix h-15"></div>
+        <div class="pull-left typeArtLeft1">
+            <ul class="recUl noDashed">
+
+                {volist name="domestic_football_img_news" id="new"}
+                <li class="clearfix">
+                    <a href="/{$new['url']}/{$new['article_id']}.html" target="_blank" title="{$new['title']}" class="pull-left recImg">
+                        <img src="{$new['img']}" width="100%" alt="{$new['title']}">
+                    </a>
+                    <div class="pull-left recArt">
+                        <h3 class="text-hidden"><a href="/{$new['url']}/{$new['article_id']}.html" target="_blank" title="{$new['title']}">{$new['title']}</a></h3>
+                        <p>{$new['content']}<a href="/{$new['url']}/{$new['article_id']}.html" target="_blank" title="{$new['title']}">[详情]</a></p>
+                    </div>
+                </li>
+                {/volist}
+
+            </ul>
+        </div>
+        <div class="pull-left typeArtRight">
+            <ul class="typeArtUl noDashed noPadTop">
+                {volist name="domestic_football_news" id="new" offset="0" length="7"}
+                <li><a href="/{$new['pinyin']}/{$new['article_id']}.html" target="_blank" title="{$new['title']}" class="text-hidden"><i></i>中国足球  |  {$new['title']}</a></li>
+                {/volist}
+            </ul>
+
+
+            <div class="clearfix titAndm"> <span class="pull-left">每日视频集锦</span> <a href="/{$zhongchao_highlight_link['pinyin']}/index.php" target="_blank" class="f12 text-999 pull-right moreTit">更多<em class="rightIcon"><i class="glyphicon glyphicon-menu-right"></i></em></a> </div>
+            <ul class="clearfix videoBoxUl noPadBot noMarBot">
+                {volist name="domestic_perday_highlights" id="highlight"}
+                <li class="pull-left">
+                    <a href="/{$highlight['pinyin']}/{$highlight['id']}.html" target="_blank" title="{$highlight['title']}"  class="videoImg cmHover">
+                        <img src="{$highlight['img']}" width="100%"  alt="{$highlight['title']}">
+                        <i class="coverMask"></i><i class="playBtn"></i>
+                    </a>
+                    <a href="/{$highlight['pinyin']}/{$highlight['id']}.html" target="_blank" title="{$highlight['title']}" class="row-2">{$highlight['title']}</a> </li>
+                {/volist}
+            </ul>
+        </div>
+        <div class="pull-right typeArtLeft1 nbaType">
+            <div class="typeArtBox">
+                <ul class="typeArtUl noDashed" style=" padding:0;">
+                    {volist name="domestic_football_news" id="new" offset="7" length="11"}
+                    <li><a href="/{$highlight['pinyin']}/{$highlight['id']}.html" target="_blank" title="{$highlight['title']}" class="text-hidden"><i></i>{$highlight['title']}</a></li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="h-15 b-t"></div>
+        <div class="basketball ballTopic">
+            <div class="pull-left leftTitle"><span>篮球专栏</span></div>
+            <ul class="pull-right rightNav clearfix">
+                {volist name="basketball_column" id="column"}
+                <li><a href="/{$column['pinyin']}/index.html" target="_blank" title="{$column['category_name']}">{$column['category_name']}</a></li>
+                {/volist}
+            </ul>
+        </div>
+        <div class="typeNav one">
+            <div class="pull-left typeTitle">
+                <h2><span class="big">NBA</span>  </h2>
+            </div>
+        </div>
+        <div class="pull-left typeArtLeft1 one">
+            {volist name="basketball_teams" id="team" offset="0" length="3"}
+            <nav class="typeArtNav clearfix"> <span class="pull-left">{$team['category_name']}</span>
+                <ul class="pull-left clearfix">
+                    {volist name="team.players" id="player" offset="1" length="3"}
+                    <li><a target="_blank" href="/tag/{$player['new_tag_id']}.html" title="{$player['tag_name']}">{$player['tag_name']}</a></li>
+                    {/volist}
+                </ul>
+            </nav>
+            <ul class="typeArtUl ">
+                {volist name="team.news" id="new"}
+                <li><a href="/{$team['url']}/{$new['article_id']}.html" target="_blank" title="{$new['title']}" class="text-hidden"><i></i>{$new['title']}</a></li>
+                {/volist}
+            </ul>
+            {/volist}
+        </div>
+        <div class="pull-left typeArtLeft1 one">
+            {volist name="basketball_teams" id="team" offset="3" length="3"}
+            <nav class="typeArtNav clearfix"> <span class="pull-left">{$team['category_name']}</span>
+                <ul class="pull-left clearfix">
+                    {volist name="team.players" id="player" offset="1" length="3"}
+                    <li><a target="_blank" href="/tag/{$player['new_tag_id']}.html" title="{$player['tag_name']}">{$player['tag_name']}</a></li>
+                    {/volist}
+                </ul>
+            </nav>
+            <ul class="typeArtUl ">
+                {volist name="team.news" id="new"}
+                <li><a href="/{$team['url']}/{$new['article_id']}.html" target="_blank" title="{$new['title']}" class="text-hidden"><i></i>{$new['title']}</a></li>
+                {/volist}
+            </ul>
+            {/volist}
+        </div>
+        <div class="pull-left typeArtLeft1 one">
+            {volist name="basketball_teams" id="team" offset="6" length="3"}
+            <nav class="typeArtNav clearfix"> <span class="pull-left">{$team['category_name']}</span>
+                <ul class="pull-left clearfix">
+                    {volist name="team.players" id="player" offset="1" length="3"}
+                    <li><a target="_blank" href="/tag/{$player['new_tag_id']}.html" title="{$player['tag_name']}">{$player['tag_name']}</a></li>
+                    {/volist}
+                </ul>
+            </nav>
+            <ul class="typeArtUl ">
+                {volist name="team.news" id="new"}
+                <li><a href="/{$team['url']}/{$new['article_id']}.html" target="_blank" title="{$new['title']}" class="text-hidden"><i></i>{$new['title']}</a></li>
+                {/volist}
+            </ul>
+            {/volist}
+        </div>
+        <div class="clearfix"></div>
+        <div class="h-15 b-t"></div>
+        <div class="typeNav one">
+            <div class="pull-left typeTitle">
+                <h2><span class="big">CBA</span>
+                    {volist name="cba_support_teams" id="team"}
+                    <span class="gry">{$team['category_name']}</span>
+                    {/volist}
+                </h2>
+            </div>
+        </div>
+        <div class="clearfix h-15"></div>
+        <div class="pull-left typeArtLeft1 cbaType">
+            <ul class="recUl noDashed">
+                {volist name="cba_left_news" id="new"}
+                <li class="clearfix">
+                    <a href="/{$new['url']}/{$new['article_id']}.html" target="_blank" title="{$new['title']}" class="pull-left recImg">
+                        <img src="{$new['img']}" width="100%"  alt="{$new['title']}">
+                    </a>
+                    <div class="pull-left recArt">
+                        <h3 class="text-hidden"><a href="/{$new['url']}/{$new['article_id']}.html" target="_blank" title="{$new['title']}">{$new['title']}</a></h3>
+                        <p>{$new['content']}<a href="/{$new['url']}/{$new['article_id']}.html" target="_blank" title="{$new['title']}">[详情]</a></p>
+                    </div>
+                </li>
+                {/volist}
+            </ul>
+        </div>
+        <div class="pull-left typeArtRight cbaType">
+            <ul class="typeArtUl noDashed noPadTop">
+                {volist name="cba_news" id="new" offset="0" length="7"}
+                <li><a href="/{$new['pinyin']}/{$new['article_id']}.html" target="_blank" title="{$new['title']}" class="text-hidden"><i></i>中国蓝球  |  {$new['title']}</a></li>
+                {/volist}
+            </ul>
+
+            <div class="clearfix titAndm"> <span class="pull-left">视频中心</span>
+                <a href="/{$cba_video_link['pinyin']}/index.html" target="_blank" class="f12 text-999 pull-right moreTit">更多<em class="rightIcon"><i class="glyphicon glyphicon-menu-right"></i></em></a>
+            </div>
+            <ul class="clearfix videoBoxUl noPadBot noMarBot">
+                {volist name="cba_videos" id="video"}
+                <li class="pull-left">
+                    <a href="/{$video['pinyin']}/{$video['id']}.html" target="_blank" title="{$video['title']}"  class="videoImg cmHover">
+                        <img src="{$video['img']}" width="100%"  alt="{$video['title']}">
+                        <i class="coverMask"></i><i class="playBtn"></i>
+                    </a>
+                    <a href="29.html" target="_blank" title="{$video['title']}" class="row-2">{$video['title']}</a> </li>
+                {/volist}
+            </ul>
+        </div>
+        <div class="pull-right typeArtLeft1 nbaType">
+            <div class="typeArtBox">
+                <ul class="typeArtUl noDashed" style=" padding:0;">
+                    {volist name="cba_news" id="new" offset="7" length="11"}
+                    <li>
+                        <a href="/{$video['pinyin']}/{$video['id']}.html" target="_blank" title="{$new['title']}" class="text-hidden">
+                            <i></i>{$new['title']}
+                        </a>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <!--新增-->
+        <div class="basketball ballTopic one">
+            <div class="pull-left leftTitle"><span>体育软件
+</span></div>
+            <ul class="pull-right rightNav clearfix">
+                <li><a href="/nba/" target="_blank" title="NBA">NBA</a></li>
+                <li><a href="" target="_blank" title="CBA">CBA</a></li>
+            </ul>
+        </div>
+
+        <div class="ctj_box">
+            <div class="ctj_tab btnlist" rel=".tabcontent_1"> <a class="cur">直播app</a> <a>体育app</a></div>
+            <div class="ctj_cont tabcontent_1">
+                <ul class="sy_ul">
+                    <li> <a href="https://www.yoyou.com/game/wzlm/" target="_blank" class="ico_80" title="王者荣耀"><img alt="王者荣耀" src="images/20151118113503849.jpg">
+                        <p class="name">王者荣耀</p>
+                    </a></li>
+                    <li> <a href="https://www.yoyou.com/game/dwrg1/" target="_blank" class="ico_80" title="第五人格"><img alt="第五人格" src="images/20180403022556420.jpg">
+                        <p class="name">第五人格</p>
+                    </a></li>
+                    <li> <a href="https://www.yoyou.com/game/kxxxl/" target="_blank" class="ico_80" title="开心消消乐"><img alt="开心消消乐" src="images/20151201050146642.png">
+                        <p class="name">开心消消乐</p>
+                    </a></li>
+                    <li> <a href="https://www.yoyou.com/game/wdsj/" target="_blank" class="ico_80" title="我的世界"><img alt="我的世界" src="images/20190603031932506.jpg">
+                        <p class="name">我的世界</p>
+                    </a></li>
+                    <li> <a href="https://www.yoyou.com/game/mhxy/" target="_blank" class="ico_80" title="梦幻西游"><img alt="梦幻西游" src="images/20200217110747527.png">
+                        <p class="name">梦幻西游</p>
+                    </a></li>
+                    <li> <a href="https://www.yoyou.com/game/qjnn/" target="_blank" class="ico_80" title="奇迹暖暖"><img alt="奇迹暖暖" src="images/20150523102206838.jpg">
+                        <p class="name">奇迹暖暖</p>
+                    </a></li>
+                    <li> <a href="https://www.yoyou.com/game/hpjy/" target="_blank" class="ico_80" title="和平精英"><img alt="和平精英" src="images/20190508085912608.png">
+                        <p class="name">和平精英</p>
+                    </a></li>
+                    <li> <a href="https://www.yoyou.com/game/lyzzr/" target="_blank" class="ico_80" title="恋与制作人"><img alt="恋与制作人" src="images/20171226053753446.png">
+                        <p class="name">恋与制作人</p>
+                    </a></li>
+                    <li> <a href="https://www.yoyou.com/game/mrzh1/" target="_blank" class="ico_80" title="明日之后"><img alt="明日之后" src="images/20180406041724889.png">
+                        <p class="name">明日之后</p>
+                    </a></li>
+                    <li> <a href="https://www.yoyou.com/game/sdyxl/" target="_blank" class="ico_80" title="神都夜行录"><img alt="神都夜行录" src="images/20180926033047665.jpg">
+                        <p class="name">神都夜行录</p>
+                    </a></li>
+                </ul>
+                <ul class="sy_ul">
+                    <li> <a href="zuiqiangwoniu_107132.html" target="_blank" class="ico_80" title="最强蜗牛"><img alt="最强蜗牛" src="images/20200623044406562.png">
+                        <p class="name">最强蜗牛</p>
+                    </a></li>
+                    <li> <a href="yirenzhixia_103478.html" target="_blank" class="ico_80" title="一人之下"><img alt="一人之下" src="images/20200527024435243.png">
+                        <p class="name">一人之下</p>
+                    </a></li>
+                    <li> <a href="lingyanjue_76050.html" target="_blank" class="ico_80" title="凌烟诀"><img alt="凌烟诀" src="images/20190723015238856.jpg">
+                        <p class="name">凌烟诀</p>
+                    </a></li>
+                    <li> <a href="baoleiqianxianpo_69917.html" target="_blank" class="ico_80" title="堡垒前线破坏与创造"><img alt="堡垒前线破坏与创造" src="images/20190520014514268.jpg">
+                        <p class="name">堡垒前线破坏与创造</p>
+                    </a></li>
+                    <li> <a href="hepingjingying_69055.html" target="_blank" class="ico_80" title="和平精英"><img alt="和平精英" src="images/20190508115400331.png">
+                        <p class="name">和平精英</p>
+                    </a></li>
+                    <li> <a href="yiqilaizhuoyao_40840.html" target="_blank" class="ico_80" title="一起来捉妖手游"><img alt="一起来捉妖手游" src="images/20190419043320514.jpg">
+                        <p class="name">一起来捉妖手游</p>
+                    </a></li>
+                    <li> <a href="mingrifangzhouguan_37463.html" target="_blank" class="ico_80" title="明日方舟"><img alt="明日方舟" src="images/20190515035322230.png">
+                        <p class="name">明日方舟</p>
+                    </a></li>
+                    <li> <a href="hundouluoguilai_11360.html" target="_blank" class="ico_80" title="魂斗罗归来"><img alt="魂斗罗归来" src="images/20200614101805161.jpg">
+                        <p class="name">魂斗罗归来</p>
+                    </a></li>
+                    <li> <a href="892.html" target="_blank" class="ico_80" title="部落冲突"><img alt="部落冲突" src="images/20190603113935853.png">
+                        <p class="name">部落冲突</p>
+                    </a></li>
+                    <li> <a href="tianlongrongyaoban_75513.html" target="_blank" class="ico_80" title="天龙荣耀版"><img alt="天龙荣耀版" src="images/20190716114943530.png">
+                        <p class="name">天龙荣耀版</p>
+                    </a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<!-- main -->
+{include file="public/footer" /}
+<script>
+    $(".btnlist").each(function(idx,item){
+        $(item).children().eq(0).addClass("cur");
+        if(!!$(this).attr("rel"))
+        {
+            $($(this).attr("rel")).children().eq(0).addClass("cur");
+        }
+    });
+    $(".btnlist").children().bind("mouseenter touch",function(){
+        if($(this).is(".cur")){return false;}
+        var parent = $(this).parent();
+        var obj_box= $($(this).parent().attr("rel"));
+        var index  = parent.children().index(this);
+        if(obj_box.children().eq(index).size() <= 0){ return false;}
+        parent.find(".cur").removeClass("cur");
+        $(this).addClass("cur");
+        obj_box.children().removeClass("cur");
+        obj_box.children().eq(index).addClass("cur");
+        return false;
+    });
+
+
+</script>
+<script type="text/javascript" src="js/index1.js"></script>
+</body>
+</html>

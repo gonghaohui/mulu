@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" />
+    <title>{$fourth['category_name']}录像</title>
+    <meta content="{$fourth['description']}" name="description" />
+    <meta content="{$fourth['keywords']}" name="keywords" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"  />
+    <link rel="stylesheet" href="__TIYU_CSS__/reset.css" />
+    <link rel="stylesheet" href="__TIYU_CSS__/index.css">
+    <link rel="stylesheet" href="__TIYU_CSS__/style.css" />
+    <link rel="stylesheet" href="__TIYU_CSS__/sy-footer.css">
+    <script type="text/javascript"  src="__TIYU_JS__/jquery.min.js"></script>
+    <script type="text/javascript" src="__TIYU_JS__/biebuzhu.js"></script>
+</head>
+
+<body>
+<!-- header/S -->
+
+{include file="public/header" /}
+
+<div class="topic_subnav_box">
+    <div class="topic_subnav">
+        <ul>
+
+            <ul>
+                <li> <a href="" class="hover">{$fourth.category_name}录像首页</a> </li>
+
+                {if condition="$zhibo_category.pinyin neq null"}
+                <li> <a href="/{$zhibo_category.pinyin}/index.html" class="">{$fourth.category_name}直播</a> </li>
+                {/if}
+
+                {if condition="$new_category.pinyin neq null"}
+                <li> <a href="/{$new_category.pinyin}/index.html" class="">{$fourth.category_name}新闻</a> </li>
+                {/if}
+
+                {if condition="$highlight_category.pinyin neq null"}
+                <li> <a href="/{$highlight_category.pinyin}/index.html" class="">{$fourth.category_name}集锦</a> </li>
+                {/if}
+
+            </ul>
+
+
+        </ul>
+    </div>
+</div>
+<div class="content_box">
+
+    <div class="local"><span class="one">当前位置：</span><a href="/index.html">首页</a> >
+        <span><a href="/{$fourth['p_pinyin']}/index.html">{$fourth['p_category_name']}</a></span>  >
+        <span>{$fourth['category_name']}</span>
+    </div>
+
+    <div class="content_block_left">
+
+        <div class="bread_crumb">
+
+        </div>
+        <div class="news_list two">
+
+            {foreach name="lists" item="video"}
+            <div class="block_img">
+                <div class="infro">
+                    <h1><a href="/{$f_url}/{$video['id']}.html">{$video['title']}</a></h1>
+                    <time>{$video['create_time']|date="Y-m-d",###}</time>
+                </div>
+            </div>
+            {/foreach}
+
+
+
+
+        </div>
+        <div class="pagination-style">
+            {$page->show_tiyu($url)}
+        </div>
+    </div>
+    <div class="content_right">
+
+        <div class="topic_right_block">
+            <div class="tocr_block_title">
+                <h1>{$fourth['category_name']}</h1>
+            </div>
+            <div class="right_tag_box">
+                <ul class="clearfix">
+                    {volist name="team_tags" id="tag"}
+                    <li><a href="/tag/{$tag['new_tag_id']}.html"  >{$tag['tag_name']}</a></li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+
+
+
+        <div class="topic_right_block">
+            <div class="tocr_block_title">
+                <h1>热门标签</h1>
+            </div>
+            <div class="right_tag_box">
+                {volist name="hot_tags" id="tags"}
+                <ul class="clearfix">
+                    <li><a href="/tag/{$tags['tag_id']}.html"  class="active" >{$tags['category_name']}</a></li>
+                </ul>
+                <ul class="clearfix">
+                    {volist name="tags.tags" id="tag"}
+                    <li><a href="/tag/{$tag['tag_id']}.html"  >{$tag['category_name']}</a></li>
+                    {/volist}
+                </ul>
+                {/volist}
+
+            </div>
+        </div>
+
+
+        <div class="block">
+            <div class="block_title">
+                <h1>实时热点</h1>
+            </div>
+            <div class="hot_video_con">
+                <ul>
+                    {volist name="hot_news" id="new"}
+                    <li><a href="/{$top_category[$new['top_id']]}/{$new['article_id']}.html" title="{$new['title']}" target="_blank"><i></i>{$new['title']}</a>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+<!--底部-->
+{include file="public/footer" /}
+</body>
+</html>

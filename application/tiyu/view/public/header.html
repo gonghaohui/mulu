@@ -1,0 +1,63 @@
+<div id="header">
+    <div id="topbar">
+        <div class="layout fn-clear content">
+            <p class="fn-left"></p>
+            <p class="fn-right"><a href="javascript:addfav()" >加入收藏</a><em>|</em><a href="javascript:setHomepage()">设为首页</a></p>
+        </div>
+    </div>
+    <!-- topbar end -->
+
+    <div id="headbar" class="layout fn-clear content">
+        <div id="logo"> <a href="/"><img src="__TIYU_IMG__/video_zxh_0718_logo11.png" alt="球网" /></a> </div>
+    </div>
+    <!-- headbar end -->
+
+    <div id="navbar" class="layout fn-clear content">
+        <ul id="nav">
+            <li class='nav-item current'><a class="nav-link" href="/index.html">首页</a></li>
+            {volist name="navigation" id="nav"}
+            <li  class='nav-item  drop-down'  id="nav-nba"><a class="nav-link drop-title" href="/{$nav['pinyin']}/index.html" target="_blank">{$nav['category_name']}</a>
+                <div class="subNav">
+                    <ul>
+                        {volist name="nav.sub" id="sub"}
+                        <li><a href="/{$sub['pinyin']}/index.html">{$sub['category_name']}</a></li>
+                        {/volist}
+                    </ul>
+                </div>
+            </li>
+            {/volist}
+        </ul>
+    </div>
+    <!-- // topbar end -->
+</div>
+
+<div class="zc_dh content">
+
+    <b><a href="/{$navigation[0]['pinyin']}/index.html" target="_blank">{$navigation[0]['category_name']}</a></b>：
+    {volist name="navigation.0.sub" id="ss"}
+    <a href="/{$ss['pinyin']}/index.html" target="_blank">{$ss['category_name']}</a>
+    {/volist}
+
+    &#160;
+
+    <b><a href="/{$navigation[1]['pinyin']}/index.html" target="_blank">{$navigation[1]['category_name']}</a></b>：
+    {volist name="navigation.1.sub" id="ss"}
+    <a href="/{$ss['pinyin']}/index.html" target="_blank">{$ss['category_name']}</a>
+    {/volist}
+</div>
+
+<!--手机导航-->
+<div class="m-nav-box">
+    <div class="m-nav"><a href="/" class="m-logo">球网</a><i class="m-menu-btn"></i><i class="m-so-btn"></i></div>
+    <div class="m-so">
+        <form name="searchform" target="_blank">
+            <input name="q" type="text" id="bdcsMain" maxlength="15" class="m-sotxt">
+            <input type="submit" value="搜索" class="m-sobtn">
+        </form>
+    </div>
+    <div class="m-menu">
+        {volist name="navigation" id="nav"}
+        <a href="/{$nav['pinyin']}/index.html">{$nav['category_name']}</a>
+        {/volist}
+    </div>
+</div>

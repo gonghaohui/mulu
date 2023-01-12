@@ -1,0 +1,857 @@
+﻿body{
+	font: 12px"微软雅黑","Microsoft YaHei",HELVETICA;
+    -webkit-text-size-adjust: 100%;   
+}
+.backimg{
+	background: url(/images/banner.jpg) center 50px no-repeat #fff;
+	background-size: 100% 10%;
+}
+.wrap{
+	width: 1200px;height: auto;margin:0 auto;
+	position: relative;
+	z-index: 5;
+}
+.left{
+	float: left;
+}
+.right{
+	float:right;
+}
+/*nav*/
+.nav_box{
+	height: 50px;background: #fff;
+}
+.nav_box .nav{
+	width: 1200px;height:50px;margin:0 auto;
+}
+.nav_box .nav .logo{
+	float:left;height:50px;
+}
+.nav_box .nav .subnav{
+	float:left;
+}
+.nav_box .nav .subnav a {
+    font: 14px/50px "microsoft yahei";
+    color: #326CE5;
+    margin-left: 15px;
+}
+.nav_box .nav .subnav a:first-child{
+	margin-left: 30px;
+}
+.nav_box .nav .subnav i {
+    line-height: 50px;
+    color: #3B7D23;
+    margin-left: 15px;
+    padding-right: 0;
+}
+/*==============首页===============*/
+/*热门导航*/
+.hot_nav{
+	width:1200px;height:80px;margin:101px auto 0;background:#326CE5;
+	position: relative;
+	z-index: 5;
+}
+.hot_nav .line{
+	width: 1px;height:55px;float:left;background: #fff;margin-top:10px;
+}
+.hot_nav div li{
+	float:left;margin:11px 21px 0 0;
+}
+.hot_nav div li a{
+	font-size:18px;line-height: 24px;color:#fff;
+}
+.hot_nav .video{
+	width:308px;height:80px;float:left;
+}
+.hot_nav .video span{
+	font-size: 18px;line-height: 80px;color:#fff;float:left;margin:0 17px 0 102px;
+}
+.hot_nav .data{
+	width:260px;height:80px;float:left;
+}
+.hot_nav .data span{
+	font-size: 18px;line-height: 80px;color:#fff;float:left;margin:0 13px 0 39px;
+}
+.hot_nav .news{
+	width:294px;height:80px;float:left;
+}
+.hot_nav .news span{
+	font-size: 18px;line-height: 80px;color:#fff;float:left;margin:0 13px 0 40px;
+}
+.hot_nav .plan{
+	width:263px;height:80px;float:left;
+}
+.hot_nav .plan span{
+	font-size: 18px;line-height: 80px;color:#fff;float:left;margin:0 13px 0 40px;
+}
+/*赛程通栏*/
+.mod_course {
+    position: relative;z-index: 10;width: 1164px;height: 150px;padding: 0 18px;margin:15px auto 0;background: #fff;padding-top: 10px;
+}
+.mod_course .inner {
+    position: relative;overflow: hidden;width: 1164px;
+}
+.mod_course .inner ul {
+    position: relative;width: 105%;
+}
+.mod_course .inner li {
+    display: inline;float: left;overflow: hidden;width: 1150px;height: 150px;margin-left: 7px;
+}
+.mod_course dl {
+    overflow: hidden;height: 150px;position: relative;
+}
+.mod_course dd, .mod_course dt {
+    display: inline;float: left;
+}
+.mod_course dd {
+    font-size: 13px;overflow: hidden;width: 114px;height: 150px;text-align: center;border-right: 1px solid #dee1ec;background: #fff;
+}
+.mod_course dd:hover{
+   background: #eee;
+}
+.mod_course .team {
+    overflow: hidden;height: 117px;
+}
+.mod_course .team a {
+    display: block;cursor: pointer;
+}
+.mod_course .red,.mod_course .time {
+    line-height: 25px;height: 25px;margin-bottom: 10px;padding: 0 4px;color: #fff;overflow: hidden;font-size:14px;
+}
+.mod_course .time {
+    background: url(/images/sprits_back.png) no-repeat #326de5;
+}
+.mod_course .time i {
+    display: inline-block;overflow: hidden;width: 16px;height: 10px;margin-left: 9px;vertical-align: middle;
+    background: url(/images/sprits_video.png) no-repeat;
+}
+.mod_course .team span {
+    display: block;font-size: 14px;
+}
+.teamTag {
+    font-size: 12px;width: 54px;margin: 8px auto;color: #326de5;border: 1px solid #326de5;border-radius: 2px;
+}
+.mod_course .teamother {
+    line-height: 30px;overflow: hidden;height: 30px;color: #326de5;border-top: 1px solid #dee1ec;
+}
+.mod_course .teamother a {
+    color: #326de5;font-size: 14px;
+}
+.mod_course .btn {
+    position: absolute;top: 10px;width: 18px;height: 150px;cursor: pointer;background: #184db8;
+}
+.mod_course .btn:hover{
+	background: #2958b6;
+}
+.mod_course .btn em {
+    font-size: 0;line-height: 0;display: block;overflow: hidden;width: 0;height: 0;margin-top: 70px;border-width: 6px;
+}
+.mod_course .prev {
+    left: 0;
+}
+.mod_course .prev.hover{
+    background: #3a63b5;
+}
+.mod_course .next.hover{
+	background: #3a63b5;
+}
+.mod_course .next, .mod_course .next, .next {
+    right: 0;
+}
+.mod_course .prev em {
+    margin-left: -2px;border-style: dashed solid dashed dashed;border-color: transparent #fff transparent transparent;
+}
+.mod_course .next em {
+    margin-left: 6px;border-style: dashed dashed dashed solid;border-color: transparent transparent transparent #fff;
+}
+/*赛程*/
+.sjb_block_title{
+	height:51px;border-bottom: 1px solid #D8D8D8;background:url(/images/block_back.png) no-repeat;
+}
+.sjb_block_title h1 {
+	font:18px/18px "microsoft yahei";color:#fff;padding: 22px 0 0 20px;float:left;
+}
+.sjb_block_title a{
+	float: right;margin-right: 10px;margin-top: 20px;
+}
+.sjb_block_title a strong {
+    display: block;float: left;font-size: 14px;color: #333333;line-height: 20px;margin-right: 7px;
+}
+.sjb_block_title a i {
+    display: block;width: 20px;height: 20px;float: left;background: #629DF3;text-align: center;line-height: 20px;font-size: 16px;color: #fff;font-family: simsun;
+}
+.sjb_block_title a:hover strong{
+	color:#DB3842;
+}
+
+.schedule_box{
+	width:640px;/* height:478px; */float:left;margin-top:20px;min-height: 478px;
+}
+.schedule{
+	/* height: 425px; */border: 1px solid #D8D8D8;min-height: 425px;
+}
+.schedule .schedule_nav{
+	height: 35px;border-bottom: 1px solid #D8D8D8;margin-top:10px;background: #F8F8F8;
+}
+.schedule_nav li{
+	float:left;line-height: 33px;color:#666;font-size: 14px;padding: 0 20px;border-top: 2px solid #F8F8F8;border-right: 1px solid #F8F8F8;border-left: 1px solid #F8F8F8;/*#DB3842*/cursor: pointer;
+}
+.schedule_nav li:first-child{
+	border-left: none;
+}
+.schedule_nav li.active{
+	border-top: 2px solid #DB3842;background: #fff;color:#333;border-bottom: 1px solid #fff;border-right-color:#D8D8D8;border-left-color:#D8D8D8;
+}
+.schedule .schedule_subnav{
+	padding: 0 10px;height: 42px;
+}
+.schedule_subnav a {
+    font: 14px/22px "microsoft yahei";color: #326CE5;margin-left:9px;float:left;padding: 0 6px;margin-top: 10px;
+}
+.schedule_subnav i {
+    font: 12px/42px "microsoft yahei";color: #D8D8D8;margin-left: 9px;float:left;
+}
+.schedule_subnav a.active{
+	background: #629DF3;color:#fff;
+}
+.schedule_details li{
+	height: 41px;border-top: 1px solid #D8D8D8;
+}
+.schedule_details li:hover{
+	background: #eee;cursor: pointer;
+}
+.schedule_details li .wks{
+	float:left;width: 56px;height:22px;background: #629DF3;margin:10px 0 0 19px;font-size:14px;line-height: 22px;text-align: center;color:#fff;
+}
+.schedule_details li .yks{
+	float:left;width: 56px;height:22px;margin:10px 0 0 19px;font-size:14px;line-height: 22px;text-align: center;color:#fff;background:#BBBBBB;
+}
+.schedule_details li .zbz{
+	float:left;width: 56px;height:22px;margin:10px 0 0 19px;font-size:14px;line-height: 22px;text-align: center;color:#fff;background:#DB3842;
+}
+.schedule_details li .time{
+	float:left;font-size: 14px;color: #333;line-height:41px;margin-left: 10px;
+}
+.schedule_details li .score {
+    width: 122px;float:left;
+}
+.left_text{
+	margin-left: 4px;
+}
+.schedule_details li .score_i {
+    float: left;font:14px/41px arial; padding: 0 1px;
+}
+.schedule_details li .score strong {
+    font:14px/41px "microsoft sans serif";color:#333;
+}
+.schedule_details li .score img {
+	width: 20px;
+	/* height: 15px; */
+	margin-top: 13px;border: 1px solid #eee;
+}
+.schedule_details li .score span {
+    float: right;    margin-right: 10px;
+}
+.schedule_details li .score span a{
+	font: 14px/41px "microsoft yahei";color: #326CE5;
+}
+.schedule_details li .score.left_text strong {
+    float: right;text-align: right;
+}
+.schedule_details li .score.left_text img {
+    float: right;margin-right: 10px;
+}
+.schedule_details li .score.left_text span {
+		float: right;margin-right: 10px;
+		max-width: 70px;
+}
+.schedule_details li .score.right_text strong {
+    float: left;text-align: left;
+}
+.schedule_details li .score.right_text img {
+    float: left;margin-left: 10px;
+}
+.schedule_details li .score.right_text span {
+		float: left;margin-left: 10px;margin-right: 0;
+		max-width: 70px;
+}
+.schedule_details li .progress{
+	font-size: 14px;color:#333;line-height: 41px;float:left;margin-left: 4px;
+}
+.schedule_details li .link{
+	font-size: 14px;color: #326CE5;line-height: 41px;float:left;margin-left: 10px;letter-spacing: 0;
+}
+/*对阵图*/
+.worldcup{
+    font-size:12px;position: relative;font-family: arial;padding: 20px 20px;
+}
+.worldcup_left{
+	float: left;
+}
+.worldcup_middle {
+    position: absolute; width: 80px;left: 50%;margin-left: -40px;top: 0;
+}
+.worldcup_right{
+	float:right;
+}
+.worldcup_left .worldcup_float {
+    float: left;
+}
+.worldcup_item a, .worldcup_item span {
+    display: block;height: 18px;line-height: 18px;
+}
+.worldcup_item .worldcup_team {
+    display: none;width: 4em;
+}
+.c-gap-top {
+    margin-top: 10px;
+}
+.worldcup_item, .op-worldcup-tabs-level-4, .worldcup_logo {
+    background: url(/images/bg.705ff47d.png) no-repeat;position: relative;
+}
+.worldcup_num {
+    position: absolute;_white-space: nowrap;width: 70px;margin: 0 -22px;text-align: center;
+}
+.worldcup_num, .worldcup_team {
+    color: #999;
+}
+.worldcup_country {
+    position: relative;z-index: 1;
+}
+.worldcup_country, .worldcup_item img {
+    width: 24px;height: 18px;_display: inline;_zoom: 1;
+}
+.worldcup_final .worldcup_country, .worldcup_final .worldcup_item img {
+    width: 48px;height: 32px;
+}
+.worldcup_item a {
+    text-decoration: none;
+}
+.worldcup_score {
+    width: 20px;text-align: center;font-weight: 700;font-size: 1.25em;_width: 16px;
+}
+.worldcup_name {
+    background: #fff;display: inline;
+}
+.op-worldcup-tabs-level-1 .worldcup_item {
+	background: 0 0;margin-top: 16px;
+}
+.op-worldcup-tabs-level-1 .worldcup_team{
+    display: inline;
+}
+.op-worldcup-tabs-level-1 .worldcup_group {
+    padding-bottom: 12px;
+}
+.op-worldcup-tabs-level-1 .worldcup_num {
+    display: none;
+}
+.op-worldcup-tabs-level-4 {
+    padding-top: 80px;background-position: -110px 80px;margin-left: -12px;
+}
+.op-worldcup-tabs-level-4 .worldcup_country {
+    float: none;
+}
+.op-worldcup-tabs-level-4 .worldcup_score {
+    display: none;
+}
+.op-worldcup-tabs-level-4 .worldcup_num {
+    top: 97px;left: 10px;
+}
+.op-worldcup-tabs-level-2 .worldcup_item{
+    padding: 8px 0 30px 18px;margin-top: 24px;
+}
+.op-worldcup-tabs-level-3 .worldcup_item{
+    background-position: -65px 0;margin-top: 40px;padding: 32px 0 70px;
+}
+.op-worldcup-tabs-level-4 .worldcup_item{
+    background: 0 0;padding: 65px 0 22px;_height: 32px;
+}
+.worldcup_logo {
+    width: 80px;height: 164px;background-position: -218px 7px;
+}
+.worldcup_final0_score, .worldcup_final1_score {
+    text-align: center;font-size: 1.25em;font-weight: 700;height: 30px;
+}
+.worldcup_final1_score {
+    margin-top: 88px;
+}
+.worldcup_right .worldcup_float {
+    float: right;
+}
+.worldcup_right .op-worldcup-tabs-level-2 .worldcup_item {
+    background-position: 20px -120px;padding: 8px 18px 30px 0;
+}
+.worldcup_right .op-worldcup-tabs-level-3 .worldcup_item {
+    background-position: -45px -120px;
+}
+.worldcup_right .op-worldcup-tabs-level-4 {
+    background-position: -160px 80px;margin: 0 -12px 0 0;
+}
+.worldcup_right .worldcup_team {
+    text-align: right;
+}
+/*小组赛赛程*/
+.schedule_shooter{
+	padding: 0 10px;
+}
+.schedule_shooter table tr{
+	border-bottom:1px solid #D8D8D8;height: 40px;font-size: 14px;color: #333333;line-height: 40px;text-align: center;
+}
+.schedule_shooter table tr a{
+	color: #326CE5;
+}
+.schedule_shooter .country img{
+	float:left;width: 28px;height: 20px;margin-top: 10px;
+}
+.schedule_shooter .country span{
+	float:left;margin-left: 12px;
+}
+
+/*世界要闻*/
+.world_news_box{
+	width:540px;height:478px;float:right;margin-top:20px;
+}
+.world_news{
+	height: 427px;border: 1px solid #D8D8D8;
+}
+.world_news h2{
+	padding: 0 10px;margin-top:20px;height: 24px;overflow: hidden;
+}
+.world_news h2 a{
+	color: #333;line-height: 24px;font-weight: bold;font-size: 18px;
+}
+.world_news h2 a:hover{
+	color:#D0021B;text-decoration: underline;
+}
+.world_news li{
+	margin-top:10px;height: 19px;overflow: hidden;
+}
+.world_news li a{
+	color: #333;line-height: 19px;font-size: 14px;
+}
+.world_news li a:hover{
+	color:#D0021B;text-decoration: underline;
+}
+/*强国要闻*/
+.power_naws{
+	width:810px;height: auto;float:left;margin-top: 8px;
+}
+.power_naws_block{
+	width: 395px;height: 260px;float:left;margin-top:10px;
+}
+.power_naws_title{
+	height: 40px;background: url(/images/power_back.png) no-repeat;
+}
+.power_naws_title img{
+	float:left;width:30px;height:20px;margin:10px 0 0 10px;
+}
+.power_naws_title span{
+	float:left;font-size:18px;line-height: 40px;color:#333;margin-left: 10px;
+}
+.power_naws_title a{
+	float:right;margin-right: 10px;margin-top:20px;
+}
+.power_naws_title a i{
+	display: block;width:20px;height:20px;float:left;background:#629DF3;text-align: center;line-height: 20px;font-size: 16px;color:#fff;font-family:simsun;
+}
+.power_naws_title a strong{
+	display: block;float:left;font-size: 14px;color: #333333;line-height: 20px;margin-right: 7px;
+}
+.power_naws_title a:hover strong{
+	color:#DB3842;
+}
+.power_naws_list{
+	height: 220px;border:1px solid #eee;
+}
+.pownew_first{
+	height: 91px;
+}
+.pownew_first_li{
+	width: 196px;height: 91px;float:left;
+}
+.pownew_first_li:hover{
+	background: #EEE;
+}
+.power_block_name>div{
+	overflow: hidden;
+	display: flex;
+}
+.power_block_name {
+    width: 134px;height: 91px;
+}
+.power_block_score {
+    width:44px;height: 91px;
+}
+.power_block_name>strong {
+    font-size: 14px;height:19px;color: #333;margin: 10px 0 0 10px;display: block;
+}
+.power_block_name>div {
+    height: 15px;margin-top: 10px;
+}
+.power_block_name>div>img {
+    width: 20px;height: 15px;float: left;margin-left: 10px;border: 1px solid #eee;
+}
+.power_block_name>div>span {
+    font-size: 14px;line-height: 15px;color: #333;float: left;margin-left: 10px;
+}
+.power_block_score>strong {
+    font-size: 14px;line-height: 19px;display: block; margin-top: 10px; min-height: 19px;text-align: center;
+}
+.power_block_score>span {
+    font-size: 18px;line-height: 24px;display: block;margin-top: 19px;color: #333;text-align: center;
+}
+.pownew_first .xiantiao{
+	float: left;background: #D8D8D8;width: 1px;height: 80px;margin-top: 6px;
+}
+.power_naws_list li{
+	height: 19px;margin-top:10px;padding: 0 10px;overflow: hidden;
+}
+.power_naws_list li i{
+	float:left;width:4px;height:4px;background:#D8D8D8;margin:9px 6px 0 0;
+}
+.power_naws_list li a{
+	font-size: 14px;color: #333333;line-height: 19px;float:left;max-width: 360px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;
+}
+.power_naws_list li a:hover{
+	color: #D0021B;text-decoration: underline;
+}
+/*notice*/
+.notice_right{
+	width: 370px;height: auto;float:right;margin-top:20px;
+}
+.notice_right .notice_block_title{
+	height: 32px;
+}
+.notice_right .notice_block_title h1{
+	font-size: 18px;color: #333;line-height: 32px; padding-left: 11px;border-left: 6px solid #DB3842;float:left;
+}
+.notice_right .notice_block_title a{
+	float: right;margin-right: 10px;margin-top: 7px;
+}
+.notice_right .notice_block_title a strong {
+    display: block;float: left;font-size: 14px;color: #333333;line-height: 20px;margin-right: 7px;
+}
+.notice_right .notice_block_title a i {
+    display: block;width: 20px;height: 20px;float: left;background: #629DF3;text-align: center;line-height: 20px;font-size: 16px;color: #fff;font-family: simsun;
+}
+.notice_right .notice_block_title a:hover strong{
+	color:#DB3842;
+}
+/*积分榜*/
+.scoreboard{
+	border:1px solid #D8D8D8;margin-top:10px;padding-bottom: 20px;
+}
+.scoreboard_title{
+	height: 39px;background: #D8D8D8;
+}
+.scoreboard_title li{
+	width: 30px;height: 30px;background: #fff;text-align: center;float:left;margin:5px 0 0 14px;position: relative;color: #333;
+}
+.scoreboard_title li span{
+	font-size: 18px;line-height: 30px;
+}
+.scoreboard_title li i{
+	position:absolute;width: 0;height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-top: 12px solid #D8D8D8;left:5px;top: 30px;display: none; 
+}
+.scoreboard_title li.hover{
+	cursor: pointer;background: #326CE5;color:#fff;
+}
+.scoreboard_title li.hover i{
+	display: block;
+}
+.scoreboard_list ul{
+	display: none;
+}
+.scoreboard_list ul:first-child{
+	display: block;
+}
+.scoreboard_list li{
+	height: 20px;margin-top:20px;
+}
+.scoreboard_list li i{
+	float:left;width:20px;height:20px;background:#DB3842;font-size: 14px;color:#fff;text-align: center;line-height: 20px;margin-left: 20px;
+}
+.scoreboard_list li img{
+	height: 20px;
+	float: left;
+	margin-left: 20px;
+	border: 1px solid #eee;
+	display: block;
+	object-fit: cover;
+}
+.scoreboard_list li span{
+	font-size:14px;color: #333;line-height: 20px;float:left;
+}
+.scoreboard_list li .name{
+	width: 100px;margin-left: 15px;
+}
+.scoreboard_list li .chang{
+	width: 90px;
+}
+/*射手榜*/
+.shooter_box{
+	margin-top:10px;
+}
+/*策划*/
+.plan_box{
+	margin-top: 20px;
+}
+.plan_list{
+	position: relative;height: auto;
+}
+.plan_list .xian{
+	width:1px;height: 92%;background: #D8D8D8;position: absolute;left: 5px;top: 4px;
+}
+.plan_list li{
+	height: 19px;margin-top: 11px;overflow: hidden;
+}
+.plan_list li span{
+	float:left;width: 10px;height: 10px;background: #D8D8D8;border-radius: 50%;margin:4px 10px 0 0;
+}
+.plan_list li a{
+	float:left;font-size: 14px;line-height: 19px;color:#333;max-width:340px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;
+}
+.plan_list li a:hover{
+	text-decoration: underline;color:#D0021B;
+}
+/*历史*/
+.history_box{
+	margin-top: 10px;
+}
+.history_list{
+	margin-top: 10px;
+}
+.history_list div{
+	height: 80px;padding-top: 10px;
+}
+.history_list div img{
+    float: left;width: 80px;height:80px;
+}
+.history_list div h2{
+    float: left;width: 274px;height:21px;overflow: hidden;
+}
+.history_list div h2 a{
+	line-height: 21px;font-size: 16px;color:#333;margin: 2px 0 0 12px;font-weight: bold;
+}
+.history_list div h2 a:hover{
+	text-decoration: underline;color:#D0021B;
+}
+.history_list div p{
+    float: left;width: 274px;height:auto;margin: 12px 0 0 12px;font-size: 14px;line-height: 19px;color:#666;
+}
+.history_list div p a{
+	color:#326CE5;
+}
+.history_link{
+	padding: 5px 0 20px 0;;
+}
+.history_link a{
+	float:left;font-size: 16px;line-height: 21px;margin:10px 0 0 40px;color:#333;
+}
+.history_link a:hover{
+	color:#DB3842;
+}
+.history_link i{
+	float:left;font-size: 12px;line-height: 21px;margin:10px 0 0 40px;color: #D8D8D8;
+}
+/*热门视频*/
+.hot_video_box{
+	width:1200px;height: auto;margin:10px auto 0;
+	position: relative;
+	z-index: 5;
+}
+.hot_video_title li{
+	float:left;font-size: 18px;color: #333333;line-height: 21px;margin-left: 50px;margin-top: 18px;padding-bottom: 9px;
+}
+.hot_video_title li.hover{
+	border-bottom: 4px solid #D0021B;cursor: pointer;color:#326CE5;
+}
+.hot_video_title li:first-child{
+	margin-left: 100px;
+}
+.hot_video_list a{
+	width:392px;height: 250px;float:left;margin:12px 0 0 12px;position: relative;overflow: hidden;
+}
+.hot_video_list a img{
+	width: 100%;height: 100%;transition: all 0.6s; 
+}
+.hot_video_list img:hover{
+    transform: scale(1.2);
+}
+.hot_video_list a span{
+	display:block;width: 94%;height: 30px;padding: 0 3%;background:rgba(0, 0, 0,0.5);position: absolute;left: 0;bottom: 0;font-size: 14px;color: #FFFFFF;line-height: 30px;text-align: center;
+}
+/*============赛程===============*/
+.schedule_new_box{
+	height: 50px;background: #326CE5;margin-top:10px;
+}
+.schedule_new{
+	width: 1200px;height: 50px;margin:0 auto;
+}
+.schedule_new a{
+	padding: 0 37px;font-size: 16px;color: #FFF;float:left;line-height: 50px;
+}
+.schedule_new a:hover{
+	background:#184CB9;
+}
+.table_nav_box{
+	width: 1200px;height: 36px;margin:20px auto;
+}
+.table_nav_box li{
+	width: 120px;height: 36px;background: #EEEE;font-size: 16px;color: #333;float: left;text-align: center;line-height: 36px;margin-left: 80px;cursor: pointer;
+}
+.table_nav_box li.hover{
+	background: #326CE5;color: #FFFFFF;
+}
+.table_nav_box li:first-child{
+	margin-left: 340px;
+}
+.schedule_table{
+	width: 1200px;height: auto;margin:0 auto;
+	position: relative;
+	z-index: 5;
+}
+/*table*/
+.schedule_tables{
+	width: 100%;
+}
+.schedule_tables th{
+	height: 36px;background: #EEE;font-size: 14px;color: #333;text-align: center;
+}
+.schedule_tables td{
+	height:50px;font-size: 14px;color: #333;text-align: center;background:#FAFAFA;line-height: 50px;
+}
+.schedule_tables .against a{
+	font-size: 14px;color: #326CE5;float: left;width:114px;text-align: left;
+}
+.schedule_tables .against strong{
+	font-size: 18px;color: #D0021B;float:left;width: 40px;text-align: center;
+}
+.schedule_tables .against a:first-child{
+	text-align: right;
+}
+.schedule_tables .against a:hover{
+	color: #D0021B;
+}
+.schedule_tables .correlation a{
+	color:#326CE5;padding: 0 10px;
+}
+.schedule_tables .correlation a:hover{
+	color: #D0021B;text-decoration: underline;
+}
+.group_title{
+	background: #666;height: 36px;
+}
+.group_title{
+	font-size: 16px;color: #FFF;line-height: 36px;text-align: center;
+}
+.group_title h1{
+	float: left;font-size: 20px;color: #FFF;line-height: 36px;margin:0 260px 0 20px;
+}
+.group_title .country{
+	float:left;
+}
+.group_title .country img{
+	float:left;width: 40px;height: 26px;margin-top: 4px;border-radius: 8px;
+}
+.group_title .country span{
+	float:left;font-size: 14px;color: #FFF;line-height: 36px;margin: 0 50px 0 20px;
+}
+/*淘汰赛 icon*/
+.sifted_out_icon{
+	width:1096px;height:708px;margin:20px auto;background: #fff url(/images/sifted_out_icon.png) no-repeat center 36px;position: relative;
+}
+.sifted_out_icon li {
+    position: absolute;cursor: pointer;overflow: hidden;text-align: center;box-sizing: border-box;
+}
+.sifted_out_icon a {
+    width: 100%;height: 100%;display: block;overflow: hidden;cursor: pointer;
+}
+.sifted_out_icon .cell_ui{
+	width: 146px;height: 166px;font-size: 14px;color: #333;border-radius:8px;border:1px solid #0186C9;
+}
+.sifted_out_icon li span{
+	display: block;font-size: 14px;color: #333;margin-top:6px;line-height: 19px;
+}
+.sifted_out_icon li span:first-child{
+	margin-top: 16px;
+}
+.sifted_out_icon li div{
+	height: 40px;background: #0186C9;margin-top: 16px;font-size: 14px;color:#FFF;line-height: 40px;
+}
+.sifted_out_icon .cell_ui_red{
+	border:1px solid #DB3842 !important;
+}
+.cell_ui_red div{
+	background: #DB3842 !important;
+}
+.sifted_out_icon .cell_ui_yellow{
+	border:1px solid #E5B732 !important;
+}
+.cell_ui_yellow div{
+	background: #E5B732 !important;
+}
+.sifted_out_icon .cell_11 {
+    left: 0;
+    top: 0;
+}
+.sifted_out_icon .cell_12 {
+    left: 0;
+    top: 178px;
+}
+.sifted_out_icon .cell_13 {
+    left: 0;
+    top: 364px;
+}
+.sifted_out_icon .cell_14 {
+    left: 0;
+    top: 542px;
+}
+.sifted_out_icon .cell_21 {
+    left: 182px;
+    top: 102px;
+}
+.sifted_out_icon .cell_22 {
+    left: 182px;
+    top: 466px;
+}
+.sifted_out_icon .cell_31 {
+    left: 274px;
+    top: 284px;
+}
+.sifted_out_icon .cell_41 {
+    left: 480px;
+    top: 196px;
+}
+.sifted_out_icon .cell_42 {
+    left: 480px;
+    top: 445px;
+}
+.sifted_out_icon .cell_51 {
+    right: 274px;
+    top: 284px;
+}
+.sifted_out_icon .cell_61 {
+    right: 182px;
+    top: 102px;
+}
+.sifted_out_icon .cell_62 {
+    right: 182px;
+    top: 466px;
+}
+.sifted_out_icon .cell_71 {
+    right: 0;
+    top: 0;
+}
+.sifted_out_icon .cell_72 {
+    right: 0;
+    top: 178px;
+}
+.sifted_out_icon .cell_73 {
+    right: 0;
+    top: 364px;
+}
+.sifted_out_icon .cell_74 {
+    right: 0;
+    top: 542px;
+}

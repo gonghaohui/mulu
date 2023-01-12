@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Copyright" content="コードスクリプトの家" />
+    <meta name="robots" content="index,follow" />
+
+    <title>{$nowCategory.category_name_jp} | コードスクリプトの家</title>
+    <meta name="keywords" content="{$nowCategory.keywords_jp}" />
+    <meta name="description" content="{$nowCategory.description_jp}" />
+
+    <link rel="stylesheet" type="text/css" href="__PC_CSS__/style.css?ver=1.01" >
+    <link rel="stylesheet" type="text/css" href="__PC_CSS__/list.css?ver=1.01" >
+    <script type="text/javascript" src="__PC_JS__/jquery.min.js"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="__PC_IMG__/icon/favicon32.ico" media="screen"/>
+
+</head>
+<body>
+{include file="public/header" /}
+
+<div class="g-box g-jknav">
+    <i class="ico-path"></i>
+    <strong>
+    <a href="/">Home</a>  → <a href="/{$nowCategory.category_url}/">{$nowCategory.category_name_jp}</a>
+</strong>
+</div>
+
+<div id="wrapper">
+
+    <div id="main" class="clearfix">
+        <div class="main-left">
+
+            <div class="articlelistBar">
+
+
+                {volist name="firstCategories" id="firstCategory"}
+                <div class="index_bor clearfix">
+                    <div class="index_con">
+                        <h2><a href="/{$nowCategory['category_url']}/list_{$firstCategory.category_id}_1.html" title="{$firstCategory.category_name_jp}">{$firstCategory.category_name_jp}</a></h2>
+                        <span><a href="/{$nowCategory['category_url']}/list_{$firstCategory.category_id}_1.html">もっと&gt;&gt; </a></span>
+                    </div>
+                    <ul class="index_list">
+                        {volist name="$firstCategory['second_category_articles']" id="firstArticle"}
+                        <li>
+                            <span>{$firstArticle.create_time|date="m-d",###}</span>
+                            <a href="/article/{$firstArticle.article_id}.html" title="{$firstArticle.title}">{$firstArticle.title}</a>
+                        </li>
+                        {/volist}
+                    </ul>
+                </div>
+                {/volist}
+
+
+            </div>
+
+
+
+        </div>
+        <div class="main-right">
+
+            <div class="bor-default bor-blue">
+                <h4 class="blue">{$nowCategory.category_name_jp}人気ランキング</h4>
+                <ul class="newsList newList-in">
+                    {volist name="firstRankArticles" id="firstRankArticle" key="k"}
+                    <li><em class="no1">{$k}</em><a href="/article/{$firstRankArticle.article_id}.html" title="{$firstRankArticle.title}">{$firstRankArticle.title}</a></li>
+                    {/volist}
+                </ul>
+            </div>
+
+            <div class="bor-default bor-blue">
+                <h4 class="blue">{$nowCategory.category_name_jp}最近更新した内容</h4>
+                <ul class="new-article">
+                    {volist name="latestFirstArticles" id="latestFirstArticle"}
+                    <li><a href="/article/{$latestFirstArticle.article_id}.html" title="{$latestFirstArticle.title}">{$latestFirstArticle.title}</a></li>
+                    {/volist}
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div>
+
+{include file="public/footer" /}
+
+
+<script type="text/javascript">
+    $(function(){
+        var $left = $('.main-left');
+        var $right = $('.main-right');
+        var l_h = $left.height();
+        var r_h = $right.height();
+        if( l_h >= r_h ){
+            $right.css('height',l_h);
+        }else{
+            $('.articlelistBar').css('height',r_h);
+        }
+    });
+</script>
+</body>
+
+
+
+</html>

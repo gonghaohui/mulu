@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Copyright" content="コードスクリプトの家" />
+    <meta name="robots" content="index,follow" />
+
+    <title>{$tool['title']}</title>
+    <meta name="keywords" content="{$tool['keywords']}" />
+    <meta name="description" content="{$tool['description']}" />
+
+    <link rel="stylesheet" type="text/css" href="__PC_CSS__/style.css?ver=1.01" >
+    <link rel="stylesheet" type="text/css" href="__PC_CSS__/list.css?ver=1.07" >
+    <script type="text/javascript" src="__PC_JS__/jquery.min.js"></script>
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="__PC_IMG__/icon/favicon32.ico" media="screen"/>
+
+</head>
+<body>
+{include file="public/header" /}
+
+<div class="g-box g-jknav">
+    <i class="ico-path"></i>
+    <strong>
+        <a href="/">Home</a>  →
+        <a href="/tools/">オンラインツール</a>  →
+        {$tool['title']}
+    </strong>
+</div>
+
+<div id="wrapper">
+
+    <div id="main" class="clearfix">
+        <div class="main-left">
+
+            <div id="tools">
+                <div class="tool_title"><h1>{$tool['title']}</h1></div>
+
+                <div id="content_area">
+                    <form>
+                        <h3>CSSコードを以下のフォームにコピーしてください:</h3>
+                        <textarea class="toolarea" id="code"></textarea>
+                        <input class="bt-blue" onclick="$('code').value = CSSencode($('code').value);" value="水平配置" type="button">
+                        <input class="bt-blue" onclick="$('code').value = CSSdecode($('code').value);" value="縦に並べる" type="button">
+
+                    </form>
+                </div>
+
+
+            </div>
+
+
+
+
+        </div>
+        <div class="main-right">
+
+            {include file="public/tool_right" /}
+
+        </div>
+    </div>
+
+
+
+</div>
+
+{include file="public/footer" /}
+<script type="text/javascript">
+    function $() {
+        var elements = new Array();
+        for (var i = 0; i < arguments.length; i++) {
+            var element = arguments[i];
+            if (typeof element == 'string')
+                element = document.getElementById(element);
+            if (arguments.length == 1)
+                return element;
+            elements.push(element);
+        }
+        return elements;
+    }
+    function CSSencode(code)
+    {
+        code = code.replace(/\r\n/ig,'');
+        code = code.replace(/(\s){2,}/ig,'$1');
+        code = code.replace(/\t/ig,'');
+        code = code.replace(/\n\}/ig,'\}');
+        code = code.replace(/\n\{\s*/ig,'\{');
+        code = code.replace(/(\S)\s*\}/ig,'$1\}');
+        code = code.replace(/(\S)\s*\{/ig,'$1\{');
+        code = code.replace(/\{\s*(\S)/ig,'\{$1');
+        return code;
+    }
+    function CSSdecode(code)
+    {
+        code = code.replace(/(\s){2,}/ig,'$1');
+        code = code.replace(/(\S)\s*\{/ig,'$1 {');
+        code = code.replace(/\*\/(.[^\}\{]*)}/ig,'\*\/\n$1}');
+        code = code.replace(/\/\*/ig,'\n\/\*');
+        code = code.replace(/;\s*(\S)/ig,';\n\t$1');
+        code = code.replace(/\}\s*(\S)/ig,'\}\n$1');
+        code = code.replace(/\n\s*\}/ig,'\n\}');
+        code = code.replace(/\{\s*(\S)/ig,'\{\n\t$1');
+        code = code.replace(/(\S)\s*\*\//ig,'$1\*\/');
+        code = code.replace(/\*\/\s*([^\}\{]\S)/ig,'\*\/\n\t$1');
+        code = code.replace(/(\S)\}/ig,'$1\n\}');
+        code = code.replace(/(\n){2,}/ig,'\n');
+        code = code.replace(/:/ig,':');
+        code = code.replace(/  /ig,' ');
+        return code;
+    }
+</script>
+</body>
+
+
+
+</html>

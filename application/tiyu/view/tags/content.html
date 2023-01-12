@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <title>{$tag.tag_name}专题</title>
+    <meta content="{$tag.tag_name}" name="keywords">
+    <meta content="{$tag.tag_name}" name="description">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="__TIYU_CSS__/index.css">
+    <link rel="stylesheet" href="__TIYU_CSS__/style.css">
+    <link href="__TIYU_CSS__/public.css" type="text/css" rel="stylesheet">
+    <link href="__TIYU_CSS__/bqdetail.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="__TIYU_JS__/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript"  src="__TIYU_JS__/jquery.min.js"></script>
+    <script type="text/javascript" src="__TIYU_JS__/biebuzhu.js"></script>
+</head>
+<body>
+
+{include file="public/header" /}
+
+<!--biaoqinfl-->
+<div class="main">
+    <!-- 面包屑导航 -->
+    <ul class="Bread-nav clearfix">
+        <li><a href="/index.html">首页</a></li>
+        <li><i>></i><a href="/tag/index.html">标签</a></li>
+        <li><i>></i>{$tag.tag_name}</li>
+    </ul>
+    <div class="wrap">
+        <div class="fl l-box">
+            <div class="l-content sp-box live-cont-foot">
+                <h3 class="head-fi">
+                    <p>{$tag.tag_name}直播（全部赛事）</p>
+                    <a href="#" target="_blank">更多>></a></h3>
+
+                <div class="live-box">
+                    <dl id="one">
+                        {volist name="tag_zhibo" id="zhobo"}
+                        <dd class="clearfix">
+                            <div>
+                                <p class="once-time">{$zhobo.create_time|date="m-d H:i",###}</p>
+                                <p class="once-event">{$zhobo.category_name}</p>
+                                <p class="once-game">{$zhobo.zhudui}VS{$zhobo.kedui}</p>
+                                <p class="video-link">
+
+                                </p>
+                            </div>
+                        </dd>
+                        {/volist}
+                    </dl>
+                    <p class="center center_a">点击进入<a target="_blank" href="#"><span class="weight">{$tag.tag_name}直播</span></a></p>
+                </div>
+
+
+
+
+
+
+            </div>
+
+
+            <div class="l-content lx-box">
+                <h3 class="head-fi">
+                    <p>{$tag.tag_name}比赛录像</p>
+                    <a href="#" target="_blank">更多>></a></h3>
+                <ul>
+                    {volist name="tag_video" id="video"}
+                    <li>
+                        <i></i>
+                        <a target="_blank" class="wordcont" href="/{$top_category[$video.top_id]}/{$video.id}.html">{$video.title}</a>
+                        <b>{$video.create_time|date="Y-m-d H:i:s",###}</b>
+                    </li>
+                    {/volist}
+                    <li class="center center_b">点击进入<a target="_blank" class="weight1" href="#">{$tag.tag_name}录像</a></li>
+                </ul>
+
+            </div>
+
+
+            <div class="l-content sp-box">
+                <h3 class="head-fi">
+                    <p>{$tag.tag_name}视频集锦</p>
+                    <a href="#" target="_blank">更多>></a></h3>
+                <ul>
+                    {volist name="tag_highlight" id="highlight"}
+                    <li>
+                        <i></i>
+                        <a target="_blank" class="wordcont" href="/{$top_category[$highlight.top_id]}/{$highlight.id}.html">{$highlight.title}</a>
+                        <b>{$highlight.create_time|date="Y-m-d H:i:s",###}</b>
+                    </li>
+                    {/volist}
+                    <li class="center center_b">点击进入<a target="_blank" class="weight1" href="#">{$tag.tag_name}集锦</a></li>
+                </ul>
+
+            </div>
+
+
+            <div class="l-content lx-box">
+                <h3 class="head-fi">
+                    <p>{$tag.tag_name}新闻</p>
+                    <a target="_blank" href="#">更多>></a></h3>
+                <ul>
+                    {volist name="tag_new" id="new"}
+                    <li>
+                        <i></i>
+                        <a target="_blank" class="wordcont" href="/{$top_category[$new.top_id]}/{$new.article_id}.html">{$new.title}</a>
+                        <b>{$new.create_time|date="Y-m-d H:i:s",###}</b>
+                    </li>
+                    {/volist}
+                    <li class="center center_b">点击进入<a target="_blank" class="weight1" href="#">{$tag.tag_name}新闻</a></li>
+                </ul>
+
+            </div>
+
+
+
+        </div>
+        <div class="fr r-box">
+            <div class="r-content">
+                <h4 class="header-f">今日直播<a target="_blank" href="/{$top_category[3]}/index.html">更多>></a></h4>
+                <ul>
+                    {volist name="today_zhibo" id="zhibo"}
+                    <li><a target="_blank" href="/{$top_category[$zhibo.top_id]}/{$zhibo.id}.html"><i></i>{$zhibo.create_time|date="H:i",###} {$zhibo.zhudui}vs{$zhibo.kedui}</a></li>
+                    {/volist}
+                </ul>
+            </div>
+            <div class="r-content videoshi">
+                <h4 class="header-f">足球录像</h4>
+                <ul>
+                    {volist name="football_video" id="football"}
+                    <li><a target="_blank" href="/{$top_category[$football.top_id]}/{$football.id}.html"><i></i>{$football.title}</a></li>
+                    {/volist}
+                </ul>
+                </ul>
+            </div>
+            <div class="r-content videoshi">
+                <h4 class="header-f">篮球录像</h4>
+                <ul>
+                    {volist name="basketball_video" id="basketball"}
+                    <li><a target="_blank" href="/{$top_category[$basketball.top_id]}/{$basketball.id}.html"><i></i>{$basketball.title}</a></li>
+                    {/volist}
+                </ul>
+            </div>
+
+
+
+            <div class="r-content videoshi">
+                <h4 class="header-f">最新新闻</h4>
+                <ul>
+                    {volist name="latest_new" id="latest"}
+                    <li><a target="_blank" href="/{$top_category[$latest.top_id]}/{$latest.article_id}.html"><i></i>{$latest.title}</a></li>
+                    {/volist}
+                </ul>
+            </div>
+            <div class="r-content hot-bq">
+                <h4 class="header-f">热门标签<a target="_blank" href="/tag/index.html">更多>></a></h4>
+                <div>
+                    {volist name="hot_tag" id="hot"}
+                    <a target="_blank" href="/tag/{$hot.new_tag_id}.html">{$hot.tag_name}</a>
+                    {/volist}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 公共底部 -->
+<!--底部-->
+{include file="public/footer" /}
+
+<!-- 公共底部 -->
+<script type="text/javascript" src="__TIYU_JS__/default.js" data-cfasync="false"></script>
+<script type="text/javascript" src="__TIYU_JS__/index.js" data-cfasync="false"></script>
+</body></html>

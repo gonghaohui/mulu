@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Copyright" content="コードスクリプトの家" />
+    <meta name="robots" content="index,follow" />
+
+    <title>{$tool['title']}</title>
+    <meta name="keywords" content="{$tool['keywords']}" />
+    <meta name="description" content="{$tool['description']}" />
+
+    <link rel="stylesheet" type="text/css" href="__PC_CSS__/style.css?ver=1.01" >
+    <link rel="stylesheet" type="text/css" href="__PC_CSS__/list.css?ver=1.07" >
+    <script type="text/javascript" src="__PC_JS__/jquery.min.js"></script>
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="__PC_IMG__/icon/favicon32.ico" media="screen"/>
+
+</head>
+<body>
+{include file="public/header" /}
+
+<div class="g-box g-jknav">
+    <i class="ico-path"></i>
+    <strong>
+        <a href="/">Home</a>  →
+        <a href="/tools/">オンラインツール</a>  →
+        {$tool['title']}
+    </strong>
+</div>
+
+<div id="wrapper">
+
+    <div id="main" class="clearfix">
+        <div class="main-left">
+
+            <div id="tools">
+                <div class="tool_title"><h1>{$tool['title']}</h1></div>
+
+                <div id="content_area">
+                    <form>
+                        <h2 class="title">HTML変換JSコードツール</h2>
+                        <h3>Htmlソースコードを以下のフォームに貼り付けてください:</h3>
+                        <textarea class="toolarea" id="osource" onfocus="change()" onkeyup="change()"></textarea>
+                        <h3>対応するJsコードは以下の形式です:</h3>
+                        <textarea class="toolarea" id="oresult2"></textarea>
+
+                        <br><br>
+                        <h2 class="title">JS変換HTMLコードツール</h2>
+                        <h3>JSソースコードを以下のフォームに貼り付けてください:</h3>
+                        <textarea class="toolarea" id="oresult" onfocus="rechange()" onkeyup="rechange()"></textarea>
+                        <h3>対応するHTMLコードは以下の形式です:</h3>
+                        <textarea class="toolarea" id="re"></textarea>
+                    </form>
+                </div>
+
+
+            </div>
+
+
+
+
+        </div>
+        <div class="main-right">
+
+            {include file="public/tool_right" /}
+
+        </div>
+    </div>
+
+
+
+</div>
+
+{include file="public/footer" /}
+
+<script type="text/javascript">
+    function change(){
+        document.getElementById('oresult2').value="document.writeln(\""+document.getElementById('osource').value.replace(/\\/g,"\\\\").replace(/\\/g,"\\/").replace(/\'/g,"\\\'").replace(/\"/g,"\\\"").split('\n').join("\");\ndocument.writeln(\"")+"\");"
+    }
+    function rechange(){
+        document.getElementById('re').value=document.getElementById('oresult').value.replace(/document.writeln\("/g,"").replace(/"\);/g,"").replace(/\\\"/g,"\"").replace(/\\\'/g,"\'").replace(/\\\//g,"\/").replace(/\\\\/g,"\\")
+    }
+</script>
+</body>
+
+
+
+</html>

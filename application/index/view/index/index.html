@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Copyright" content="コードスクリプトの家" />
+    <meta name="robots" content="index,follow" />
+
+    <title>コードスクリプトの家 | www.scriptjp.com</title>
+    <meta name="keywords" content="スクリプト、ウェブマスターツール、vbscript、正規表現、jquery、dos、bat、バッチ処理、javascript、HTML、div + css、ASP、PHP、ASP.NET" />
+    <meta name="description" content="最新のネットワークプログラミング、スクリプトプログラミング、Webページの作成、Webページの特殊効果を提供し、Webマスターとネットワークプログラミングの実践者に学習資料を提供します。" />
+
+    <link rel="stylesheet" type="text/css" href="__PC_CSS__/style.css?ver=1.01" >
+    <link rel="stylesheet" type="text/css" href="__PC_CSS__/index.css?ver=1.01" >
+    <script type="text/javascript" src="__PC_JS__/jquery.min.js"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="__PC_IMG__/icon/favicon32.ico" media="screen"/>
+
+</head>
+<body>
+{include file="public/header" /}
+
+
+<div id="wrapper">
+
+
+    <div class="whitebg index-list clearfix">
+
+        {volist name="categories" id="category"}
+        <div class="index-ll clearfix">
+            <div class="title">
+                <a href="/{$category.category_url}/" ><h2>{$category['category_name_jp']}</h2></a>
+            </div>
+            <ul class="list clearfix">
+                {volist name="$category['first_category_articles']" id="article"}
+                <li>
+                    <a href="/article/{$article['article_id']}.html" title="{$article['title']}">{$article['title']}</a>
+                </li>
+                {/volist}
+            </ul>
+        </div>
+        {/volist}
+
+
+        <div class="index-ll clearfix">
+            <div class="title">
+                <a href="/tools/" ><h2>オンラインツール</h2></a>
+            </div>
+            <ul class="list clearfix">
+                {volist name="tools" id="tool"}
+                <li>
+                    <a href="/tools/{$tool['action']}.html" title="{$tool['title']}">{$tool['title']}</a>
+                </li>
+                {/volist}
+            </ul>
+        </div>
+
+    </div>
+
+
+
+    <div class="blank clear"></div>
+
+    <div class="whitebg box tags">
+        <div class="news-title">
+            <h2>人気のタグ</h2>
+        </div>
+        <ul>
+            {volist name="hotTags" id="tag"}
+            <a href="/tag/list_{$tag['tag_id']}.html" title="{$tag['tag_name_jp']}">{$tag['tag_name_jp']}</a>
+            {/volist}
+        </ul>
+    </div>
+
+    <div class="blank clear"></div>
+
+    {notempty name="links"}
+    <div class="links whitebg box ">
+        <div class="news-title">
+            <h2>Friend Links</h2>
+        </div>
+        <ul>
+            {volist name="links" id="link"}
+            <li><a href="{$link['link_url']}" target="_blank">{$link['link_name']}</a></li>
+            {/volist}
+        </ul>
+    </div>
+    <div class="blank clear"></div>
+    {/notempty}
+
+</div>
+
+
+
+
+
+
+
+{include file="public/footer" /}
+</body>
+
+
+
+</html>
