@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{$site.web_site_keyword}-APP</title>
+    <meta content="{$site.web_site_description},APP" name="keywords">
+    <meta content="{$site.web_site_description}" name="description">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="__TIYU_CSS__/index.css">
+    <link rel="stylesheet" href="__TIYU_CSS__/style.css">
+    <link href="__TIYU_CSS__/public.css" type="text/css" rel="stylesheet">
+    <link href="__TIYU_CSS__/biaoqian.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="__TIYU_JS__/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript"  src="__TIYU_JS__/jquery.min.js"></script>
+    <script type="text/javascript" src="__TIYU_JS__/swiper/swiper-4.5.0.min.js"></script>
+    <script type="text/javascript" src="__TIYU_JS__/biebuzhu.js"></script>
+</head>
+<body>
+
+{include file="public/header" /}
+
+<!--biaoqin-->
+<div class="main">
+    <!--ctj_box-->
+    <div class="content_box2 thr">
+        <div class="ctj_box">
+            <div class="ctj_tab btnlist" rel=".tabcontent_1"> <a class="cur">直播app</a> <a>体育app</a></div>
+            <div class="ctj_cont tabcontent_1">
+                <ul class="sy_ul">
+                    {volist name="zhibo_app" id="app"}
+                    <li>
+                        <a href="/app/{$app.id}.html" target="_blank" class="ico_80" title="{$app.name}">
+                            <img alt="{$app.name}" src="{$app.img}">
+                            <p class="name">{$app.name}</p>
+                        </a>
+                    </li>
+                    {/volist}
+                </ul>
+                <ul class="sy_ul">
+                    {volist name="tiyu_app" id="app"}
+                    <li>
+                        <a href="/app/{$app.id}.html" target="_blank" class="ico_80" title="{$app.name}">
+                            <img alt="{$app.name}" src="{$app.img}">
+                            <p class="name">{$app.name}</p>
+                        </a>
+                    </li>
+                    {/volist}
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="local"><a href="/index.html">首页</a> - <span>APP</span></div>
+    </div>
+    <!--crumbs-->
+    <div class="content_box2 mb20">
+        <div class="game_one">
+            <!--<div class="key_one">-->
+                <!--<span class="tpleft">类型：</span>-->
+                <!--<ul>-->
+                    <!--<li><a href="#">聊天社交</a></li>-->
+                    <!--<li><a href="#">系统工具</a></li>-->
+                    <!--<li><a href="#">安了防护</a></li>-->
+                    <!--<li><a href="#">网络流览</a></li>-->
+                    <!--<li class="active"><a href="#">影音播放</a></li>-->
+                    <!--<li><a href="#">主知美化</a></li>-->
+                    <!--<li><a href="#">咨讯阅读</a></li>-->
+                    <!--<li><a href="#">生活导就</a></li>-->
+                    <!--<li><a href="#">网络流览</a></li>-->
+                    <!--<li><a href="#">影音播放</a></li>-->
+                    <!--<li><a href="#">主知美化</a></li>-->
+                    <!--<li><a href="#">咨讯阅读</a></li>-->
+                    <!--<li><a href="#">生活导就</a></li>-->
+                <!--</ul>-->
+            <!--</div>-->
+
+            <div class="sdt_bar">
+                <h1 class="name" id="title">
+                    <a href="/app/tiyu.html">体育app</a>
+                </h1>
+            </div>
+            <div class="game_two">
+                <ul>
+                    {volist name="tiyu" id="item"}
+                    <li><img src="{$item.img}" class="photo">
+                        <div class="cont">
+                            <div class="title">{$item.name}</div>
+                            <div class="infro">
+                                <div class="tpleft">
+                                    <div class="bq"><span>{$item.version}</span><span>{$item.size}</span><span class="red">{$item.update}</span></div>
+                                    <div class="sml">{$item.sub_name}</div>
+                                </div>
+                                <a href="/app/{$item.id}.html" class="more">详情</a>
+                            </div>
+                        </div>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+
+            <div class="sdt_bar">
+                <h1 class="name" id="title">
+                    <a href="/app/zhibo.html">直播app</a>
+                </h1>
+            </div>
+            <div class="game_two">
+                <ul>
+                    {volist name="zhibo" id="item"}
+                    <li><img src="{$item.img}" class="photo">
+                        <div class="cont">
+                            <div class="title">{$item.name}</div>
+                            <div class="infro">
+                                <div class="tpleft">
+                                    <div class="bq"><span>{$item.version}</span><span>{$item.size}</span><span class="red">{$item.update}</span></div>
+                                    <div class="sml">{$item.sub_name}</div>
+                                </div>
+                                <a href="/app/{$item.id}.html" class="more">详情</a>
+                            </div>
+                        </div>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 公共底部 -->
+</div>
+<!--底部-->
+{include file="public/footer" /}
+
+<script>
+    $(".btnlist").each(function(idx,item){
+        $(item).children().eq(0).addClass("cur");
+        if(!!$(this).attr("rel"))
+        {
+            $($(this).attr("rel")).children().eq(0).addClass("cur");
+        }
+    });
+    $(".btnlist").children().bind("mouseenter touch",function(){
+        if($(this).is(".cur")){return false;}
+        var parent = $(this).parent();
+        var obj_box= $($(this).parent().attr("rel"));
+        var index  = parent.children().index(this);
+        if(obj_box.children().eq(index).size() <= 0){ return false;}
+        parent.find(".cur").removeClass("cur");
+        $(this).addClass("cur");
+        obj_box.children().removeClass("cur");
+        obj_box.children().eq(index).addClass("cur");
+        return false;
+    });
+</script>
+<script type="text/javascript" src="__TIYU_JS__/index1.js"></script>
+</body></html>

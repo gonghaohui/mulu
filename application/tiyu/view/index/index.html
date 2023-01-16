@@ -502,11 +502,10 @@
         <div class="clearfix"></div>
         <!--新增-->
         <div class="basketball ballTopic one">
-            <div class="pull-left leftTitle"><span>体育软件
-</span></div>
+            <div class="pull-left leftTitle"><a href="/app/index.html"><span>体育软件</span></a></div>
             <ul class="pull-right rightNav clearfix">
-                <li><a href="/nba/" target="_blank" title="NBA">NBA</a></li>
-                <li><a href="" target="_blank" title="CBA">CBA</a></li>
+                <li><a href="/app/zhibo.html" target="_blank" title="直播app">直播app</a></li>
+                <li><a href="/app/tiyu.html" target="_blank" title="体育app">体育app</a></li>
             </ul>
         </div>
 
@@ -514,68 +513,24 @@
             <div class="ctj_tab btnlist" rel=".tabcontent_1"> <a class="cur">直播app</a> <a>体育app</a></div>
             <div class="ctj_cont tabcontent_1">
                 <ul class="sy_ul">
-                    <li> <a href="https://www.yoyou.com/game/wzlm/" target="_blank" class="ico_80" title="王者荣耀"><img alt="王者荣耀" src="images/20151118113503849.jpg">
-                        <p class="name">王者荣耀</p>
-                    </a></li>
-                    <li> <a href="https://www.yoyou.com/game/dwrg1/" target="_blank" class="ico_80" title="第五人格"><img alt="第五人格" src="images/20180403022556420.jpg">
-                        <p class="name">第五人格</p>
-                    </a></li>
-                    <li> <a href="https://www.yoyou.com/game/kxxxl/" target="_blank" class="ico_80" title="开心消消乐"><img alt="开心消消乐" src="images/20151201050146642.png">
-                        <p class="name">开心消消乐</p>
-                    </a></li>
-                    <li> <a href="https://www.yoyou.com/game/wdsj/" target="_blank" class="ico_80" title="我的世界"><img alt="我的世界" src="images/20190603031932506.jpg">
-                        <p class="name">我的世界</p>
-                    </a></li>
-                    <li> <a href="https://www.yoyou.com/game/mhxy/" target="_blank" class="ico_80" title="梦幻西游"><img alt="梦幻西游" src="images/20200217110747527.png">
-                        <p class="name">梦幻西游</p>
-                    </a></li>
-                    <li> <a href="https://www.yoyou.com/game/qjnn/" target="_blank" class="ico_80" title="奇迹暖暖"><img alt="奇迹暖暖" src="images/20150523102206838.jpg">
-                        <p class="name">奇迹暖暖</p>
-                    </a></li>
-                    <li> <a href="https://www.yoyou.com/game/hpjy/" target="_blank" class="ico_80" title="和平精英"><img alt="和平精英" src="images/20190508085912608.png">
-                        <p class="name">和平精英</p>
-                    </a></li>
-                    <li> <a href="https://www.yoyou.com/game/lyzzr/" target="_blank" class="ico_80" title="恋与制作人"><img alt="恋与制作人" src="images/20171226053753446.png">
-                        <p class="name">恋与制作人</p>
-                    </a></li>
-                    <li> <a href="https://www.yoyou.com/game/mrzh1/" target="_blank" class="ico_80" title="明日之后"><img alt="明日之后" src="images/20180406041724889.png">
-                        <p class="name">明日之后</p>
-                    </a></li>
-                    <li> <a href="https://www.yoyou.com/game/sdyxl/" target="_blank" class="ico_80" title="神都夜行录"><img alt="神都夜行录" src="images/20180926033047665.jpg">
-                        <p class="name">神都夜行录</p>
-                    </a></li>
+                    {volist name="zhibo_app" id="app"}
+                    <li>
+                        <a href="/app/{$app.id}.html" target="_blank" class="ico_80" title="{$app.name}">
+                            <img alt="{$app.name}" src="{$app.img}">
+                            <p class="name">{$app.name}</p>
+                        </a>
+                    </li>
+                    {/volist}
                 </ul>
                 <ul class="sy_ul">
-                    <li> <a href="zuiqiangwoniu_107132.html" target="_blank" class="ico_80" title="最强蜗牛"><img alt="最强蜗牛" src="images/20200623044406562.png">
-                        <p class="name">最强蜗牛</p>
-                    </a></li>
-                    <li> <a href="yirenzhixia_103478.html" target="_blank" class="ico_80" title="一人之下"><img alt="一人之下" src="images/20200527024435243.png">
-                        <p class="name">一人之下</p>
-                    </a></li>
-                    <li> <a href="lingyanjue_76050.html" target="_blank" class="ico_80" title="凌烟诀"><img alt="凌烟诀" src="images/20190723015238856.jpg">
-                        <p class="name">凌烟诀</p>
-                    </a></li>
-                    <li> <a href="baoleiqianxianpo_69917.html" target="_blank" class="ico_80" title="堡垒前线破坏与创造"><img alt="堡垒前线破坏与创造" src="images/20190520014514268.jpg">
-                        <p class="name">堡垒前线破坏与创造</p>
-                    </a></li>
-                    <li> <a href="hepingjingying_69055.html" target="_blank" class="ico_80" title="和平精英"><img alt="和平精英" src="images/20190508115400331.png">
-                        <p class="name">和平精英</p>
-                    </a></li>
-                    <li> <a href="yiqilaizhuoyao_40840.html" target="_blank" class="ico_80" title="一起来捉妖手游"><img alt="一起来捉妖手游" src="images/20190419043320514.jpg">
-                        <p class="name">一起来捉妖手游</p>
-                    </a></li>
-                    <li> <a href="mingrifangzhouguan_37463.html" target="_blank" class="ico_80" title="明日方舟"><img alt="明日方舟" src="images/20190515035322230.png">
-                        <p class="name">明日方舟</p>
-                    </a></li>
-                    <li> <a href="hundouluoguilai_11360.html" target="_blank" class="ico_80" title="魂斗罗归来"><img alt="魂斗罗归来" src="images/20200614101805161.jpg">
-                        <p class="name">魂斗罗归来</p>
-                    </a></li>
-                    <li> <a href="892.html" target="_blank" class="ico_80" title="部落冲突"><img alt="部落冲突" src="images/20190603113935853.png">
-                        <p class="name">部落冲突</p>
-                    </a></li>
-                    <li> <a href="tianlongrongyaoban_75513.html" target="_blank" class="ico_80" title="天龙荣耀版"><img alt="天龙荣耀版" src="images/20190716114943530.png">
-                        <p class="name">天龙荣耀版</p>
-                    </a></li>
+                    {volist name="tiyu_app" id="app"}
+                    <li>
+                        <a href="/app/{$app.id}.html" target="_blank" class="ico_80" title="{$app.name}">
+                            <img alt="{$app.name}" src="{$app.img}">
+                            <p class="name">{$app.name}</p>
+                        </a>
+                    </li>
+                    {/volist}
                 </ul>
 
             </div>

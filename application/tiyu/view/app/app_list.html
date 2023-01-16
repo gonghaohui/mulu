@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{$title}</title>
+    <meta content="{$title}" name="keywords">
+    <meta content="{$title}" name="description">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="__TIYU_JS__/swiper-bundle.min.css">
+    <link rel="stylesheet" href="__TIYU_CSS__/index.css">
+    <link rel="stylesheet" href="__TIYU_CSS__/style.css">
+    <link href="__TIYU_CSS__/public.css" type="text/css" rel="stylesheet">
+    <link href="__TIYU_CSS__/biaoqian.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="__TIYU_JS__/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript"  src="__TIYU_JS__/jquery.min.js"></script>
+    <script type="text/javascript" src="__TIYU_JS__/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="__TIYU_JS__/biebuzhu.js"></script>
+</head>
+<body>
+
+{include file="public/header" /}
+
+<!--biaoqin-->
+<div class="main">
+    <!--ctj_box-->
+    <div class="content_box2 thr">
+        <div class="ctj_box">
+            <div class="ctj_tab btnlist" rel=".tabcontent_1"> <a class="cur">直播app</a> <a>体育app</a></div>
+            <div class="ctj_cont tabcontent_1">
+                <ul class="sy_ul">
+                    {volist name="zhibo_app" id="app"}
+                    <li>
+                        <a href="/app/{$app.id}.html" target="_blank" class="ico_80" title="{$app.name}">
+                            <img alt="{$app.name}" src="{$app.img}">
+                            <p class="name">{$app.name}</p>
+                        </a>
+                    </li>
+                    {/volist}
+                </ul>
+                <ul class="sy_ul">
+                    {volist name="tiyu_app" id="app"}
+                    <li>
+                        <a href="/app/{$app.id}.html" target="_blank" class="ico_80" title="{$app.name}">
+                            <img alt="{$app.name}" src="{$app.img}">
+                            <p class="name">{$app.name}</p>
+                        </a>
+                    </li>
+                    {/volist}
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="local"><a href="/app/index.html">首页</a> - <span>{$title}</span></div>
+    </div>
+    <!--crumbs-->
+    <div class="content_box2 witebg mb20">
+        <!--<div class="dhj_top_box"> <a href="https://www.yoyou.com/special/mfgknbazb1118/" target="_blank" class="dt_pic"><img src="images/20221010050447512.jpeg"></a>-->
+            <!--<div class="dt_name">-->
+
+                <!--<h1>免费观看nba直播app合集</h1>-->
+
+                <!--<div class="dt_txt">免费观看nba直播平台有哪些？什么app可以免费观看nba直播？不少喜欢看nba比赛的用户想要找一个免费看nba的软件，这里小编为用户带来了《免费观看nba直播app合集》这一专题，里面都是各种看体育赛事的直播软件，都是免费观看，感兴趣的用户快来看看吧！</div>-->
+                <!--<div class="dt_btn"><a href="https://www.yoyou.com/special/" class="br" target="_blank">更多专题合集</a></div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <ul class="dhj_ul">
+            {volist name="lists" id="item"}
+            <li>
+                <div class="dhj_inner">
+                    <div class="dhj_top cf"><a href="/app/{$item.id}.html" class="dhj_pic" target="_blank"><img src="{$item.img}"></a>
+                        <div class="cont">
+                            <a href="/app/{$item.id}.html" class="dhj_name" target="_blank">{$item.name}</a>
+                            <div class="dhj_p2">
+                                <p class="star1 mr15"><em style="width:100%"></em></p>
+                                大小：{$item.size}</div>
+                            <div class="dhj_btn f9"> <a href="/app/{$item.id}.html" class="bb" target="_blank">查看详情</a> </div>
+                        </div>
+                    </div>
+                    <div class="dhj_txt">{$item.detail}</div>
+                </div>
+                <i class="dhj_bg"></i>
+            </li>
+            {/volist}
+        </ul>
+        <!--page_box-->
+        <div class="page_box tc"></div>
+    </div>
+    <!--<div class="content_box2 witebg">-->
+        <!--<div class="tit_py20"><span>精彩合集推荐</span><a class="more" target="_blank" href="https://www.yoyou.com/special/collection/">更多</a></div>-->
+        <!--<div class="yc_wrap">-->
+            <!--<div class="swiper">-->
+                <!--<ul class="p_ul cf swiper-wrapper">-->
+                    <!--<li class="swiper-slide"><a href="https://www.yoyou.com/special/rmsytj100/" target="_blank" title="热门手游推荐"><img src="images/20180916103512669.jpg" data-original="//img.yoyou.com/uploadfile/2018/0916/20180916103512669.jpg" style="display: block;">-->
+                        <!--<div class="al_tit">-->
+                            <!--<p class="at">热门手游推荐</p>-->
+                        <!--</div>-->
+                    <!--</a></li>-->
+                    <!--<li class="swiper-slide"><a href="https://www.yoyou.com/special/mfbtflsydq99/" target="_blank" title="免费变态福利手游大全"><img src="images/20180916104355482.jpg" data-original="//img.yoyou.com/uploadfile/2018/0916/20180916104355482.jpg" style="display: block;">-->
+                        <!--<div class="al_tit">-->
+                            <!--<p class="at">免费变态福利手游大全</p>-->
+                        <!--</div>-->
+                    <!--</a></li>-->
+                    <!--<li class="swiper-slide"><a href="https://www.yoyou.com/special/mfpjyxdq98/" target="_blank" title="免费破解游戏大全"><img src="images/20180914103446414.jpg" data-original="//img.yoyou.com/uploadfile/2018/0914/20180914103446414.jpg" style="display: block;">-->
+                        <!--<div class="al_tit">-->
+                            <!--<p class="at">免费破解游戏大全</p>-->
+                        <!--</div>-->
+                    <!--</a></li>-->
+                    <!--<li class="swiper-slide"><a href="https://www.yoyou.com/special/lsdwrgdsy96/" target="_blank" title="类似第五人格的手机游戏"><img src="images/20180413111906516.jpg" data-original="//img.yoyou.com/uploadfile/2018/0413/20180413111906516.jpg" style="display: block;">-->
+                        <!--<div class="al_tit">-->
+                            <!--<p class="at">类似第五人格的手机游戏</p>-->
+                        <!--</div>-->
+                    <!--</a></li>-->
+                    <!--<li class="swiper-slide"><a href="https://www.yoyou.com/special/qwlvsy95/" target="_blank" title="青蛙旅行手游大全"><img src="images/grey.gif" data-original="//img.yoyou.com/uploadfile/2018/0124/20180124012235811.png">-->
+                        <!--<div class="al_tit">-->
+                            <!--<p class="at">青蛙旅行手游大全</p>-->
+                        <!--</div>-->
+                    <!--</a></li>-->
+                    <!--<li class="swiper-slide"><a href="https://www.yoyou.com/special/2018cjqp94/" target="_blank" title="2022春节抢票软件合集"><img src="images/grey.gif" data-original="//img.yoyou.com/uploadfile/2018/0124/20180124011743212.jpg">-->
+                        <!--<div class="al_tit">-->
+                            <!--<p class="at">2022春节抢票软件合集</p>-->
+                        <!--</div>-->
+                    <!--</a></li>-->
+                <!--</ul>-->
+            <!--</div>-->
+            <!--<a class="prev" id="in_yc_p" href="javascript:void(0)">prev</a> <a class="next" id="in_yc_n" href="javascript:void(0)">next</a>-->
+        <!--</div>-->
+    <!--</div>-->
+</div>
+<!-- 公共底部 -->
+
+<!--底部-->
+{include file="public/footer" /}
+
+<script>
+    $(".btnlist").each(function(idx,item){
+        $(item).children().eq(0).addClass("cur");
+        if(!!$(this).attr("rel"))
+        {
+            $($(this).attr("rel")).children().eq(0).addClass("cur");
+        }
+    });
+    $(".btnlist").children().bind("mouseenter touch",function(){
+        if($(this).is(".cur")){return false;}
+        var parent = $(this).parent();
+        var obj_box= $($(this).parent().attr("rel"));
+        var index  = parent.children().index(this);
+        if(obj_box.children().eq(index).size() <= 0){ return false;}
+        parent.find(".cur").removeClass("cur");
+        $(this).addClass("cur");
+        obj_box.children().removeClass("cur");
+        obj_box.children().eq(index).addClass("cur");
+        return false;
+    });
+    var mySwiper = new Swiper('.swiper', {
+        autoplay: true,
+        slidesPerView : 1,
+        spaceBetween:'2%',
+        navigation: {
+            nextEl: '.next',
+            prevEl: '.prev',
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 2
+            },
+            768: {
+                slidesPerView: 3
+            }
+        }
+    })
+
+</script>
+
+<script type="text/javascript" src="__TIYU_JS__/default.js" data-cfasync="false"></script>
+<script type="text/javascript" src="__TIYU_JS__/index.js" data-cfasync="false"></script>
+<script type="text/javascript" src="__TIYU_JS__/index1.js" data-cfasync="false"></script>
+</body></html>

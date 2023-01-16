@@ -396,6 +396,21 @@ class Index extends PcBase{
         $zhongchao_highlight_link = Db::name('mulu_category')->find(26);
         $this->assign('zhongchao_highlight_link',$zhongchao_highlight_link);
 
+        $zhibo_app = Db::name('mulu_app')
+            ->where('type',1)->where('hot',1)
+            ->order('sort desc')
+            ->limit(10)
+            ->field('id,name,img')
+            ->select();
+        $tiyu_app = Db::name('mulu_app')
+            ->where('type',2)->where('hot',1)
+            ->order('sort desc')
+            ->limit(10)
+            ->field('id,name,img')
+            ->select();
+        $this->assign('zhibo_app',$zhibo_app);
+        $this->assign('tiyu_app',$tiyu_app);
+
         return $this->fetch('index/index');
 
     }

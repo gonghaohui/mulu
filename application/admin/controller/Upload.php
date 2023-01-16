@@ -165,6 +165,7 @@ class Upload extends Base
         $info = $file->move($dir);
         if($info){
             $newName = $info->getSaveName();
+            $newName = str_replace('\\','/',$newName);
             //压缩图片
 //            image_png_size_add(ROOT_PATH . 'public' . DS . 'uploads/images/'.$newName,ROOT_PATH . 'public' . DS . 'uploads/images/'.$newName);
             echo "/uploads/images/{$newName}";

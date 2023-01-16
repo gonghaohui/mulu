@@ -11,6 +11,13 @@ Route::domain('127.0.0.79',function(){
 
     Route::post('tag/search', 'tiyu/tags/search');
 
+    //app
+    Route::get('app/index', 'tiyu/apps/index');
+    Route::get('app/zhibo', 'tiyu/apps/app_list');
+    Route::get('app/tiyu', 'tiyu/apps/app_list');
+    Route::get('app/:id', 'tiyu/apps/content',[],['id'=>'\d+']);
+
+
     //内容页
     Route::get('<f_string>/:id', 'tiyu/content/index',[],['f_string'=>'\w+','id'=>'\d+']);
 
